@@ -1,0 +1,507 @@
+{
+ "puntos": [
+  {
+   "id": "puerta",
+   "titulo": "La Puerta · Mariposario y Centro de Ciencias",
+   "piso": 1,
+   "lon": -72.22846,
+   "lat": 7.73746,
+   "altura": 738,
+   "texto": "En la terraza baja, junto a la ciudad: un edificio en forma de mariposa con dos domos de mariposas vivas, museo de ciencias y laboratorios.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0425",
+     "texto": "Así está hoy: la terraza baja junto a la quebrada",
+     "tipo": "hoy"
+    },
+    {
+     "src": "img/v2/PU1_puerta_dia",
+     "texto": "El edificio mariposa y sus dos domos",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/PU2_puerta_noche",
+     "texto": "La Puerta de noche",
+     "tipo": "noche"
+    },
+    {
+     "src": "img/v2/PU2_puerta_noche_alt",
+     "texto": "La Puerta de noche · otra versión",
+     "tipo": "noche"
+    },
+    {
+     "src": "img/v2/M5_morpho_mano",
+     "texto": "Dentro del domo: una Morpho azul",
+     "tipo": "detalle"
+    }
+   ]
+  },
+  {
+   "id": "universidad",
+   "titulo": "El campus · universidad del bosque",
+   "piso": 1,
+   "lon": -72.2290946,
+   "lat": 7.7372339,
+   "altura": 740,
+   "texto": "Dos propuestas para la terraza baja: un campus de ciencias del bosque, o una ciudad universitaria con residencias.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0425",
+     "texto": "Así está hoy",
+     "tipo": "hoy"
+    },
+    {
+     "src": "img/v2/UN1_campus_A",
+     "texto": "Propuesta A · campus del bosque",
+     "tipo": "variación"
+    },
+    {
+     "src": "img/v2/UN2_campus_B",
+     "texto": "Propuesta B · campus con residencias",
+     "tipo": "variación"
+    },
+    {
+     "src": "img/v2/UN3_campus_vida",
+     "texto": "La vida en el campus",
+     "tipo": "detalle"
+    }
+   ]
+  },
+  {
+   "id": "portal",
+   "titulo": "El portal de entrada",
+   "piso": 1,
+   "lon": -72.229741,
+   "lat": 7.737943,
+   "altura": 730,
+   "texto": "La llegada desde la vía: portal de piedra y madera con taquillas y acceso peatonal, a 8 minutos de la Plaza Bolívar.",
+   "imagenes": [
+    {
+     "src": "img/v2/PU4_fachada_noche",
+     "texto": "El portal de noche",
+     "tipo": "noche"
+    }
+   ]
+  },
+  {
+   "id": "bulevar",
+   "titulo": "El bulevar de la quebrada",
+   "piso": 2,
+   "lon": -72.223728,
+   "lat": 7.7414148,
+   "altura": 774,
+   "texto": "Donde el bosque toca los barrios: un bulevar con áreas de ejercicio y un colector que devuelve la quebrada limpia.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0420",
+     "texto": "Así está hoy: la quebrada entre el barrio y el bosque",
+     "tipo": "hoy"
+    },
+    {
+     "src": "img/v2/QB1_bulevar_dia",
+     "texto": "El bulevar en la mañana",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/QB2_bulevar_noche",
+     "texto": "El bulevar de noche",
+     "tipo": "noche"
+    },
+    {
+     "src": "img/v2/M4_agua",
+     "texto": "Agua limpia otra vez",
+     "tipo": "detalle"
+    }
+   ]
+  },
+  {
+   "id": "bosque",
+   "titulo": "El bosque premontano · senderos",
+   "piso": 3,
+   "lon": -72.2174,
+   "lat": 7.7408,
+   "altura": 1057,
+   "texto": "73 hectáreas de bosque premontano: senderos de interpretación, aulas abiertas, cascadas y fauna única.",
+   "imagenes": [
+    {
+     "src": "img/v2/BO1_sendero_niebla",
+     "texto": "Sendero de interpretación en la niebla",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/BO5_aula_bosque",
+     "texto": "Aula abierta en el bosque",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/BO6_cascada",
+     "texto": "Cascada y mirador de agua",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/B1_bosque_noche",
+     "texto": "El bosque de noche, con luciérnagas",
+     "tipo": "noche"
+    },
+    {
+     "src": "img/v2/M1_colibri",
+     "texto": "Colibrí en una heliconia",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/M2_orquidea",
+     "texto": "Orquídea Flor de Mayo",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/M3_heliconius",
+     "texto": "Mariposa Heliconius",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/M6_bromelia_rana",
+     "texto": "Ranita en una bromelia",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/M7_tucancito",
+     "texto": "Tucancito esmeralda",
+     "tipo": "detalle"
+    }
+   ]
+  },
+  {
+   "id": "puente",
+   "titulo": "Puentes entre las copas",
+   "piso": 3,
+   "lon": -72.2188,
+   "lat": 7.7401,
+   "altura": 1022,
+   "texto": "Un puente colgante de 150 metros que cruza el bosque a la altura de las copas.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0511",
+     "texto": "Así está hoy",
+     "tipo": "hoy"
+    },
+    {
+     "src": "img/v2/BO2_puente_aereo",
+     "texto": "El puente desde el aire",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/BO3_puente_persona",
+     "texto": "Caminando entre las copas",
+     "tipo": "detalle"
+    }
+   ]
+  },
+  {
+   "id": "observatorio",
+   "titulo": "Observatorio de aves",
+   "piso": 3,
+   "lon": -72.216,
+   "lat": 7.7396,
+   "altura": 1087,
+   "texto": "Una torre de 20 metros que asoma sobre el bosque, para ver aves al amanecer sobre el mar de nubes.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0512",
+     "texto": "Así está hoy",
+     "tipo": "hoy"
+    },
+    {
+     "src": "img/v2/BO4_observatorio",
+     "texto": "El observatorio al amanecer",
+     "tipo": "día"
+    }
+   ]
+  },
+  {
+   "id": "glamping",
+   "titulo": "Glamping en la meseta",
+   "piso": 4,
+   "lon": -72.21987,
+   "lat": 7.73961,
+   "altura": 1000,
+   "texto": "A mil metros, domos de glamping sobre plataformas de madera, sin cimientos, entre los árboles y de cara a la ciudad.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0488",
+     "texto": "Así está hoy",
+     "tipo": "hoy"
+    },
+    {
+     "src": "img/v2/G1_glamping_dia",
+     "texto": "Los domos al atardecer",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/G2_glamping_noche",
+     "texto": "Los domos de noche",
+     "tipo": "noche"
+    },
+    {
+     "src": "img/v2/G3_glamping_interior",
+     "texto": "Despertar frente a la ciudad",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/GL5_glamping_deck",
+     "texto": "La terraza con jacuzzi",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/GL4_glamping_lejos",
+     "texto": "El glamping desde lejos",
+     "tipo": "día"
+    }
+   ]
+  },
+  {
+   "id": "teleferico",
+   "titulo": "El teleférico",
+   "piso": 0,
+   "lon": -72.2202314,
+   "lat": 7.7378561,
+   "altura": 960,
+   "texto": "De la ciudad a la cima en menos de diez minutos: 1,9 km sobre el bosque, sin talar bajo la línea.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0426",
+     "texto": "Así está hoy",
+     "tipo": "hoy"
+    },
+    {
+     "src": "img/v2/TE1_teleferico",
+     "texto": "El teleférico al atardecer",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/TE3_teleferico_noche",
+     "texto": "Las cabinas de noche",
+     "tipo": "noche"
+    },
+    {
+     "src": "img/v2/TE2_cabina_interior",
+     "texto": "Dentro de la cabina",
+     "tipo": "detalle"
+    }
+   ]
+  },
+  {
+   "id": "estacion",
+   "titulo": "Estación Mirador · comer con vista",
+   "piso": 5,
+   "lon": -72.2128639,
+   "lat": 7.738207,
+   "altura": 1269,
+   "texto": "Restaurante y estación alta del teleférico al borde del pinar, con una terraza de cara a toda la ciudad.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0461",
+     "texto": "Así está hoy",
+     "tipo": "hoy"
+    },
+    {
+     "src": "img/v2/ES1_estacion_aerea",
+     "texto": "La Estación Mirador al atardecer",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/ES2_estacion_terraza",
+     "texto": "La terraza",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/ES3_estacion_noche",
+     "texto": "La Estación de noche",
+     "tipo": "noche"
+    },
+    {
+     "src": "img/v2/ES3_estacion_noche_alt",
+     "texto": "La Estación de noche · otra versión",
+     "tipo": "noche"
+    },
+    {
+     "src": "img/v2/ES4_plato_andino",
+     "texto": "Pisca andina y arepas con vista",
+     "tipo": "detalle"
+    }
+   ]
+  },
+  {
+   "id": "capilla",
+   "titulo": "Capilla de los Pinos",
+   "piso": 5,
+   "lon": -72.2126826,
+   "lat": 7.7375287,
+   "altura": 1258,
+   "texto": "Una capilla de piedra, madera y vidrio entre los pinos, con el altar abierto a la ciudad.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0479",
+     "texto": "Así está hoy: dentro del pinar",
+     "tipo": "hoy"
+    },
+    {
+     "src": "img/v2/T1_templo_dia",
+     "texto": "La capilla con el sol entre los pinos",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/T2_templo_interior",
+     "texto": "Por dentro",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/T3_templo_noche",
+     "texto": "De noche",
+     "tipo": "noche"
+    }
+   ]
+  },
+  {
+   "id": "cima",
+   "titulo": "La cima · usted elige",
+   "piso": 5,
+   "lon": -72.2131812,
+   "lat": 7.7379085,
+   "altura": 1250,
+   "texto": "La cumbre mira de frente al centro de la ciudad. Tres propuestas para la imagen monumental: la Virgen, el Cristo o el gran Rosario.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0503",
+     "texto": "Así está hoy: el cono del pinar desde la ciudad",
+     "tipo": "hoy"
+    },
+    {
+     "src": "img/v2/V1g_virgen",
+     "texto": "Variación 1 · Virgen Inmaculada",
+     "tipo": "variación"
+    },
+    {
+     "src": "img/v2/V2g_cristo",
+     "texto": "Variación 2 · Cristo",
+     "tipo": "variación"
+    },
+    {
+     "src": "img/v2/V3g_rosario",
+     "texto": "Variación 3 · El gran Rosario",
+     "tipo": "variación"
+    },
+    {
+     "src": "img/v2/N2_cima_noche",
+     "texto": "La cima de noche",
+     "tipo": "noche"
+    }
+   ]
+  },
+  {
+   "id": "pinos",
+   "titulo": "Entre los pinos",
+   "piso": 5,
+   "lon": -72.212456,
+   "lat": 7.7377548,
+   "altura": 1267,
+   "texto": "El camino del rosario, el jardín de la memoria, la zona de picnic, el mirador y el despegue de parapente.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0480",
+     "texto": "Así está hoy",
+     "tipo": "hoy"
+    },
+    {
+     "src": "img/v2/PI2_rosario_pinos",
+     "texto": "El camino del rosario",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/PI6_pinos_noche",
+     "texto": "El rosario iluminado de noche",
+     "tipo": "noche"
+    },
+    {
+     "src": "img/v2/PI1_jardin_memoria",
+     "texto": "El jardín de la memoria",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/PI5_picnic_pinos",
+     "texto": "Picnic entre los pinos",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/PI4_mirador_pinos",
+     "texto": "El mirador de los pinos",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/PA1_parapente",
+     "texto": "Parapente sobre el valle",
+     "tipo": "día"
+    }
+   ]
+  },
+  {
+   "id": "nevada",
+   "titulo": "Acceso El Nevada · camino real",
+   "piso": 0,
+   "lon": -72.207332,
+   "lat": 7.748511,
+   "altura": 1231,
+   "texto": "A 13 minutos del centro y casi a la altura de los pinos: el camino real recuperado sube desde la Av. Rotaria hasta El Nevada (1,5–2 km).",
+   "imagenes": [
+    {
+     "src": "img/real/real_0538",
+     "texto": "Desde El Nevada: la ciudad (foto real, 11-10-2026)",
+     "tipo": "hoy"
+    }
+   ],
+   "credito": "Ruta: información del Dr. Gabriel Omar Tapias"
+  },
+  {
+   "id": "viento",
+   "titulo": "Mirador Loma del Viento · la ciudad ya sube a la montaña",
+   "piso": 0,
+   "lon": -72.205825,
+   "lat": 7.728626,
+   "altura": 1374,
+   "texto": "Cada fin de semana, cientos de familias suben a los miradores de la vía al Chorro El Indio.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0528",
+     "texto": "El mirador lleno de carros y familias (foto real, domingo 11-10-2026)",
+     "tipo": "hoy"
+    }
+   ]
+  },
+  {
+   "id": "panaga",
+   "titulo": "Aldea Pánaga · senderos de la comunidad",
+   "piso": 0,
+   "lon": -72.218702,
+   "lat": 7.729238,
+   "altura": 1102,
+   "texto": "Senderismo interpretativo con la comunidad: de El Nevada a la aldea son 2 km por senderos directos, frente a más de 12 km por carretera.",
+   "imagenes": [],
+   "credito": "Información: Dr. Gabriel Omar Tapias"
+  },
+  {
+   "id": "roca",
+   "titulo": "Roca Mirador",
+   "piso": 0,
+   "lon": -72.2096,
+   "lat": 7.7363,
+   "altura": 1214,
+   "texto": "La gran roca gris con vista a San Cristóbal, parada de los senderistas que suben por la vía al Chorro.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0536",
+     "texto": "El pinar visto desde el lado de El Nevada (foto real, 11-10-2026)",
+     "tipo": "hoy"
+    }
+   ]
+  }
+ ]
+}

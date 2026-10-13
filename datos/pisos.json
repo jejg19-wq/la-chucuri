@@ -1,0 +1,52 @@
+{
+ "esquinas": [
+  [
+   -72.242,
+   7.756
+  ],
+  [
+   -72.2000077,
+   7.756
+  ],
+  [
+   -72.2000077,
+   7.7240214
+  ],
+  [
+   -72.242,
+   7.7240214
+  ]
+ ],
+ "pisos": [
+  {
+   "nombre": "La Puerta",
+   "desde": 0,
+   "hasta": 800,
+   "color": "#F58C1E"
+  },
+  {
+   "nombre": "Quebradas y bosque",
+   "desde": 800,
+   "hasta": 950,
+   "color": "#7BE36F"
+  },
+  {
+   "nombre": "La Meseta",
+   "desde": 950,
+   "hasta": 1030,
+   "color": "#FFD43C"
+  },
+  {
+   "nombre": "Bosque alto",
+   "desde": 1030,
+   "hasta": 1150,
+   "color": "#74CFFF"
+  },
+  {
+   "nombre": "La Cima",
+   "desde": 1150,
+   "hasta": 9999,
+   "color": "#FFFFFF"
+  }
+ ]
+}
