@@ -133,7 +133,7 @@ p { margin: 0; }
 .maq-ayuda { position: absolute; z-index: 5; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--vidrio-2); border: 1px solid var(--linea); border-radius: 999px; padding: 10px 16px; font: 600 13px/1 var(--f-display); letter-spacing: .14em; text-transform: uppercase; color: var(--gris); pointer-events: none; transition: opacity .6s; white-space: nowrap; }
 .maq-ayuda.fuera { opacity: 0; }
 /* controles del mapa: zoom y brújula debajo de la leyenda; créditos discretos abajo */
-.maqueta .maplibregl-ctrl-top-right { top: calc(250px + env(safe-area-inset-top, 0px)); right: calc(var(--gutter) - 10px); }
+.maqueta .maplibregl-ctrl-top-right { top: calc(340px + env(safe-area-inset-top, 0px)); right: calc(var(--gutter) - 10px); }
 .maqueta .maplibregl-ctrl-group { background: var(--vidrio-2); border: 1px solid var(--linea); box-shadow: none; }
 .maqueta .maplibregl-ctrl-group button + button { border-top-color: var(--linea); }
 .maqueta .maplibregl-ctrl-group button .maplibregl-ctrl-icon { filter: invert(1); }
@@ -201,6 +201,11 @@ p { margin: 0; }
 .foto .tipo { position: absolute; left: 12px; top: 12px; font: 600 11px/1.2 var(--f-display); letter-spacing: .14em; text-transform: uppercase; background: var(--vidrio-2); border: 1px solid var(--neon); border-radius: 6px; padding: 6px 8px; pointer-events: none; }
 .foto .tipo.real { border-color: var(--cielo); }
 .foto.alta img { aspect-ratio: 4 / 5; }
+.foto.cuadrada img { aspect-ratio: 1; }
+/* foto real vertical junto a la propuesta, a la misma altura */
+.par { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr); gap: 14px; height: clamp(320px, 40vw, 600px); }
+.par .foto img { aspect-ratio: auto; height: 100%; }
+.par2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 
 .carrusel { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(280px, 34%); gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; scrollbar-width: thin; scrollbar-color: var(--neon) transparent; }
 .carrusel > * { scroll-snap-align: start; }
@@ -337,6 +342,12 @@ p { margin: 0; }
   .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 44vw; }
   .bento .a, .bento .b, .bento .c, .bento .d, .bento .e { grid-column: span 1; grid-row: span 1; }
   .bento .a, .bento .foto:last-child { grid-column: span 2; }
+  .caminos-graf { overflow-x: auto; }
+  .caminos-graf svg { min-width: 780px; }
+  .par { grid-template-columns: minmax(0, 1fr); height: auto; }
+  .par .foto:first-child img { aspect-ratio: 4 / 5; }
+  .par .foto img { height: auto; aspect-ratio: 16 / 9; }
+  .par2 { grid-template-columns: minmax(0, 1fr); }
   .expediente { grid-template-columns: minmax(0, 1fr); }
   .ficha { top: auto; left: 0; right: 0; bottom: 0; width: 100%; max-height: 72%; border-radius: 18px 18px 0 0; }
   .ficha[hidden] { transform: translateY(110%); }

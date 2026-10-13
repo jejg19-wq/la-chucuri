@@ -69,6 +69,16 @@
       paint: { "line-color": "#74CFFF", "line-width": 3, "line-dasharray": [1, 1.6], "line-opacity": 0.95 } });
     mapa.addLayer({ id: "cable", type: "line", source: "rutas", filter: ["==", ["get", "tipo"], "cable"],
       paint: { "line-color": "#FFFFFF", "line-width": 3, "line-dasharray": [3, 2] } });
+    /* la caminería que ya existe (Av. Rotaria – El Nevada), más marcada que los senderos propuestos */
+    const esCamineria = ["==", ["get", "tipo"], "camineria"];
+    mapa.addLayer({ id: "camineria-halo", type: "line", source: "rutas", filter: esCamineria,
+      paint: { "line-color": "#FFD43C", "line-width": 11, "line-blur": 7, "line-opacity": 0.45 } });
+    mapa.addLayer({ id: "camineria", type: "line", source: "rutas", filter: esCamineria,
+      layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-color": "#FFD43C", "line-width": 3.4 } });
+    mapa.addLayer({ id: "camineria-nombre", type: "symbol", source: "rutas", filter: esCamineria,
+      layout: { "symbol-placement": "line", "text-field": ["get", "nombre"], "text-font": ["Noto Sans Regular"], "text-size": 12.5,
+        "text-letter-spacing": 0.04, "symbol-spacing": 380, "text-offset": [0, -1.2] },
+      paint: { "text-color": "#FFE7A3", "text-halo-color": "rgba(8,17,29,.92)", "text-halo-width": 1.8 } });
     mapa.addSource("obras", { type: "geojson", data: obras });
     mapa.addLayer({ id: "obras", type: "fill-extrusion", source: "obras", filter: filtroObras(),
       paint: { "fill-extrusion-color": ["get", "color"], "fill-extrusion-height": ["get", "alto"], "fill-extrusion-base": ["get", "base"],
@@ -88,13 +98,18 @@
   function leyenda(lista) {
     const el = $(".leyenda-pisos");
     if (!el) return;
+    const linea = fondo => `<i style="background:${fondo};height:4px;vertical-align:3px"></i>`;
     el.innerHTML = '<b style="color:var(--neon-2)">Los cinco pisos</b>' + lista.map((p, i) =>
-      `<span><i style="background:${p.color}"></i>${i + 1} · ${p.nombre}</span>`).join("");
+      `<span><i style="background:${p.color}"></i>${i + 1} · ${p.nombre}</span>`).join("") +
+      '<b style="color:var(--neon-2);margin-top:6px">Caminos</b>' +
+      `<span>${linea("#FFD43C")}Caminería que ya existe</span>` +
+      `<span>${linea("repeating-linear-gradient(90deg,#74CFFF 0 4px,transparent 4px 7px)")}Senderos propuestos</span>` +
+      `<span>${linea("repeating-linear-gradient(90deg,#fff 0 6px,transparent 6px 10px)")}Teleférico propuesto</span>`;
   }
 
   /* ---------------- puntos ---------------- */
   function ponerPuntos() {
-    const ACCESOS = ["nevada", "viento", "panaga", "roca"];
+    const ACCESOS = ["nevada", "viento", "panaga", "roca", "rotaria"];
     puntos.forEach(p => {
       const b = document.createElement("button");
       const acceso = ACCESOS.includes(p.id);
@@ -114,8 +129,8 @@
     requestAnimationFrame(() => requestAnimationFrame(ajustarEtiquetas));
   }
   /* etiquetas sin encimarse: se muestran por orden de importancia; las que chocan quedan como punto (se ven al pasar el cursor) */
-  const PRIORIDAD = ["puerta", "cima", "glamping", "bosque", "bulevar", "teleferico", "estacion", "capilla", "universidad",
-    "puente", "observatorio", "pinos", "portal", "viento", "nevada", "panaga", "roca"];
+  const PRIORIDAD = ["puerta", "cima", "glamping", "bosque", "bulevar", "villa", "teleferico", "nevada", "rotaria", "estacion", "capilla",
+    "cabanas", "aventura", "restaurante", "universidad", "puente", "observatorio", "pinos", "portal", "viento", "panaga", "roca"];
   function ajustarEtiquetas() {
     seccion.classList.toggle("compacto", mapa.getZoom() < 14.6 && window.innerWidth < 900);
     const ids = Object.keys(marcadores).sort((a, b) => {
@@ -166,7 +181,9 @@
     nuevo.onload = () => { img.src = nuevo.src; img.alt = im.texto; img.style.opacity = 1; };
     nuevo.src = im.src + "_1200.webp";
     const tag = $(".ficha-img .tag", ficha);
-    tag.textContent = im.tipo === "hoy" ? "Hoy · foto real del dron" : "Imagen referencial · " + (NOMBRE_TIPO[im.tipo] || im.tipo);
+    /* las fotos FR_ son reales pero no del dron (las mandó Jackson) */
+    tag.textContent = im.tipo === "hoy" ? (im.src.includes("/FR_") ? "Hoy · foto real" : "Hoy · foto real del dron")
+      : "Imagen referencial · " + (NOMBRE_TIPO[im.tipo] || im.tipo);
     tag.classList.toggle("real", im.tipo === "hoy");
     $(".ficha-img figcaption", ficha).textContent = im.texto;
     $$(".ficha-tabs button", ficha).forEach(b => b.setAttribute("aria-pressed", b.dataset.t === im.tipo ? "true" : "false"));
@@ -180,8 +197,9 @@
     if (estaba && mapa && !recorrido) volar({ center: mapa.getCenter() }, 900, null, false);
   }
   /* hacia dónde mira la cámara en cada sitio: abajo, desde la ciudad hacia la montaña; arriba, desde la montaña hacia la ciudad */
-  const RUMBO = { puerta: 140, universidad: 140, portal: 140, bulevar: 145, bosque: 140, puente: 140, observatorio: 140, teleferico: 120,
-    glamping: 300, estacion: 295, capilla: 300, cima: 300, pinos: 300 };
+  const RUMBO = { puerta: 140, universidad: 140, portal: 140, bulevar: 145, villa: 135, restaurante: 140, bosque: 140, puente: 140,
+    observatorio: 140, teleferico: 120, glamping: 300, cabanas: 300, aventura: 300, estacion: 295, capilla: 300, cima: 300, pinos: 300,
+    nevada: 220, rotaria: 150 };
   function volarA(p) {
     const lejos = !p.piso;
     const pad = window.innerWidth > 900 ? { top: 60, right: ficha.offsetWidth + 60 } : { bottom: ficha.offsetHeight };
@@ -257,7 +275,10 @@
     noche = v;
     $$("[data-modo]").forEach(b => b.setAttribute("aria-pressed", (b.dataset.modo === "noche") === v ? "true" : "false"));
     seccion.classList.toggle("de-noche", v);
-    if (!mapa || !mapa.isStyleLoaded()) return;
+    /* no usar isStyleLoaded(): da falso mientras cargan teselas (p. ej. durante un vuelo) y el cambio se perdía.
+       Si el mapa aún no arrancó, el estado queda guardado y se aplica al terminar de cargar. */
+    if (!mapa) return;
+    try { if (!mapa.getLayer("satelite")) return; } catch (e) { return; }
     mapa.setPaintProperty("satelite", "raster-brightness-max", v ? 0.22 : 1);
     mapa.setPaintProperty("satelite", "raster-saturation", v ? -0.55 : 0.12);
     mapa.setPaintProperty("satelite", "raster-hue-rotate", v ? 200 : 0);
@@ -271,7 +292,8 @@
 
   /* ---------------- recorrido guiado ---------------- */
   /* sube por la montaña mirando hacia ella y, desde el glamping, gira para mirar la ciudad */
-  const PARADAS = ["puerta", "universidad", "bulevar", "bosque", "puente", "teleferico", "glamping", "estacion", "capilla", "cima", "pinos", "nevada", "viento"];
+  const PARADAS = ["puerta", "universidad", "bulevar", "villa", "restaurante", "bosque", "puente", "teleferico", "glamping", "cabanas", "aventura",
+    "estacion", "capilla", "cima", "pinos", "nevada", "viento"];
   function iniciarRecorrido() {
     detenerRecorrido();
     let i = 0;
@@ -316,7 +338,8 @@
     if (b.dataset.capa) {
       const on = b.getAttribute("aria-pressed") !== "true";
       b.setAttribute("aria-pressed", on ? "true" : "false");
-      const capas = { pisos: ["pisos"], obras: ["obras"], rutas: ["senderos", "cable", "caminos"] }[b.dataset.capa] || [];
+      const capas = { pisos: ["pisos"], obras: ["obras"],
+        rutas: ["senderos", "cable", "caminos", "camineria", "camineria-halo", "camineria-nombre"] }[b.dataset.capa] || [];
       capas.forEach(c => mapa.getLayer(c) && mapa.setLayoutProperty(c, "visibility", on ? "visible" : "none"));
       if (b.dataset.capa === "pisos") $(".leyenda-pisos").hidden = !on;
     }

@@ -7,7 +7,7 @@
    "lon": -72.22846,
    "lat": 7.73746,
    "altura": 738,
-   "texto": "En la terraza baja, junto a la ciudad: un edificio en forma de mariposa con dos domos de mariposas vivas, museo de ciencias y laboratorios.",
+   "texto": "En la terraza baja, junto a la ciudad: un edificio en forma de mariposa con dos domos de mariposas vivas, museo de ciencias, laboratorios y un salón de conversación.",
    "imagenes": [
     {
      "src": "img/real/real_0425",
@@ -17,6 +17,11 @@
     {
      "src": "img/v2/PU1_puerta_dia",
      "texto": "El edificio mariposa y sus dos domos",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/CM1_caminerias",
+     "texto": "Las caminerías entre jardines de mariposas",
      "tipo": "día"
     },
     {
@@ -32,6 +37,21 @@
     {
      "src": "img/v2/M5_morpho_mano",
      "texto": "Dentro del domo: una Morpho azul",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/P06_domo_mariposario",
+     "texto": "Dentro del mariposario",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/LA1_laboratorio",
+     "texto": "Los laboratorios de biodiversidad",
+     "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/SC1_salon_conversacion",
+     "texto": "El salón de conversación",
      "tipo": "detalle"
     }
    ]
@@ -103,6 +123,11 @@
      "tipo": "día"
     },
     {
+     "src": "img/v2/BJ1_bulevar_ejercicio",
+     "texto": "Las áreas de ejercicio junto a la quebrada",
+     "tipo": "detalle"
+    },
+    {
      "src": "img/v2/QB2_bulevar_noche",
      "texto": "El bulevar de noche",
      "tipo": "noche"
@@ -111,6 +136,58 @@
      "src": "img/v2/M4_agua",
      "texto": "Agua limpia otra vez",
      "tipo": "detalle"
+    }
+   ]
+  },
+  {
+   "id": "villa",
+   "titulo": "La villa · edificios entre los árboles",
+   "piso": 1,
+   "lon": -72.2262,
+   "lat": 7.7395,
+   "altura": 770,
+   "texto": "En la ladera baja, junto al barrio: edificios de tres y cuatro pisos escalonados entre los árboles, con caminerías y una plaza. Dónde y cuántos, lo deciden los propietarios.",
+   "imagenes": [
+    {
+     "src": "img/real/real_0415",
+     "texto": "Así está hoy: la ladera junto al barrio",
+     "tipo": "hoy"
+    },
+    {
+     "src": "img/v2/VI1_villa_dia",
+     "texto": "La villa entre los árboles",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/VI2_villa_noche",
+     "texto": "La villa de noche",
+     "tipo": "noche"
+    },
+    {
+     "src": "img/v2/VI3_villa_cerca",
+     "texto": "Entre los edificios, la caminería sube hacia el bosque",
+     "tipo": "detalle"
+    }
+   ]
+  },
+  {
+   "id": "restaurante",
+   "titulo": "Restaurante de la quebrada",
+   "piso": 2,
+   "lon": -72.221,
+   "lat": 7.7415,
+   "altura": 829,
+   "texto": "Un restaurante de madera y piedra junto al agua, con terraza en medio del bosque: comer escuchando la quebrada.",
+   "imagenes": [
+    {
+     "src": "img/real/FR_rio_quebrada",
+     "texto": "Así son hoy las quebradas de la montaña (foto real)",
+     "tipo": "hoy"
+    },
+    {
+     "src": "img/v2/RE1_restaurante_quebrada",
+     "texto": "La terraza junto a la cascada",
+     "tipo": "día"
     }
    ]
   },
@@ -259,6 +336,32 @@
    ]
   },
   {
+   "id": "cabanas",
+   "titulo": "Cabañas en el bosque alto",
+   "piso": 4,
+   "lon": -72.2185,
+   "lat": 7.7404,
+   "altura": 1030,
+   "texto": "Cabañas de madera sobre pilotes, entre pinos y árboles nativos, con su terraza mirando a la ciudad.",
+   "imagenes": [
+    {
+     "src": "img/v2/CA1_cabanas_dia",
+     "texto": "Las cabañas al amanecer",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/CA2_cabanas_noche",
+     "texto": "Las cabañas de noche",
+     "tipo": "noche"
+    },
+    {
+     "src": "img/v2/P17_cabanas_meseta",
+     "texto": "Las cabañas desde el aire",
+     "tipo": "día"
+    }
+   ]
+  },
+  {
    "id": "teleferico",
    "titulo": "El teleférico",
    "piso": 0,
@@ -286,6 +389,32 @@
      "src": "img/v2/TE2_cabina_interior",
      "texto": "Dentro de la cabina",
      "tipo": "detalle"
+    },
+    {
+     "src": "img/v2/FU1_funicular",
+     "texto": "Opción B: un funicular por la misma ladera",
+     "tipo": "variación"
+    }
+   ]
+  },
+  {
+   "id": "aventura",
+   "titulo": "Aventura · bicicleta y senderismo",
+   "piso": 5,
+   "lon": -72.215,
+   "lat": 7.738,
+   "altura": 1152,
+   "texto": "Caminos empinados para bicicleta de montaña y senderos de piedra que suben entre el bosque y los pinos, con la ciudad abajo.",
+   "imagenes": [
+    {
+     "src": "img/v2/P15_bicicleta_montana",
+     "texto": "Bajada en bicicleta entre los pinos",
+     "tipo": "día"
+    },
+    {
+     "src": "img/v2/SE1_senderismo",
+     "texto": "Senderismo por el camino real",
+     "tipo": "día"
     }
    ]
   },
@@ -391,6 +520,11 @@
      "tipo": "variación"
     },
     {
+     "src": "img/v2/V4_virgen_rosario",
+     "texto": "Variación 4 · La Virgen con el Rosario alrededor",
+     "tipo": "variación"
+    },
+    {
      "src": "img/v2/N2_cima_noche",
      "texto": "La cima de noche",
      "tipo": "noche"
@@ -440,18 +574,28 @@
      "src": "img/v2/PA1_parapente",
      "texto": "Parapente sobre el valle",
      "tipo": "día"
+    },
+    {
+     "src": "img/v2/PA2_parapente_despegue",
+     "texto": "El despegue de parapente",
+     "tipo": "detalle"
     }
    ]
   },
   {
    "id": "nevada",
-   "titulo": "Acceso El Nevada · camino real",
+   "titulo": "La Cruz · entrada por El Nevada",
    "piso": 0,
-   "lon": -72.207332,
-   "lat": 7.748511,
-   "altura": 1231,
-   "texto": "A 13 minutos del centro y casi a la altura de los pinos: el camino real recuperado sube desde la Av. Rotaria hasta El Nevada (1,5–2 km).",
+   "lon": -72.2066359,
+   "lat": 7.7485139,
+   "altura": 1223,
+   "texto": "Al final de la caminería que sube desde la Av. Rotaria está la Cruz: la entrada a La Chucurí por El Nevada que indica el Dr. Tapias. Desde aquí, el Camino de la Virgen del Carmen sigue hasta los pinos.",
    "imagenes": [
+    {
+     "src": "img/real/FR_cruz_nevada",
+     "texto": "La Cruz, entrada por El Nevada (foto real)",
+     "tipo": "hoy"
+    },
     {
      "src": "img/real/real_0538",
      "texto": "Desde El Nevada: la ciudad (foto real, 11-10-2026)",
@@ -459,6 +603,17 @@
     }
    ],
    "credito": "Ruta: información del Dr. Gabriel Omar Tapias"
+  },
+  {
+   "id": "rotaria",
+   "titulo": "Caminería Av. Rotaria – El Nevada",
+   "piso": 0,
+   "lon": -72.216971,
+   "lat": 7.7535866,
+   "altura": 925,
+   "texto": "Ya existe: junto a la entrada de la urbanización Los Criollitos empieza una caminería pública de unos 2 km, de asfalto y piedra, que sube hasta El Nevada en unos 35 minutos, con un mirador cerca del final. Al final está la Cruz, la entrada por El Nevada.",
+   "imagenes": [],
+   "credito": "Fuente: La Nación (20-09-2023) y OpenStreetMap"
   },
   {
    "id": "viento",
@@ -496,6 +651,11 @@
    "altura": 1214,
    "texto": "La gran roca gris con vista a San Cristóbal, parada de los senderistas que suben por la vía al Chorro.",
    "imagenes": [
+    {
+     "src": "img/real/FR_piedra_mirador",
+     "texto": "La piedra, con la ciudad al fondo (foto real)",
+     "tipo": "hoy"
+    },
     {
      "src": "img/real/real_0536",
      "texto": "El pinar visto desde el lado de El Nevada (foto real, 11-10-2026)",
