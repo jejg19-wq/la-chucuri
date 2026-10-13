@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A1422">
+<meta property="og:type" content="website">
+<meta property="og:title" content="La Chucur&iacute; &middot; Centro Internacional Biotem&aacute;tico">
+<meta property="og:description" content="103,8 hect&aacute;reas de monta&ntilde;a frente a San Crist&oacute;bal, T&aacute;chira. Prototipo conceptual para inversionistas.">
+<meta property="og:image" content="https://jejg19-wq.github.io/la-chucuri/img/P01_masterplan.jpg">
+<meta property="og:url" content="https://jejg19-wq.github.io/la-chucuri/">
+<meta name="twitter:card" content="summary_large_image">
+<meta charset="utf-8">
+<title>La Chucurí</title>
+<meta name="description" content="Presentación para inversionistas del Centro Internacional Biotemático La Chucurí, San Cristóbal, Táchira.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>/* Láminas a pantalla completa: neón naranja sobre azul noche, el mismo lenguaje del video. Un solo tema, oscuro por diseño. */
+:root{
+  color-scheme:dark;
+  --noche:#0A1422; --azul:#0E1B2D; --vidrio:rgba(11,22,38,.86); --tinta:#F4EFE6; --gris:#AEB8C6; --gris-2:#8693A4;
+  --neon:#F58C1E; --neon-2:#FFC482; --neon-glow:rgba(245,140,30,.45); --oro:#FFD43C; --hoja:#7BE36F; --cielo:#74CFFF;
+  --linea:rgba(244,239,230,.14); --nota:#FFE27A; --nota-tinta:#2B2306; --sobre-neon:#1B0F02;
+  --f-display:"Barlow Condensed","Bahnschrift","Arial Narrow",system-ui,sans-serif;
+  --f-texto:"Barlow","Segoe UI",system-ui,sans-serif;
+  --gutter:clamp(16px,4vw,56px);
+}
+html{background:var(--noche);scroll-behavior:smooth;scroll-snap-type:y proximity}
+body{margin:0;background:var(--noche);color:var(--tinta);font-family:var(--f-texto);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:var(--neon-2)}
+:focus-visible{outline:3px solid var(--neon-2);outline-offset:3px}
+h1,h2,h3,h4{font-family:var(--f-display);text-transform:uppercase;margin:0;text-wrap:balance;font-weight:700}
+h1{font-size:clamp(68px,12vw,176px);line-height:.86;letter-spacing:.01em;text-shadow:0 0 30px rgba(245,140,30,.35)}
+h2{font-size:clamp(38px,5.2vw,78px);line-height:.95}
+h4{font-size:21px;font-weight:600;letter-spacing:.02em}
+p{margin:0}
+.eyebrow{font-family:var(--f-display);font-weight:600;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--neon-2);display:flex;gap:.8em;align-items:center}
+.eyebrow span{color:var(--neon);border:1px solid var(--neon);border-radius:4px;padding:1px 7px;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.lead{font-size:clamp(17px,1.3vw,21px);max-width:62ch}
+.lead.ancho{max-width:92ch}
+.lead.fuerte{color:var(--neon-2);font-weight:500}
+.fuente{font-size:13px;color:var(--gris-2);max-width:86ch}
+.sub-h{font-size:clamp(22px,2.1vw,30px);font-weight:600;letter-spacing:.04em}
+.sub-h small{font-size:.58em;color:var(--gris);letter-spacing:.14em;margin-left:.6em;font-weight:500}
+.aviso{font:600 12px/1.5 var(--f-display);letter-spacing:.16em;text-transform:uppercase;color:var(--gris-2)}
+
+/* barra */
+.barra{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;gap:16px;padding:calc(10px + env(safe-area-inset-top,0px)) var(--gutter) 10px;background:linear-gradient(180deg,rgba(10,20,34,.94),rgba(10,20,34,.76));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.logo{display:flex;align-items:center;gap:10px;color:var(--tinta);text-decoration:none;font:700 22px/1 var(--f-display);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.logo-ico{width:30px;height:21px;fill:var(--neon);filter:drop-shadow(0 0 6px var(--neon-glow))}
+.donde{flex:1;min-width:0;font:600 14px/1 var(--f-display);letter-spacing:.12em;text-transform:uppercase;color:var(--gris);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.acciones{display:flex;gap:8px;margin-left:auto}
+.b-ico,.b-sel{font:600 14px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--tinta);background:transparent;border:1px solid var(--linea);border-radius:999px;padding:9px 14px;cursor:pointer;white-space:nowrap}
+.b-ico:hover{border-color:var(--gris)}
+.b-ico[aria-pressed="true"],.b-ico[aria-expanded="true"]{border-color:var(--nota);color:var(--nota)}
+.b-sel{display:flex;align-items:center;gap:8px;border-color:var(--neon);color:var(--neon-2)}
+.b-sel .ico{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+.b-sel b{background:var(--neon);color:var(--sobre-neon);border-radius:999px;padding:3px 8px;font-size:13px;font-variant-numeric:tabular-nums}
+.progreso{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--neon);box-shadow:0 0 10px var(--neon)}
+.indice{position:fixed;top:calc(62px + env(safe-area-inset-top,0px));right:var(--gutter);z-index:60;background:var(--vidrio);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--linea);border-radius:14px;padding:8px;max-height:calc(100svh - 90px);overflow:auto;width:min(340px,calc(100vw - 32px));box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.indice ol{list-style:none;margin:0;padding:0}
+.indice a{display:flex;gap:12px;padding:9px 10px;border-radius:8px;color:var(--tinta);text-decoration:none;font:600 15px/1.2 var(--f-display);letter-spacing:.07em;text-transform:uppercase}
+.indice a span{color:var(--neon);font-variant-numeric:tabular-nums}
+.indice a:hover,.indice a.act{background:rgba(245,140,30,.14)}
+.ayuda{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;font:600 13px/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:var(--gris);background:var(--vidrio);border:1px solid var(--linea);border-radius:999px;padding:9px 14px;transition:opacity .6s;pointer-events:none}
+.ayuda.fuera{opacity:0}
+
+/* láminas */
+.lam{position:relative;min-height:100svh;padding-block:calc(84px + env(safe-area-inset-top,0px)) 56px;padding-inline:var(--gutter);scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;border-top:1px solid var(--linea)}
+.wrap{width:100%;max-width:1480px;margin-inline:auto;display:flex;flex-direction:column;gap:clamp(16px,2vw,26px)}
+.duo{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,3.2vw,56px);align-items:center}
+.duo>*{min-width:0}
+.txt{display:flex;flex-direction:column;gap:18px;min-width:0}
+
+/* portada */
+.lam.portada{padding:0;border-top:0;justify-content:flex-end}
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-media{position:absolute;inset:0;transform-origin:62% 40%}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;max-width:none}
+.hero-prop{position:absolute;inset:0;clip-path:inset(0 0 0 0);transition:clip-path 1.1s cubic-bezier(.25,.8,.25,1)}
+.hero.go .hero-prop{animation:revelar 2.6s cubic-bezier(.3,.7,.2,1) .7s both}
+.hero.ver-hoy .hero-prop{clip-path:inset(0 0 0 100%);animation:none}
+.hero-sweep{position:absolute;top:0;bottom:0;left:-6px;width:3px;background:var(--neon);box-shadow:0 0 22px 6px var(--neon);opacity:0;pointer-events:none}
+.hero.go .hero-sweep{animation:barrido 2.6s cubic-bezier(.3,.7,.2,1) .7s both}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,20,34,.94) 0%,rgba(10,20,34,.66) 34%,rgba(10,20,34,0) 68%),linear-gradient(0deg,rgba(10,20,34,.85) 0%,rgba(10,20,34,0) 42%);pointer-events:none}
+.hero-txt{position:relative;z-index:2;max-width:780px;display:flex;flex-direction:column;gap:16px;padding:calc(96px + env(safe-area-inset-top,0px)) var(--gutter) clamp(36px,6vh,72px)}
+.sub{font:600 clamp(20px,2.4vw,32px)/1.1 var(--f-display);letter-spacing:.2em;text-transform:uppercase;color:var(--neon-2);margin-top:-4px}
+.chips-dato{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.chips-dato li{background:var(--vidrio);border:1px solid var(--linea);border-radius:10px;padding:10px 14px;font-size:14px;color:var(--gris);line-height:1.3}
+.chips-dato b{display:block;font:700 28px/1 var(--f-display);color:var(--tinta);font-variant-numeric:tabular-nums}
+.hero-act{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 15px/1 var(--f-display);letter-spacing:.12em;text-transform:uppercase;color:var(--sobre-neon);background:var(--neon);border:1px solid var(--neon);border-radius:999px;padding:12px 18px;cursor:pointer;text-decoration:none;box-shadow:0 0 18px var(--neon-glow)}
+.btn:hover{background:var(--neon-2);border-color:var(--neon-2)}
+.btn.ghost{background:transparent;color:var(--neon-2);box-shadow:none}
+.btn.ghost:hover{background:rgba(245,140,30,.12)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.kb{animation:kb 34s ease-in-out infinite alternate}
+.single.kb,.cmp.kb{animation:none}
+.single.kb img{animation:kb 30s ease-in-out infinite alternate;transform-origin:50% 45%}
+
+/* comparador hoy / propuesta */
+.cmp,.single,.v-stage{position:relative;aspect-ratio:1600/893;border-radius:14px;overflow:hidden;background:var(--azul);box-shadow:0 30px 80px rgba(0,0,0,.45);--pos:55%}
+.single{aspect-ratio:1600/905}
+.cmp img,.single img,.v-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;max-width:none}
+.cmp-prop{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.cmp-line{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;transform:translateX(-1px);background:var(--neon);box-shadow:0 0 12px 2px var(--neon),0 0 40px 6px rgba(245,140,30,.3);pointer-events:none}
+.cmp.barriendo .cmp-line{width:3px;box-shadow:0 0 18px 5px var(--neon),0 0 60px 12px rgba(245,140,30,.4)}
+.cmp-knob{position:absolute;top:50%;left:50%;width:44px;height:44px;transform:translate(-50%,-50%);border-radius:50%;background:var(--vidrio);border:2px solid var(--neon);box-shadow:0 0 18px var(--neon-glow)}
+.cmp-knob::before,.cmp-knob::after{content:"";position:absolute;top:50%;border:6px solid transparent;transform:translateY(-50%)}
+.cmp-knob::before{left:6px;border-right-color:var(--neon-2)}
+.cmp-knob::after{right:6px;border-left-color:var(--neon-2)}
+.cmp-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;touch-action:pan-y;-webkit-appearance:none;appearance:none}
+.cmp:focus-within .cmp-knob{outline:3px solid var(--neon-2);outline-offset:3px}
+.tag{position:absolute;top:12px;z-index:4;font:600 12px/1.2 var(--f-display);letter-spacing:.13em;text-transform:uppercase;color:var(--tinta);background:var(--vidrio);border:1px solid var(--neon);border-radius:6px;padding:7px 9px;pointer-events:none;max-width:46%}
+.tag-l{left:12px}
+.tag-r{right:12px;border-color:var(--linea);text-align:right}
+
+/* escenas con pestañas */
+.scene{display:flex;flex-direction:column;gap:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tabs button,.vbtn{font:600 14px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--gris);background:transparent;border:1px solid var(--linea);border-radius:999px;padding:10px 14px;cursor:pointer}
+.tabs button:hover,.vbtn:hover{color:var(--tinta);border-color:var(--gris)}
+.tabs button[aria-selected="true"],.vbtn[aria-pressed="true"]{color:var(--sobre-neon);background:var(--neon);border-color:var(--neon);box-shadow:0 0 16px var(--neon-glow)}
+.panel{display:flex;flex-direction:column;gap:14px}
+.scene .cmp,.scene .single{width:min(100%,calc(64vh * 1.78));margin-inline:auto}
+.cap{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;width:min(100%,calc(64vh * 1.78));margin-inline:auto}
+.cap p{max-width:82ch;color:var(--tinta)}
+.heart,.pchip{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--neon-2);background:transparent;border:1px solid var(--neon);border-radius:999px;padding:10px 14px;cursor:pointer;white-space:nowrap}
+.heart .ico,.pchip .ico{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;flex:none}
+.heart[aria-pressed="true"],.pchip[aria-pressed="true"]{background:var(--neon);color:var(--sobre-neon)}
+.heart[aria-pressed="true"] .ico,.pchip[aria-pressed="true"] .ico{fill:currentColor}
+.heart .h-on{display:none}
+.heart[aria-pressed="true"] .h-on{display:inline}
+.heart[aria-pressed="true"] .h-off{display:none}
+.txt .heart{align-self:flex-start}
+
+/* mapas */
+.map{position:relative;margin:0;border-radius:14px;overflow:hidden;background:var(--azul);box-shadow:0 30px 80px rgba(0,0,0,.45);width:min(100%,calc(78vh * var(--ar)));justify-self:center}
+.map>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
+.map .tint{mix-blend-mode:screen}
+.map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.map path{fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.map .halo{stroke-width:11;opacity:.28}
+.l-lindero{stroke:var(--oro);stroke-width:3}
+path.l-lindero:not(.halo){fill:rgba(255,212,60,.07)}
+.l-ruta{stroke:var(--neon);stroke-width:3}
+.l-publica{stroke:var(--hoja);stroke-width:3.5}
+.l-agua{stroke:var(--cielo);stroke-width:2.5}
+.l-sendero{stroke:var(--cielo);stroke-width:3;stroke-dasharray:3 8}
+.l-cable{stroke:#FFFFFF;stroke-width:3;stroke-dasharray:12 9}
+.l-actual{stroke:#FFFFFF;stroke-width:2.2;stroke-dasharray:2 7}
+.map path.hl{stroke-width:6;opacity:1}
+.pin{position:absolute;transform:translate(-50%,-50%);pointer-events:none;z-index:2}
+.pin i{display:block;width:13px;height:13px;border-radius:50%;background:var(--neon);border:2px solid #FFFFFF;box-shadow:0 0 0 4px rgba(245,140,30,.25),0 0 14px var(--neon)}
+.pin span{position:absolute;left:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font:600 clamp(11px,.95vw,14px)/1.15 var(--f-display);letter-spacing:.07em;text-transform:uppercase;color:var(--tinta);background:var(--vidrio);border:1px solid var(--neon);border-radius:6px;padding:5px 8px}
+.pin span small{display:block;color:var(--neon-2);font-weight:500;font-size:.86em;letter-spacing:.05em}
+.pin.izq span{left:auto;right:20px;text-align:right}
+.pin.finca i{background:var(--oro);box-shadow:0 0 0 5px rgba(255,212,60,.25),0 0 16px var(--oro)}
+.pin.finca span{border-color:var(--oro)}
+.pin.public i{background:var(--hoja);box-shadow:0 0 0 4px rgba(123,227,111,.25),0 0 14px var(--hoja)}
+.pin.public span{border-color:var(--hoja)}
+.pin.area i{display:none}
+.pin.area span{left:50%;transform:translate(-50%,-50%);border-color:transparent;background:rgba(10,20,34,.6);text-align:center}
+.pin.hl i{transform:scale(1.5)}
+.pin.hl span{background:var(--neon);color:var(--sobre-neon)}
+.pin.hl span small{color:var(--sobre-neon)}
+.escala{position:absolute;left:14px;right:14px;bottom:12px;display:flex;flex-direction:column;gap:4px;pointer-events:none}
+.escala span{display:block;height:4px;background:var(--neon);box-shadow:0 0 8px var(--neon)}
+.escala em{font:600 12px/1 var(--f-display);letter-spacing:.12em;color:var(--tinta);font-style:normal;text-shadow:0 1px 3px #000}
+.norte{position:absolute;right:14px;top:12px;font:700 15px/1 var(--f-display);color:var(--tinta);background:var(--vidrio);border:1px solid var(--linea);border-radius:50%;width:30px;height:30px;display:grid;place-items:center}
+.norte::before{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%);border:5px solid transparent;border-bottom:8px solid var(--neon)}
+.dist{list-style:none;margin:0;padding:0;display:grid}
+.dist li{display:grid;grid-template-columns:96px minmax(0,1fr);align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px solid var(--linea)}
+.dist li[data-route]{cursor:default}
+.dist b{font:700 26px/1 var(--f-display);color:var(--neon);font-variant-numeric:tabular-nums}
+.dist li:hover b{text-shadow:0 0 12px var(--neon)}
+.ficha{border-collapse:collapse;width:100%}
+.ficha th{text-align:left;font:600 14px/1.3 var(--f-display);letter-spacing:.12em;text-transform:uppercase;color:var(--neon-2);padding:11px 16px 11px 0;vertical-align:top;white-space:nowrap;border-bottom:1px solid var(--linea)}
+.ficha td{padding:11px 0;border-bottom:1px solid var(--linea)}
+.galeria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.galeria figure{margin:0;position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/9}
+.galeria img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+.galeria figure:hover img{transform:scale(1.05)}
+.galeria figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 9px;background:linear-gradient(rgba(10,20,34,0),rgba(10,20,34,.9));font-size:13.5px;line-height:1.35}
+.acc{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.acc li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;align-items:start}
+.acc li>b{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font:700 18px/1 var(--f-display);color:var(--sobre-neon);background:var(--neon);box-shadow:0 0 14px var(--neon-glow)}
+.acc p{color:var(--gris);font-size:15.5px}
+.leyenda{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font:600 13px/1.4 var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--gris)}
+.lg{display:inline-block;width:22px;height:0;border-top:3px solid;margin-right:6px;vertical-align:middle}
+.lg.pub{border-color:var(--hoja)} .lg.ruta{border-color:var(--neon)} .lg.sen{border-color:var(--cielo);border-top-style:dotted} .lg.cab{border-color:#FFFFFF;border-top-style:dashed}
+
+/* corte */
+.corte-wrap{overflow-x:auto;border-radius:14px;background:radial-gradient(120% 120% at 70% 0%,#13283F 0%,var(--noche) 70%);border:1px solid var(--linea)}
+.corte{display:block;width:100%;min-width:880px;height:auto}
+.corte .grid line{stroke:rgba(244,239,230,.09)}
+.corte .grid text{fill:var(--gris-2);font:500 19px var(--f-display)}
+.c-area{fill:url(#gArea)}
+.c-line{fill:none;stroke:var(--neon);stroke-width:5;filter:drop-shadow(0 0 8px rgba(245,140,30,.9))}
+.c-cable{fill:none;stroke:#FFFFFF;stroke-width:2.5;stroke-dasharray:12 9}
+.c-cable-t{fill:var(--tinta);font:600 19px var(--f-display);letter-spacing:.12em}
+.c-foot{fill:var(--gris);font:600 19px var(--f-display);letter-spacing:.1em}
+.piso{cursor:pointer}
+.piso line{stroke:#FFFFFF;stroke-width:1.5}
+.piso circle{fill:var(--neon);stroke:#FFFFFF;stroke-width:3}
+.piso rect{fill:rgba(11,22,38,.9);stroke:var(--neon);stroke-width:1.5;transition:fill .2s}
+.piso text{fill:var(--tinta);font:700 21px var(--f-display);letter-spacing:.08em;transition:fill .2s}
+.piso:hover rect,.piso:focus rect{fill:var(--neon)}
+.piso:hover text,.piso:focus text{fill:var(--sobre-neon)}
+
+/* animaciones de dibujo: en reposo todo se ve; al entrar en pantalla se dibuja */
+.draw.armed path[pathLength]{stroke-dasharray:1;stroke-dashoffset:1}
+.draw.play path[pathLength]{stroke-dasharray:1;animation:dibujar 2.4s cubic-bezier(.45,0,.2,1) both}
+.draw.play .halo[pathLength]{animation-delay:.15s}
+.draw.armed .l-sendero,.draw.armed .l-cable,.draw.armed .l-actual,.draw.armed .c-cable,.draw.armed .tint{opacity:0}
+.draw.play .l-sendero,.draw.play .l-cable,.draw.play .l-actual,.draw.play .c-cable,.draw.play .tint{animation:aparecer 1.2s ease 1.6s both}
+.draw.play .pin i{animation:latido 1.6s ease 1s 2}
+
+/* historia */
+.hist{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,1fr);gap:28px;align-items:center}
+.ilus{margin:0;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45);aspect-ratio:1600/905}
+.ilus img{width:100%;height:100%;object-fit:cover;display:block}
+.ilus figcaption{position:absolute;left:10px;bottom:10px;font:600 11px/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;background:var(--vidrio);border:1px solid var(--linea);border-radius:5px;padding:6px 8px}
+.linea{list-style:none;margin:0;padding:0 0 0 24px;border-left:2px solid var(--neon);display:flex;flex-direction:column;gap:13px}
+.linea li{position:relative}
+.linea li::before{content:"";position:absolute;left:-32px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--noche);border:2px solid var(--neon);box-shadow:0 0 10px var(--neon-glow)}
+.linea b{font:600 14px/1 var(--f-display);letter-spacing:.14em;color:var(--neon-2);text-transform:uppercase}
+.linea h4{margin:3px 0 3px}
+.linea p{color:var(--gris);font-size:15.5px;line-height:1.5}
+
+/* la cima: variaciones */
+.cima{align-items:start}
+.chooser{display:flex;flex-direction:column;gap:12px}
+.v-img{opacity:0;z-index:0}
+.v-img.prev{opacity:1;z-index:1}
+.v-img.on{opacity:1;z-index:2}
+.v-stage.go .v-img.on{animation:revelar 1.3s cubic-bezier(.25,.8,.25,1) both}
+.v-sweep{position:absolute;top:0;bottom:0;left:-6px;width:3px;background:var(--neon);box-shadow:0 0 18px 5px var(--neon);opacity:0;z-index:3;pointer-events:none}
+.v-stage.go .v-sweep{animation:barrido 1.3s cubic-bezier(.25,.8,.25,1) both}
+.vbtns{display:flex;flex-wrap:wrap;gap:8px}
+.elegir{align-self:flex-start}
+.cima .map{width:min(100%,calc(52vh * var(--ar)))}
+
+/* valor */
+.valor{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.v-dato{border:1px solid var(--linea);border-radius:14px;padding:18px 18px 16px;background:linear-gradient(160deg,rgba(245,140,30,.10),rgba(14,27,45,.4))}
+.v-dato b{display:block;font:700 clamp(44px,5vw,76px)/1 var(--f-display);color:var(--neon);text-shadow:0 0 22px var(--neon-glow);font-variant-numeric:tabular-nums}
+.v-dato span{color:var(--gris)}
+.dem{align-items:start}
+.demanda{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:12px}
+.demanda li{border-bottom:1px solid var(--linea);padding-bottom:12px}
+.demanda b{display:block;font:700 34px/1.05 var(--f-display);color:var(--tinta);font-variant-numeric:tabular-nums}
+.demanda small{display:block;color:var(--gris-2);font-size:12.5px;margin-top:3px}
+.ref{border-collapse:collapse;width:100%;margin-top:12px}
+.ref th{text-align:left;font:600 15px/1.25 var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--neon-2);padding:10px 14px 10px 0;vertical-align:top;border-bottom:1px solid var(--linea);width:36%}
+.ref td{padding:10px 0;border-bottom:1px solid var(--linea);color:var(--tinta);font-size:15.5px}
+
+/* desarrollo */
+.fases{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:f}
+.fases li{border:1px solid var(--linea);border-top:3px solid var(--neon);border-radius:12px;padding:16px;background:rgba(14,27,45,.55);display:flex;flex-direction:column;gap:6px}
+.fases b{font:600 14px/1 var(--f-display);letter-spacing:.14em;color:var(--neon-2);text-transform:uppercase}
+.fases p{color:var(--gris);font-size:15.5px}
+.puertas{display:flex;flex-wrap:wrap;gap:10px}
+
+/* expediente */
+.check{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.check li{position:relative;padding:12px 0 12px 38px;border-bottom:1px solid var(--linea)}
+.check li::before{content:"";position:absolute;left:4px;top:13px;width:20px;height:20px;border-radius:50%;border:2px solid var(--neon-2)}
+.check li.ok::before{background:var(--hoja);border-color:var(--hoja)}
+.check li.ok::after{content:"";position:absolute;left:11px;top:17px;width:6px;height:10px;border:solid var(--noche);border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+
+/* contacto y selección */
+.contactos{display:grid;gap:10px}
+.contactos p{display:flex;flex-direction:column;border-left:3px solid var(--neon);padding-left:12px}
+.contactos b{font:700 24px/1.1 var(--f-display);text-transform:uppercase;letter-spacing:.04em}
+.sel-txt{user-select:all;color:var(--neon-2);font-size:18px}
+.resumen{border:1px solid var(--neon);border-radius:16px;padding:20px;background:linear-gradient(160deg,rgba(245,140,30,.10),rgba(14,27,45,.6));display:flex;flex-direction:column;gap:14px;box-shadow:0 0 40px rgba(245,140,30,.12)}
+.res-body{display:flex;flex-direction:column;gap:10px}
+.res-body h5{margin:0;font:600 13px/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:var(--neon-2)}
+.res-body ul{margin:0;padding-left:18px}
+.res-body .vacio{color:var(--gris)}
+.res-act{display:flex;flex-wrap:wrap;gap:10px}
+.estado{min-height:1.4em;color:var(--hoja);font-size:14.5px}
+.res-texto{width:100%;min-height:150px;background:var(--noche);color:var(--tinta);border:1px solid var(--linea);border-radius:10px;padding:10px;font:14px/1.5 var(--f-texto)}
+
+/* notas de revisión (solo al activar "Notas") */
+.nota{display:none;background:var(--nota);color:var(--nota-tinta);border-radius:8px;padding:12px 14px;font-size:15px;line-height:1.45;max-width:72ch;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.nota b{display:block;font:700 13px/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+.revision .nota{display:block}
+
+@keyframes revelar{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes barrido{0%{left:0;opacity:1}88%{opacity:1}100%{left:100%;opacity:0}}
+@keyframes dibujar{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes aparecer{from{opacity:0}to{opacity:1}}
+@keyframes latido{0%,100%{transform:scale(1)}50%{transform:scale(1.6)}}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.06) translate(-1%,-.6%)}}
+
+@media (max-width:1100px){
+  .hist{grid-template-columns:minmax(0,1fr)}
+  .valor,.fases{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:960px){
+  .duo{grid-template-columns:minmax(0,1fr)}
+  .lam{min-height:auto;padding-block:calc(78px + env(safe-area-inset-top,0px)) 44px;scroll-snap-align:none}
+  html{scroll-snap-type:none}
+  .lam.portada{min-height:100svh;padding:0}
+  .scene .cmp,.scene .single,.cap,.map,.cima .map{width:100%}
+  .galeria{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ayuda{display:none}
+}
+@media (max-width:760px){
+  .donde,#b-full{display:none}
+  .b-sel span{display:none}
+  .logo{font-size:18px}
+  .b-ico,.b-sel{padding:8px 11px;font-size:13px}
+  .pin.menor{display:none}
+  .pin span{font-size:10px;padding:3px 6px}
+  .tag{font-size:10px;padding:5px 7px}
+  .dist li{grid-template-columns:78px minmax(0,1fr)}
+  .valor,.fases{grid-template-columns:minmax(0,1fr)}
+  .hero::after{background:linear-gradient(0deg,rgba(10,20,34,.96) 0%,rgba(10,20,34,.75) 45%,rgba(10,20,34,.1) 80%)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .draw.armed path[pathLength]{stroke-dashoffset:0}
+  .draw.armed .l-sendero,.draw.armed .l-cable,.draw.armed .l-actual,.draw.armed .c-cable,.draw.armed .tint{opacity:1}
+}
+</style>
+</head>
+<body>
+<header class="barra">
+  <a class="logo" href="#lam-portada"><svg class="logo-ico" viewBox="0 0 40 28" aria-hidden="true"><path d="M20 6c-2-4-8-6-13-5S0 6 3 11s9 5 13 4c-3 2-7 5-6 9s6 4 9 0l1-6 1 6c3 4 8 4 9 0s-3-7-6-9c4 1 10 1 13-4S38 0 33 1 22 2 20 6z"/></svg><span>La Chucurí</span></a>
+  <p class="donde" id="donde" aria-live="polite">00 · Portada</p>
+  <div class="acciones">
+    <button type="button" class="b-ico" id="b-indice" aria-expanded="false" aria-controls="indice">Índice</button>
+    <button type="button" class="b-ico" id="b-notas" hidden aria-pressed="false" title="Muestra las notas pendientes para revisar con el cliente">Notas</button>
+    <button type="button" class="b-ico" id="b-full" title="Pantalla completa">Pantalla completa</button>
+    <button type="button" class="b-sel" id="b-sel" aria-controls="resumen"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span>Mi selección</span><b id="sel-n">0</b></button>
+  </div>
+  <span class="progreso" id="progreso" aria-hidden="true"></span>
+</header>
+<nav class="indice" id="indice" hidden aria-label="Índice de la presentación"><ol><li><a href="#lam-portada"><span>00</span>Portada</a></li><li><a href="#lam-ubicacion"><span>01</span>Ubicación</a></li><li><a href="#lam-terreno"><span>02</span>El terreno</a></li><li><a href="#lam-historia"><span>03</span>La historia</a></li><li><a href="#lam-accesos"><span>04</span>La ciudad sube a la montaña</a></li><li><a href="#lam-pisos"><span>05</span>Una montaña, cinco pisos</a></li><li><a href="#lam-puerta"><span>06</span>Piso 1 · La Puerta</a></li><li><a href="#lam-quebradas"><span>07</span>Piso 2 · Las quebradas</a></li><li><a href="#lam-bosque"><span>08</span>Piso 3 · El bosque</a></li><li><a href="#lam-meseta"><span>09</span>Piso 4 · La meseta</a></li><li><a href="#lam-teleferico"><span>10</span>El teleférico</a></li><li><a href="#lam-cima"><span>11</span>Piso 5 · La cima: usted elige</a></li><li><a href="#lam-cima2"><span>12</span>La cima: fe, memoria y miradores</a></li><li><a href="#lam-noche"><span>13</span>De noche</a></li><li><a href="#lam-valor"><span>14</span>Lo que vale esta montaña</a></li><li><a href="#lam-desarrollo"><span>15</span>Cómo se puede desarrollar</a></li><li><a href="#lam-expediente"><span>16</span>Expediente técnico</a></li><li><a href="#lam-contacto"><span>17</span>Su selección y contacto</a></li></ol></nav>
+<main id="main"><section class="lam portada" id="lam-portada" data-title="Portada">
+<div class="hero">
+  <div class="hero-media kb">
+    <img class="hero-hoy" src="img/P01_masterplan__hoy.jpg" alt="Foto real del dron: la montaña de La Chucurí junto a San Cristóbal" width="1600" height="893" decoding="async" fetchpriority="high">
+    <div class="hero-prop"><img class="" src="img/P01_masterplan.jpg" alt="Propuesta: el parque completo sobre la misma foto" width="1600" height="893" decoding="async" fetchpriority="high"></div>
+    <span class="hero-sweep" aria-hidden="true"></span>
+  </div>
+  <div class="hero-txt">
+    <p class="eyebrow"><span>00</span>San Cristóbal · Táchira · Venezuela</p>
+    <h1>La Chucurí</h1>
+    <p class="sub">Centro Internacional Biotemático</p>
+    <p class="lead">Ciento tres hectáreas de montaña dentro de la ciudad: de la calle, a 730 metros, a un bosque de pinos a 1.270. Un parque de fe, ciencia y aventura que interviene el 7&nbsp;% del terreno y deja el resto como bosque.</p>
+    <ul class="chips-dato">
+      <li><b>103,8</b> hectáreas</li><li><b>730–1.270</b> metros</li><li><b>8 min</b> de la Plaza Bolívar</li><li><b>93 %</b> sigue siendo bosque</li>
+    </ul>
+    <div class="hero-act">
+      <button type="button" class="btn" id="hero-toggle" aria-pressed="false">Ver la foto real de hoy</button>
+      <a class="btn ghost" href="#lam-cima">Ir a la cima: usted elige</a>
+    </div>
+    <p class="aviso">Prototipo conceptual · No es un proyecto aprobado · Imágenes referenciales</p>
+  </div>
+</div></section><section class="lam " id="lam-ubicacion" data-title="Ubicación">
+<div class="wrap duo">
+  <div class="txt">
+    <p class="eyebrow"><span>01</span>Ubicación</p><h2>A ocho minutos del centro</h2>
+    <p class="lead">En el borde sur de San Cristóbal, parroquia La Concordia, junto a los barrios Marco Tulio Rangel y Genaro Méndez. Desde la entrada baja de la finca:</p>
+    <ul class="dist">
+      <li data-route="r_centro"><b>8 min</b><span>Plaza Bolívar · 3,9 km</span></li>
+      <li data-route="r_terminal"><b>5 min</b><span>Terminal de pasajeros · 2,7 km</span></li>
+      <li data-route="r_tariba"><b>13 min</b><span>Basílica de Táriba · 11 km</span></li>
+      <li data-route="r_unet"><b>15 min</b><span>UNET y ULA · 8–9 km</span></li>
+      <li data-route="r_chorro"><b>23 min</b><span>Cascada del Chorro El Indio · 12 km</span></li>
+      <li><b>47 min</b><span>Aeropuerto de Santo Domingo · 41 km</span></li>
+      <li><b>1 h 15</b><span>Frontera con Colombia · 53 km</span></li>
+    </ul>
+    <p class="fuente">Distancias por carretera desde el acceso oeste, medidas con OSRM. Tiempos sin tráfico.</p>
+  </div>
+  <figure class="map draw" data-map="ubicacion" style="aspect-ratio:1500/1760;--ar:0.8523">
+  <img src="img/map_ubicacion.jpg" alt="Mapa satelital de San Cristóbal con las rutas desde la finca" width="1500" height="1760" loading="lazy">
+  <svg viewBox="0 0 1500 1760" preserveAspectRatio="none" aria-hidden="true"><path class="halo l-ruta" d="M577.9,1355.1 L572.6,1352.5 L572.2,1331.3 L567.6,1327.9 L563.6,1320.8 L563.3,1301.2 L556.8,1292.9 L544.8,1291.1 L539.9,1279.9 L533.7,1272.4 L511.0,1229.9 L504.0,1208.6 L496.1,1171.2 L487.0,1168.7 L490.5,1156.3 L488.5,1133.4 L489.8,1117.0 L514.0,1003.8 L520.0,957.1 L522.6,955.3 L543.1,956.6 L553.0,888.6 L546.3,887.7" pathLength="1"/><path class="l-ruta" data-k="r_centro" d="M577.9,1355.1 L572.6,1352.5 L572.2,1331.3 L567.6,1327.9 L563.6,1320.8 L563.3,1301.2 L556.8,1292.9 L544.8,1291.1 L539.9,1279.9 L533.7,1272.4 L511.0,1229.9 L504.0,1208.6 L496.1,1171.2 L487.0,1168.7 L490.5,1156.3 L488.5,1133.4 L489.8,1117.0 L514.0,1003.8 L520.0,957.1 L522.6,955.3 L543.1,956.6 L553.0,888.6 L546.3,887.7" pathLength="1"/><path class="halo l-ruta" d="M577.9,1355.1 L572.6,1352.5 L572.2,1331.3 L567.6,1327.9 L563.6,1320.8 L563.3,1301.2 L559.7,1295.6 L554.0,1291.5 L555.3,1288.6 L579.6,1277.4 L578.4,1273.9 L629.3,1256.1 L653.7,1222.5 L660.0,1217.7 L673.2,1212.7 L691.4,1198.7 L703.9,1197.0 L729.4,1203.6 L742.7,1199.6 L751.0,1188.8 L765.5,1137.6 L781.3,1118.7 L790.2,1121.7 L801.5,1119.0 L810.2,1119.6 L825.4,1129.6 L840.1,1132.0 L842.9,1137.2 L847.6,1139.8 L861.7,1133.7 L883.0,1138.9 L892.7,1137.9 L895.5,1141.1 L895.9,1149.9 L898.8,1149.3 L901.2,1144.8 L903.7,1146.1 L905.8,1151.9 L904.0,1158.6 L909.4,1162.6 L911.2,1170.0 L915.0,1172.6 L915.7,1177.4 L917.7,1177.9 L914.6,1179.9 L916.1,1183.6 L935.4,1187.8 L939.4,1197.0 L929.7,1198.3 L924.7,1202.4 L921.7,1212.4 L923.3,1216.1 L927.2,1218.4 L938.0,1217.5 L945.7,1214.6 L951.9,1204.7 L955.4,1202.4 L976.3,1205.3 L981.4,1203.1 L1001.3,1178.9 L1006.7,1177.3 L1031.3,1182.6 L1042.4,1197.9 L1046.8,1200.1 L1070.2,1196.5 L1088.0,1214.1 L1104.7,1221.2 L1117.9,1234.5 L1118.4,1241.0 L1109.2,1274.8 L1106.2,1277.2 L1095.2,1280.3 L1091.2,1284.7 L1091.5,1290.0 L1094.3,1294.1 L1114.9,1305.4 L1116.2,1321.7 L1124.8,1325.5 L1138.7,1336.9 L1156.6,1344.4 L1157.8,1346.5 L1143.8,1363.5 L1135.3,1379.2 L1132.8,1380.1 L1123.7,1376.6 L1117.4,1378.9 L1115.8,1389.1 L1107.1,1395.5 L1101.4,1407.2 L1088.3,1405.5 L1066.2,1413.0 L1053.7,1408.9 L1043.8,1410.8 L1040.3,1417.8 L1043.0,1441.3 L1049.0,1447.9 L1065.6,1445.6 L1073.5,1450.6 L1080.7,1448.7 L1090.6,1454.9 L1095.6,1449.5 L1099.5,1448.7 L1105.1,1455.4 L1115.0,1459.1 L1117.2,1464.4 L1127.0,1470.5 L1131.9,1475.8 L1142.4,1473.9 L1146.0,1475.7 L1147.8,1479.0 L1145.8,1493.0 L1147.6,1497.0 L1166.7,1498.9 L1172.2,1503.2 L1179.1,1502.3 L1186.2,1506.4 L1191.2,1516.9 L1188.9,1529.3 L1190.3,1552.6 L1163.3,1569.0 L1158.3,1574.2 L1155.7,1597.9 L1138.8,1621.6 L1140.7,1627.8 L1153.2,1634.5 L1167.8,1630.0 L1196.5,1635.6 L1208.5,1644.4 L1225.0,1640.9 L1239.6,1641.9 L1241.9,1645.3" pathLength="1"/><path class="l-ruta" data-k="r_chorro" d="M577.9,1355.1 L572.6,1352.5 L572.2,1331.3 L567.6,1327.9 L563.6,1320.8 L563.3,1301.2 L559.7,1295.6 L554.0,1291.5 L555.3,1288.6 L579.6,1277.4 L578.4,1273.9 L629.3,1256.1 L653.7,1222.5 L660.0,1217.7 L673.2,1212.7 L691.4,1198.7 L703.9,1197.0 L729.4,1203.6 L742.7,1199.6 L751.0,1188.8 L765.5,1137.6 L781.3,1118.7 L790.2,1121.7 L801.5,1119.0 L810.2,1119.6 L825.4,1129.6 L840.1,1132.0 L842.9,1137.2 L847.6,1139.8 L861.7,1133.7 L883.0,1138.9 L892.7,1137.9 L895.5,1141.1 L895.9,1149.9 L898.8,1149.3 L901.2,1144.8 L903.7,1146.1 L905.8,1151.9 L904.0,1158.6 L909.4,1162.6 L911.2,1170.0 L915.0,1172.6 L915.7,1177.4 L917.7,1177.9 L914.6,1179.9 L916.1,1183.6 L935.4,1187.8 L939.4,1197.0 L929.7,1198.3 L924.7,1202.4 L921.7,1212.4 L923.3,1216.1 L927.2,1218.4 L938.0,1217.5 L945.7,1214.6 L951.9,1204.7 L955.4,1202.4 L976.3,1205.3 L981.4,1203.1 L1001.3,1178.9 L1006.7,1177.3 L1031.3,1182.6 L1042.4,1197.9 L1046.8,1200.1 L1070.2,1196.5 L1088.0,1214.1 L1104.7,1221.2 L1117.9,1234.5 L1118.4,1241.0 L1109.2,1274.8 L1106.2,1277.2 L1095.2,1280.3 L1091.2,1284.7 L1091.5,1290.0 L1094.3,1294.1 L1114.9,1305.4 L1116.2,1321.7 L1124.8,1325.5 L1138.7,1336.9 L1156.6,1344.4 L1157.8,1346.5 L1143.8,1363.5 L1135.3,1379.2 L1132.8,1380.1 L1123.7,1376.6 L1117.4,1378.9 L1115.8,1389.1 L1107.1,1395.5 L1101.4,1407.2 L1088.3,1405.5 L1066.2,1413.0 L1053.7,1408.9 L1043.8,1410.8 L1040.3,1417.8 L1043.0,1441.3 L1049.0,1447.9 L1065.6,1445.6 L1073.5,1450.6 L1080.7,1448.7 L1090.6,1454.9 L1095.6,1449.5 L1099.5,1448.7 L1105.1,1455.4 L1115.0,1459.1 L1117.2,1464.4 L1127.0,1470.5 L1131.9,1475.8 L1142.4,1473.9 L1146.0,1475.7 L1147.8,1479.0 L1145.8,1493.0 L1147.6,1497.0 L1166.7,1498.9 L1172.2,1503.2 L1179.1,1502.3 L1186.2,1506.4 L1191.2,1516.9 L1188.9,1529.3 L1190.3,1552.6 L1163.3,1569.0 L1158.3,1574.2 L1155.7,1597.9 L1138.8,1621.6 L1140.7,1627.8 L1153.2,1634.5 L1167.8,1630.0 L1196.5,1635.6 L1208.5,1644.4 L1225.0,1640.9 L1239.6,1641.9 L1241.9,1645.3" pathLength="1"/><path class="halo l-ruta" d="M577.9,1355.1 L583.0,1357.4 L583.9,1370.3 L582.1,1376.3 L557.6,1399.2 L553.6,1398.4 L545.2,1391.6 L517.0,1387.7 L510.0,1390.1 L473.4,1350.4 L455.5,1300.2 L436.1,1269.5 L435.2,1257.6 L441.8,1239.2 L439.5,1233.0 L428.1,1225.6 L425.7,1208.6 L420.2,1193.7 L386.6,1126.2 L362.1,1000.7 L361.4,983.8 L364.6,966.5 L381.0,916.6 L414.6,835.7 L415.0,818.2 L408.9,792.0 L412.6,758.3 L416.4,751.3 L442.7,728.4 L443.6,706.3 L450.8,684.5 L452.5,671.7 L475.2,621.5 L486.4,587.2 L494.2,540.7 L496.0,451.7 L501.1,427.5 L528.9,354.5 L537.9,338.2 L585.6,266.9 L592.8,249.5 L601.3,217.7 L610.7,202.2 L622.1,190.8 L642.9,184.5 L655.9,170.1 L668.8,166.3 L679.9,165.8 L687.5,162.1 L662.6,116.2 L642.9,127.1 L640.5,121.8" pathLength="1"/><path class="l-ruta" data-k="r_tariba" d="M577.9,1355.1 L583.0,1357.4 L583.9,1370.3 L582.1,1376.3 L557.6,1399.2 L553.6,1398.4 L545.2,1391.6 L517.0,1387.7 L510.0,1390.1 L473.4,1350.4 L455.5,1300.2 L436.1,1269.5 L435.2,1257.6 L441.8,1239.2 L439.5,1233.0 L428.1,1225.6 L425.7,1208.6 L420.2,1193.7 L386.6,1126.2 L362.1,1000.7 L361.4,983.8 L364.6,966.5 L381.0,916.6 L414.6,835.7 L415.0,818.2 L408.9,792.0 L412.6,758.3 L416.4,751.3 L442.7,728.4 L443.6,706.3 L450.8,684.5 L452.5,671.7 L475.2,621.5 L486.4,587.2 L494.2,540.7 L496.0,451.7 L501.1,427.5 L528.9,354.5 L537.9,338.2 L585.6,266.9 L592.8,249.5 L601.3,217.7 L610.7,202.2 L622.1,190.8 L642.9,184.5 L655.9,170.1 L668.8,166.3 L679.9,165.8 L687.5,162.1 L662.6,116.2 L642.9,127.1 L640.5,121.8" pathLength="1"/><path class="halo l-ruta" d="M577.9,1355.1 L583.0,1357.4 L583.9,1370.3 L582.1,1376.3 L557.6,1399.2 L553.6,1398.4 L545.2,1391.6 L517.0,1387.7 L510.0,1390.1 L473.4,1350.4 L457.4,1304.5 L437.2,1272.3 L434.8,1260.6 L446.3,1226.7 L455.0,1210.5 L474.0,1186.4 L478.8,1191.2 L476.7,1200.9 L481.2,1202.6 L485.7,1192.6" pathLength="1"/><path class="l-ruta" data-k="r_terminal" d="M577.9,1355.1 L583.0,1357.4 L583.9,1370.3 L582.1,1376.3 L557.6,1399.2 L553.6,1398.4 L545.2,1391.6 L517.0,1387.7 L510.0,1390.1 L473.4,1350.4 L457.4,1304.5 L437.2,1272.3 L434.8,1260.6 L446.3,1226.7 L455.0,1210.5 L474.0,1186.4 L478.8,1191.2 L476.7,1200.9 L481.2,1202.6 L485.7,1192.6" pathLength="1"/><path class="halo l-ruta" d="M577.9,1355.1 L572.6,1352.5 L572.2,1331.3 L567.6,1327.9 L563.6,1320.8 L563.3,1301.2 L559.7,1295.6 L554.0,1291.5 L556.2,1287.6 L579.6,1277.4 L578.4,1273.9 L629.3,1256.1 L653.7,1222.5 L660.0,1217.7 L673.2,1212.7 L691.4,1198.7 L703.9,1197.0 L729.4,1203.6 L742.7,1199.6 L751.0,1188.8 L763.6,1141.6 L771.0,1129.2 L784.2,1116.2 L792.9,1111.5 L812.4,1105.4 L819.5,1099.9 L823.7,1093.7 L827.0,1083.3 L846.9,942.9 L845.1,936.0 L836.0,924.8 L833.0,918.2 L812.6,843.2 L810.0,825.2 L812.3,812.6 L816.7,803.1 L838.3,775.8 L843.2,763.4 L846.0,688.1 L842.2,666.7 L842.5,658.3 L847.9,650.6 L892.2,615.0 L899.1,611.1 L915.1,608.2 L917.1,606.2 L926.5,522.4 L949.1,529.4 L955.2,529.3 L965.3,526.7 L980.2,513.2 L987.9,510.6 L991.8,512.9 L996.9,520.5 L1035.8,526.4 L1033.8,524.6 L1034.0,521.9 L1020.4,520.0" pathLength="1"/><path class="l-ruta" data-k="r_unet" d="M577.9,1355.1 L572.6,1352.5 L572.2,1331.3 L567.6,1327.9 L563.6,1320.8 L563.3,1301.2 L559.7,1295.6 L554.0,1291.5 L556.2,1287.6 L579.6,1277.4 L578.4,1273.9 L629.3,1256.1 L653.7,1222.5 L660.0,1217.7 L673.2,1212.7 L691.4,1198.7 L703.9,1197.0 L729.4,1203.6 L742.7,1199.6 L751.0,1188.8 L763.6,1141.6 L771.0,1129.2 L784.2,1116.2 L792.9,1111.5 L812.4,1105.4 L819.5,1099.9 L823.7,1093.7 L827.0,1083.3 L846.9,942.9 L845.1,936.0 L836.0,924.8 L833.0,918.2 L812.6,843.2 L810.0,825.2 L812.3,812.6 L816.7,803.1 L838.3,775.8 L843.2,763.4 L846.0,688.1 L842.2,666.7 L842.5,658.3 L847.9,650.6 L892.2,615.0 L899.1,611.1 L915.1,608.2 L917.1,606.2 L926.5,522.4 L949.1,529.4 L955.2,529.3 L965.3,526.7 L980.2,513.2 L987.9,510.6 L991.8,512.9 L996.9,520.5 L1035.8,526.4 L1033.8,524.6 L1034.0,521.9 L1020.4,520.0" pathLength="1"/><path class="halo l-lindero" d="M736.1,1277.4 L787.8,1308.5 L791.2,1320.7 L818.5,1311.7 L858.3,1346.8 L859.2,1349.8 L856.0,1355.6 L855.1,1365.1 L849.7,1372.0 L831.1,1375.3 L805.9,1370.6 L775.3,1358.6 L767.3,1380.7 L741.7,1395.2 L731.8,1395.8 L677.1,1413.0 L647.0,1408.0 L610.2,1380.5 L604.2,1382.3 L577.5,1357.1 L594.0,1357.2 L600.4,1350.7 L606.9,1352.3 L625.8,1344.3 L652.9,1314.8 L664.3,1315.3 L670.8,1308.3 L677.2,1307.3 L682.3,1300.7 L693.6,1297.9 L713.7,1284.9 Z" pathLength="1"/><path class="l-lindero" data-k="lindero" d="M736.1,1277.4 L787.8,1308.5 L791.2,1320.7 L818.5,1311.7 L858.3,1346.8 L859.2,1349.8 L856.0,1355.6 L855.1,1365.1 L849.7,1372.0 L831.1,1375.3 L805.9,1370.6 L775.3,1358.6 L767.3,1380.7 L741.7,1395.2 L731.8,1395.8 L677.1,1413.0 L647.0,1408.0 L610.2,1380.5 L604.2,1382.3 L577.5,1357.1 L594.0,1357.2 L600.4,1350.7 L606.9,1352.3 L625.8,1344.3 L652.9,1314.8 L664.3,1315.3 L670.8,1308.3 L677.2,1307.3 L682.3,1300.7 L693.6,1297.9 L713.7,1284.9 Z" pathLength="1"/></svg>
+  <div class="pin finca der" style="left:47.47%;top:75.66%"><i></i><span>LA CHUCURÍ<small>103,8 HA</small></span></div><div class="pin pin der" style="left:36.37%;top:50.77%" data-route="r_centro"><i></i><span>PLAZA BOLÍVAR<small>8 MIN · 3,9 KM</small></span></div><div class="pin pin der" style="left:32.39%;top:67.72%" data-route="r_terminal"><i></i><span>TERMINAL<small>5 MIN · 2,7 KM</small></span></div><div class="pin pin der" style="left:42.35%;top:7.05%" data-route="r_tariba"><i></i><span>BASÍLICA DE TÁRIBA<small>13 MIN · 11 KM</small></span></div><div class="pin pin izq" style="left:68.06%;top:29.32%" data-route="r_unet"><i></i><span>UNET · ULA<small>15 MIN · 8,8 KM</small></span></div><div class="pin pin izq" style="left:82.98%;top:93.45%" data-route="r_chorro"><i></i><span>CHORRO DEL INDIO<small>23 MIN · 12 KM</small></span></div>
+  <div class="escala" aria-hidden="true"><span style="width:4.63%"></span><em>500 m</em></div>
+  <span class="norte" aria-hidden="true">N</span>
+</figure>
+</div></section><section class="lam " id="lam-terreno" data-title="El terreno">
+<div class="wrap">
+  <div class="duo">
+    <div class="txt">
+      <p class="eyebrow"><span>02</span>El terreno</p><h2>Una montaña entera, de la calle al pinar</h2>
+      <table class="ficha">
+        <tr><th>Superficie</th><td>103,8 ha · levantamiento topográfico de 2004, 39 vértices</td></tr>
+        <tr><th>Altura</th><td>De 730 a 1.270 m sobre el nivel del mar</td></tr>
+        <tr><th>Bosque</th><td>73 ha de bosque premontano · 20 ha de pinar</td></tr>
+        <tr><th>Límites</th><td>Quebrada La Chucurí y la ciudad al norte · quebradas Pánaga y La Tana al sur</td></tr>
+        <tr><th>Zonas planas</th><td>Terraza baja de 4 ha · meseta de 2,7 ha a 1.000 m</td></tr>
+        <tr><th>Pendiente</th><td>El 78 % del terreno supera el 25 %: por eso solo se interviene el 7 %</td></tr>
+      </table>
+    </div>
+    <figure class="map draw" data-map="terreno" style="aspect-ratio:1800/977;--ar:1.8424">
+  <img src="img/map_terreno.jpg" alt="La finca sobre la imagen satelital, con su lindero y la quebrada" width="1800" height="977" loading="lazy">
+  <svg viewBox="0 0 1800 977" preserveAspectRatio="none" aria-hidden="true"><path class="halo l-agua" d="M2723.6,172.1 L2728.0,187.4 L2747.8,212.2 L2760.5,237.7 L2765.0,252.4 L2761.2,281.1 L2765.0,293.8 L2765.6,307.2 L2756.7,340.4 L2760.5,355.0 L2758.0,386.9 L2746.5,393.3 L2734.4,403.5 L2729.0,433.5 L2724.2,449.4 L2711.1,459.0 L2700.6,471.7 L2682.7,479.4 L2669.8,498.7 L2626.1,516.5 L2576.0,548.8 L2548.4,571.4 L2451.4,594.0 L2362.4,598.9 L2294.5,576.3 L2247.7,539.1 L2207.2,477.7 L2140.9,434.1 L2006.7,330.7 L1975.9,291.9 L1901.5,261.2 L1819.1,256.4 L1759.3,285.5 L1715.6,283.8 L1602.4,240.2 L1555.5,232.1 L1458.5,190.1 L1401.8,122.3 L1341.2,141.3 L1300.4,116.3 L1230.6,156.5 L1204.4,199.2 L1148.2,229.8 L1090.2,243.8 L1020.2,266.1 L989.7,287.0 L934.6,314.6 L877.0,359.6 L785.0,403.1 L682.9,460.6 L643.5,525.5 L579.8,542.2 L527.3,571.0 L499.6,590.6 L438.1,584.6 L410.8,591.3 L399.4,615.9 L399.8,641.6 L390.0,649.8 L373.4,646.3 L353.8,655.6 L101.3,678.2 L73.1,687.6 L63.5,695.3 L14.4,713.9 L-20.7,717.7 L-42.1,722.8 L-60.6,723.4 L-129.8,689.4 L-137.8,681.9 L-142.1,681.7" pathLength="1"/><path class="l-agua" data-k="quebrada" d="M2723.6,172.1 L2728.0,187.4 L2747.8,212.2 L2760.5,237.7 L2765.0,252.4 L2761.2,281.1 L2765.0,293.8 L2765.6,307.2 L2756.7,340.4 L2760.5,355.0 L2758.0,386.9 L2746.5,393.3 L2734.4,403.5 L2729.0,433.5 L2724.2,449.4 L2711.1,459.0 L2700.6,471.7 L2682.7,479.4 L2669.8,498.7 L2626.1,516.5 L2576.0,548.8 L2548.4,571.4 L2451.4,594.0 L2362.4,598.9 L2294.5,576.3 L2247.7,539.1 L2207.2,477.7 L2140.9,434.1 L2006.7,330.7 L1975.9,291.9 L1901.5,261.2 L1819.1,256.4 L1759.3,285.5 L1715.6,283.8 L1602.4,240.2 L1555.5,232.1 L1458.5,190.1 L1401.8,122.3 L1341.2,141.3 L1300.4,116.3 L1230.6,156.5 L1204.4,199.2 L1148.2,229.8 L1090.2,243.8 L1020.2,266.1 L989.7,287.0 L934.6,314.6 L877.0,359.6 L785.0,403.1 L682.9,460.6 L643.5,525.5 L579.8,542.2 L527.3,571.0 L499.6,590.6 L438.1,584.6 L410.8,591.3 L399.4,615.9 L399.8,641.6 L390.0,649.8 L373.4,646.3 L353.8,655.6 L101.3,678.2 L73.1,687.6 L63.5,695.3 L14.4,713.9 L-20.7,717.7 L-42.1,722.8 L-60.6,723.4 L-129.8,689.4 L-137.8,681.9 L-142.1,681.7" pathLength="1"/><path class="halo l-lindero" d="M1062.0,269.6 L1263.0,390.7 L1276.1,437.9 L1381.8,402.8 L1536.5,539.3 L1534.8,548.5 L1540.2,550.7 L1527.6,573.4 L1524.3,592.8 L1524.2,610.2 L1503.0,637.1 L1430.8,649.6 L1400.7,641.9 L1372.7,640.6 L1333.0,631.7 L1214.4,584.8 L1183.1,670.8 L1083.7,727.0 L1045.5,729.4 L833.0,796.3 L716.4,776.6 L573.4,670.0 L550.2,676.9 L507.4,640.3 L446.4,579.2 L510.5,579.7 L535.4,554.4 L560.6,560.5 L595.2,542.3 L634.0,529.5 L739.2,414.9 L783.3,416.8 L808.8,389.8 L833.6,385.7 L853.1,360.3 L897.3,349.3 L975.1,298.9 Z" pathLength="1"/><path class="l-lindero" data-k="lindero" d="M1062.0,269.6 L1263.0,390.7 L1276.1,437.9 L1381.8,402.8 L1536.5,539.3 L1534.8,548.5 L1540.2,550.7 L1527.6,573.4 L1524.3,592.8 L1524.2,610.2 L1503.0,637.1 L1430.8,649.6 L1400.7,641.9 L1372.7,640.6 L1333.0,631.7 L1214.4,584.8 L1183.1,670.8 L1083.7,727.0 L1045.5,729.4 L833.0,796.3 L716.4,776.6 L573.4,670.0 L550.2,676.9 L507.4,640.3 L446.4,579.2 L510.5,579.7 L535.4,554.4 L560.6,560.5 L595.2,542.3 L634.0,529.5 L739.2,414.9 L783.3,416.8 L808.8,389.8 L833.6,385.7 L853.1,360.3 L897.3,349.3 L975.1,298.9 Z" pathLength="1"/></svg>
+  <div class="pin pin der" style="left:30.83%;top:63.50%"><i></i><span>TERRAZA BAJA<small>730 M · 4 HA PLANAS</small></span></div><div class="pin pin der" style="left:59.18%;top:50.31%"><i></i><span>MESETA<small>1.000 M</small></span></div><div class="pin pin izq" style="left:84.10%;top:61.41%"><i></i><span>PINAR Y CIMA<small>1.270 M</small></span></div><div class="pin area der" style="left:45.55%;top:44.85%"><i></i><span>BOSQUE PREMONTANO<small>73 HA</small></span></div><div class="pin area der" style="left:19.14%;top:18.46%"><i></i><span>SAN CRISTÓBAL<small>MARCO TULIO RANGEL · GENARO MÉNDEZ</small></span></div>
+  <div class="escala" aria-hidden="true"><span style="width:14.96%"></span><em>500 m</em></div>
+  <span class="norte" aria-hidden="true">N</span>
+</figure>
+  </div>
+  <h3 class="sub-h">Así está hoy <small>Fotografía aérea · 08-10-2026</small></h3>
+  <div class="galeria"><figure><img class="" src="img/real_0415.jpg" alt="La finca desde la entrada baja, con los barrios a la izquierda" width="1600" height="900" decoding="async" loading="lazy"><figcaption>La finca desde la entrada baja, con los barrios a la izquierda</figcaption></figure><figure><img class="" src="img/real_0503.jpg" alt="El pinar de la cima, visto desde el lado de la ciudad" width="1600" height="900" decoding="async" loading="lazy"><figcaption>El pinar de la cima, visto desde el lado de la ciudad</figcaption></figure><figure><img class="" src="img/real_0467.jpg" alt="La ciudad desde la cima" width="1600" height="900" decoding="async" loading="lazy"><figcaption>La ciudad desde la cima</figcaption></figure><figure><img class="" src="img/real_0479.jpg" alt="Dentro del pinar" width="1600" height="900" decoding="async" loading="lazy"><figcaption>Dentro del pinar</figcaption></figure><figure><img class="" src="img/real_0420.jpg" alt="La quebrada entre el barrio y el bosque" width="1600" height="900" decoding="async" loading="lazy"><figcaption>La quebrada entre el barrio y el bosque</figcaption></figure><figure><img class="" src="img/real_0456.jpg" alt="La Roca Mirador y las torres de alta tensión junto a la cima" width="1600" height="900" decoding="async" loading="lazy"><figcaption>La Roca Mirador y las torres de alta tensión junto a la cima</figcaption></figure></div>
+</div></section><section class="lam " id="lam-historia" data-title="La historia">
+<div class="wrap">
+  <p class="eyebrow"><span>03</span>La historia</p><h2>Un valle con memoria</h2>
+  <div class="hist">
+    <figure class="ilus"><img class="" src="img/H1_valle_indigena.jpg" alt="Ilustración: aldea indígena en el valle del Torbes antes de la ciudad" width="1600" height="905" decoding="async" loading="lazy"><figcaption>Ilustración</figcaption></figure>
+    <ol class="linea">
+      <li><b>Antes de 1547</b><h4>El valle de Zorca</h4><p>Tierra de parcialidades indígenas del valle del Torbes. La visita de 1602 registra, entre otras, a Táriba, Carapo, Sirgara y Machirí.</p></li>
+      <li><b>1547</b><h4>La primera entrada, por el sur</h4><p>La expedición de Alonso Pérez de Tolosa llegó desde los llanos subiendo por el Uribante y el Torbes. La primera entrada europea al valle fue por el sur.</p></li>
+      <li><b>1561</b><h4>Nace San Cristóbal</h4><p>Juan Maldonado funda la villa, paso entre Pamplona y Mérida.</p></li>
+      <li><b>Siglos XIX y XX</b><h4>El camino del ganado</h4><p>Por el camino del sur subía el ganado del llano hasta las sabanas de La Concordia, al pie de esta montaña: 55.000 reses en 1938.</p></li>
+      <li><b>Siglo XX</b><h4>Hacienda cafetalera</h4><p>La Chucurí fue hacienda de café. Sobre los viejos cafetales se sembró, hace más de 40 años, el pinar que hoy se ve desde la ciudad.</p></li>
+      <li><b>Hoy</b><h4>Senderos</h4><p>Los senderistas suben por estas lomas hacia el pinar, la Roca Mirador y la Loma del Viento.</p></li>
+    </ol>
+    <figure class="ilus"><img class="" src="img/H2_entrada_1547.jpg" alt="Ilustración: jinetes subiendo desde los llanos y arrieros con ganado" width="1600" height="905" decoding="async" loading="lazy"><figcaption>Ilustración</figcaption></figure>
+  </div>
+  <p class="fuente">Fuentes: L. G. Castillo Lara, Boletín de la Academia Nacional de la Historia (1991 y 1997) · A. Díaz González (1939), citado en Aldea Mundo (2003) · documento del Centro Internacional Biotemático La Chucurí.</p>
+</div></section><section class="lam " id="lam-accesos" data-title="La ciudad sube a la montaña">
+<div class="wrap duo">
+  <div class="txt">
+    <p class="eyebrow"><span>04</span>Accesos</p><h2>La ciudad ya sube a la montaña</h2>
+    <p class="lead">La Alcaldía y la Gobernación rehabilitaron 6&nbsp;km de vía hasta el Chorro El Indio con caminerías, miradores y 150 postes de luz solar, e inauguraron el Bosque Encantado en octubre de 2024. Hoy recibe entre 1.000 y 1.200 personas cada fin de semana.</p>
+    <p class="lead fuerte">Ese camino va por la carretera. La Chucurí puede ser la otra puerta del parque: la que entra desde la ciudad, directo al bosque.</p>
+    <ol class="acc">
+      <li><b>1</b><div><h4>Entrada baja · 730 m</h4><p>Junto a la ciudad, a 8 minutos de la Plaza Bolívar.</p></div></li>
+      <li><b>2</b><div><h4>El Nevada · 1.230 m</h4><p>A 13 minutos del centro, casi a la altura de los pinos. Un sendero de unos 2 km llevaría a la cima subiendo apenas 190 m.</p></div></li>
+      <li><b>3</b><div><h4>Vía al Chorro</h4><p>22 minutos en carro y 2 km a pie por la Roca Mirador, el camino que ya usan los senderistas.</p></div></li>
+    </ol>
+    <p class="leyenda"><i class="lg pub"></i>Obra pública existente <i class="lg ruta"></i>Rutas en carro <i class="lg sen"></i>Sendero propuesto <i class="lg cab"></i>Teleférico propuesto</p>
+    <p class="fuente">Fuentes: La Nación (14-10-2024) · Últimas Noticias (09-11-2025) · rutas medidas con OSRM y OpenStreetMap.</p>
+  </div>
+  <figure class="map draw" data-map="accesos" style="aspect-ratio:1800/1677;--ar:1.0733">
+  <img src="img/map_accesos.jpg" alt="Mapa de accesos: entrada baja, el Nevada, la vía al Chorro y el corredor turístico" width="1800" height="1677" loading="lazy">
+  <svg viewBox="0 0 1800 1677" preserveAspectRatio="none" aria-hidden="true"><path class="halo l-ruta" d="M252.0,45.8 L-25.7,10.2 L-32.4,8.3 L-37.7,-1.0 L-40.4,-1.4 L-83.0,103.3 L-105.2,167.1 L-124.2,233.3 L-124.2,258.0 L-72.2,526.3 L-30.1,614.8 L-7.7,657.0 L5.7,693.6 L8.4,708.0 L8.1,722.7 L3.4,749.5 L4.7,758.6 L32.7,824.2 L67.9,876.0 L101.4,973.5 L110.3,987.1 L137.5,1015.4 L143.5,1026.2 L148.7,1043.1 L149.3,1063.0 L165.3,1060.9 L193.0,1051.2 L249.8,1059.0 L266.7,1072.7 L277.5,1074.0 L324.0,1028.2 L327.7,1016.2 L325.8,990.2 L322.0,987.1 L315.5,985.7" pathLength="1"/><path class="l-ruta" data-k="c_baja" d="M252.0,45.8 L-25.7,10.2 L-32.4,8.3 L-37.7,-1.0 L-40.4,-1.4 L-83.0,103.3 L-105.2,167.1 L-124.2,233.3 L-124.2,258.0 L-72.2,526.3 L-30.1,614.8 L-7.7,657.0 L5.7,693.6 L8.4,708.0 L8.1,722.7 L3.4,749.5 L4.7,758.6 L32.7,824.2 L67.9,876.0 L101.4,973.5 L110.3,987.1 L137.5,1015.4 L143.5,1026.2 L148.7,1043.1 L149.3,1063.0 L165.3,1060.9 L193.0,1051.2 L249.8,1059.0 L266.7,1072.7 L277.5,1074.0 L324.0,1028.2 L327.7,1016.2 L325.8,990.2 L322.0,987.1 L315.5,985.7" pathLength="1"/><path class="halo l-ruta" d="M252.0,45.8 L216.4,40.7 L206.8,111.9 L315.3,127.0 L367.2,132.0 L371.1,152.9 L370.9,167.8 L551.3,179.3 L605.7,192.2 L581.3,239.9 L581.2,243.3 L744.0,331.9 L823.9,343.4 L826.3,342.3 L881.4,352.0 L890.7,350.9 L928.7,332.5 L947.6,330.7 L959.1,334.9 L967.4,342.3 L971.5,350.4 L973.5,386.3 L983.8,402.2 L980.8,411.7 L969.6,422.7 L965.8,429.2 L965.3,433.8 L970.7,440.0 L977.0,439.9 L980.9,437.3 L985.9,423.8 L989.9,419.1 L1013.7,406.8 L1014.2,396.7 L1005.4,371.8 L1006.4,363.5 L1011.5,356.0 L1021.1,346.9 L1044.9,330.9 L1062.0,327.4 L1145.3,335.6 L1177.7,323.5 L1184.5,323.3 L1201.7,334.5 L1221.6,332.5 L1229.4,337.8 L1227.6,345.5 L1224.3,347.4 L1185.7,354.6 L1172.5,359.9 L1156.9,377.4 L1125.7,444.9 L1119.6,450.7 L1106.1,457.3 L1075.1,460.3 L1071.3,464.6 L1055.2,505.8 L1069.8,525.2 L1068.4,531.9 L1061.5,544.4 L1061.5,552.1 L1071.3,560.5 L1080.2,561.6 L1087.1,570.0 L1087.9,576.3 L1080.4,587.0 L1078.4,621.9 L1058.9,663.3 L1042.5,667.8 L1034.7,667.4 L1017.9,672.6 L1013.0,678.7 L1006.7,692.2 L1007.9,702.4 L1010.2,706.2 L1017.9,710.8 L1030.2,710.8 L1047.2,706.9 L1055.2,703.1 L1061.4,696.3 L1067.6,683.3 L1074.6,678.5 L1080.4,677.2 L1110.4,684.1 L1116.7,684.4 L1126.9,680.0 L1166.9,631.3 L1177.8,628.1 L1227.3,638.9 L1232.6,643.5 L1249.7,669.6 L1258.5,673.9 L1298.7,666.1 L1305.5,666.8 L1314.4,673.0 L1341.3,702.1 L1374.9,716.5 L1392.2,734.1 L1397.1,736.4 L1401.4,743.2 L1402.4,756.2 L1387.9,804.6 L1383.9,824.1 L1378.0,829.0 L1369.2,829.5 L1355.9,835.2 L1347.8,844.1 L1348.3,854.8 L1354.0,863.0 L1388.1,879.7 L1395.3,885.7 L1396.6,891.0 L1395.5,912.9 L1398.0,918.5 L1403.6,922.8 L1415.3,926.1 L1425.2,934.4 L1429.6,940.6 L1443.2,949.0 L1479.3,964.1 L1481.6,968.4 L1453.4,1002.5 L1447.1,1017.7 L1436.4,1034.2 L1431.5,1036.0 L1419.6,1030.0 L1413.1,1028.9 L1400.5,1033.5 L1397.5,1039.2 L1397.2,1054.1 L1393.7,1058.9 L1379.8,1066.8 L1372.1,1086.1 L1368.2,1090.4 L1361.1,1091.5 L1342.0,1087.1 L1331.2,1092.2 L1297.5,1102.1 L1272.3,1093.8 L1261.3,1093.5 L1249.5,1100.1 L1245.8,1107.4 L1243.0,1103.3 L1243.9,1097.2 L1252.9,1088.0 L1253.9,1083.7 L1260.4,1077.2 L1261.1,1072.7 L1247.5,1054.7 L1219.2,1050.2 L1214.7,1047.9 L1208.0,1038.8 L1184.0,1041.7 L1171.1,1038.5 L1164.3,1031.3 L1160.7,1014.6 L1149.0,1003.7 L1143.6,1004.2 L1139.5,1007.1 L1127.9,1005.4 L1117.3,1007.1 L1101.1,1006.3 L1091.1,997.9 L1088.6,988.9 L1089.0,980.5 L1093.4,971.2 L1092.3,970.0 L1077.2,978.8 L1063.9,978.9" pathLength="1"/><path class="l-ruta" data-k="c_desvio" d="M252.0,45.8 L216.4,40.7 L206.8,111.9 L315.3,127.0 L367.2,132.0 L371.1,152.9 L370.9,167.8 L551.3,179.3 L605.7,192.2 L581.3,239.9 L581.2,243.3 L744.0,331.9 L823.9,343.4 L826.3,342.3 L881.4,352.0 L890.7,350.9 L928.7,332.5 L947.6,330.7 L959.1,334.9 L967.4,342.3 L971.5,350.4 L973.5,386.3 L983.8,402.2 L980.8,411.7 L969.6,422.7 L965.8,429.2 L965.3,433.8 L970.7,440.0 L977.0,439.9 L980.9,437.3 L985.9,423.8 L989.9,419.1 L1013.7,406.8 L1014.2,396.7 L1005.4,371.8 L1006.4,363.5 L1011.5,356.0 L1021.1,346.9 L1044.9,330.9 L1062.0,327.4 L1145.3,335.6 L1177.7,323.5 L1184.5,323.3 L1201.7,334.5 L1221.6,332.5 L1229.4,337.8 L1227.6,345.5 L1224.3,347.4 L1185.7,354.6 L1172.5,359.9 L1156.9,377.4 L1125.7,444.9 L1119.6,450.7 L1106.1,457.3 L1075.1,460.3 L1071.3,464.6 L1055.2,505.8 L1069.8,525.2 L1068.4,531.9 L1061.5,544.4 L1061.5,552.1 L1071.3,560.5 L1080.2,561.6 L1087.1,570.0 L1087.9,576.3 L1080.4,587.0 L1078.4,621.9 L1058.9,663.3 L1042.5,667.8 L1034.7,667.4 L1017.9,672.6 L1013.0,678.7 L1006.7,692.2 L1007.9,702.4 L1010.2,706.2 L1017.9,710.8 L1030.2,710.8 L1047.2,706.9 L1055.2,703.1 L1061.4,696.3 L1067.6,683.3 L1074.6,678.5 L1080.4,677.2 L1110.4,684.1 L1116.7,684.4 L1126.9,680.0 L1166.9,631.3 L1177.8,628.1 L1227.3,638.9 L1232.6,643.5 L1249.7,669.6 L1258.5,673.9 L1298.7,666.1 L1305.5,666.8 L1314.4,673.0 L1341.3,702.1 L1374.9,716.5 L1392.2,734.1 L1397.1,736.4 L1401.4,743.2 L1402.4,756.2 L1387.9,804.6 L1383.9,824.1 L1378.0,829.0 L1369.2,829.5 L1355.9,835.2 L1347.8,844.1 L1348.3,854.8 L1354.0,863.0 L1388.1,879.7 L1395.3,885.7 L1396.6,891.0 L1395.5,912.9 L1398.0,918.5 L1403.6,922.8 L1415.3,926.1 L1425.2,934.4 L1429.6,940.6 L1443.2,949.0 L1479.3,964.1 L1481.6,968.4 L1453.4,1002.5 L1447.1,1017.7 L1436.4,1034.2 L1431.5,1036.0 L1419.6,1030.0 L1413.1,1028.9 L1400.5,1033.5 L1397.5,1039.2 L1397.2,1054.1 L1393.7,1058.9 L1379.8,1066.8 L1372.1,1086.1 L1368.2,1090.4 L1361.1,1091.5 L1342.0,1087.1 L1331.2,1092.2 L1297.5,1102.1 L1272.3,1093.8 L1261.3,1093.5 L1249.5,1100.1 L1245.8,1107.4 L1243.0,1103.3 L1243.9,1097.2 L1252.9,1088.0 L1253.9,1083.7 L1260.4,1077.2 L1261.1,1072.7 L1247.5,1054.7 L1219.2,1050.2 L1214.7,1047.9 L1208.0,1038.8 L1184.0,1041.7 L1171.1,1038.5 L1164.3,1031.3 L1160.7,1014.6 L1149.0,1003.7 L1143.6,1004.2 L1139.5,1007.1 L1127.9,1005.4 L1117.3,1007.1 L1101.1,1006.3 L1091.1,997.9 L1088.6,988.9 L1089.0,980.5 L1093.4,971.2 L1092.3,970.0 L1077.2,978.8 L1063.9,978.9" pathLength="1"/><path class="halo l-ruta" d="M252.0,45.8 L216.4,40.7 L206.8,111.9 L315.3,127.0 L367.2,132.0 L371.1,152.9 L370.9,167.8 L551.3,179.3 L605.7,192.2 L581.3,239.9 L581.2,243.3 L744.0,331.9 L823.9,343.4 L826.3,342.3 L881.4,352.0 L890.7,350.9 L928.7,332.5 L947.6,330.7 L959.1,334.9 L967.4,342.3 L971.5,350.4 L973.5,386.3 L983.8,402.2 L980.8,411.7 L969.6,422.7 L965.8,429.2 L965.3,433.8 L970.7,440.0 L977.0,439.9 L980.9,437.3 L985.9,423.8 L989.9,419.1 L1013.7,406.8 L1014.2,396.7 L1005.4,371.8 L1006.4,363.5 L1011.5,356.0 L1021.1,346.9 L1044.9,330.9 L1062.0,327.4 L1145.3,335.6 L1177.7,323.5 L1184.5,323.3 L1201.7,334.5 L1221.6,332.5 L1229.4,337.8 L1227.6,345.5 L1224.3,347.4 L1185.7,354.6 L1172.5,359.9 L1156.9,377.4 L1125.7,444.9 L1119.6,450.7 L1106.1,457.3 L1075.1,460.3 L1071.3,464.6 L1055.2,505.8 L1069.8,525.2 L1068.4,531.9 L1061.5,544.4 L1061.5,552.1 L1071.3,560.5 L1080.2,561.6 L1087.1,570.0 L1087.9,576.3 L1080.4,587.0 L1078.4,621.9 L1058.9,663.3 L1042.5,667.8 L1021.2,665.3" pathLength="1"/><path class="l-ruta" data-k="c_nevada" d="M252.0,45.8 L216.4,40.7 L206.8,111.9 L315.3,127.0 L367.2,132.0 L371.1,152.9 L370.9,167.8 L551.3,179.3 L605.7,192.2 L581.3,239.9 L581.2,243.3 L744.0,331.9 L823.9,343.4 L826.3,342.3 L881.4,352.0 L890.7,350.9 L928.7,332.5 L947.6,330.7 L959.1,334.9 L967.4,342.3 L971.5,350.4 L973.5,386.3 L983.8,402.2 L980.8,411.7 L969.6,422.7 L965.8,429.2 L965.3,433.8 L970.7,440.0 L977.0,439.9 L980.9,437.3 L985.9,423.8 L989.9,419.1 L1013.7,406.8 L1014.2,396.7 L1005.4,371.8 L1006.4,363.5 L1011.5,356.0 L1021.1,346.9 L1044.9,330.9 L1062.0,327.4 L1145.3,335.6 L1177.7,323.5 L1184.5,323.3 L1201.7,334.5 L1221.6,332.5 L1229.4,337.8 L1227.6,345.5 L1224.3,347.4 L1185.7,354.6 L1172.5,359.9 L1156.9,377.4 L1125.7,444.9 L1119.6,450.7 L1106.1,457.3 L1075.1,460.3 L1071.3,464.6 L1055.2,505.8 L1069.8,525.2 L1068.4,531.9 L1061.5,544.4 L1061.5,552.1 L1071.3,560.5 L1080.2,561.6 L1087.1,570.0 L1087.9,576.3 L1080.4,587.0 L1078.4,621.9 L1058.9,663.3 L1042.5,667.8 L1021.2,665.3" pathLength="1"/><path class="l-cable" data-k="cable" d="M371.0,1011.1 L867.6,1000.5"/><path class="halo l-publica" d="M1247.2,1132.8 L1245.8,1107.4 L1249.5,1100.1 L1256.2,1095.2 L1261.3,1093.5 L1272.2,1093.8 L1297.5,1102.1 L1331.3,1092.2 L1337.5,1087.9 L1342.0,1087.1 L1361.1,1091.5 L1370.5,1089.0 L1379.8,1066.8 L1393.7,1058.9 L1397.2,1054.1 L1397.5,1039.2 L1400.5,1033.5 L1415.1,1029.0 L1431.5,1036.0 L1434.8,1035.4 L1439.3,1031.4 L1447.1,1017.7 L1453.4,1002.5 L1481.0,970.1 L1481.5,966.7 L1479.3,964.1 L1443.2,949.0 L1429.6,940.6 L1425.2,934.4 L1415.3,926.1 L1403.6,922.8 L1398.0,918.5 L1395.5,912.9 L1396.6,891.0 L1395.3,885.7 L1388.0,879.7" pathLength="1"/><path class="l-publica" data-k="corr0" d="M1247.2,1132.8 L1245.8,1107.4 L1249.5,1100.1 L1256.2,1095.2 L1261.3,1093.5 L1272.2,1093.8 L1297.5,1102.1 L1331.3,1092.2 L1337.5,1087.9 L1342.0,1087.1 L1361.1,1091.5 L1370.5,1089.0 L1379.8,1066.8 L1393.7,1058.9 L1397.2,1054.1 L1397.5,1039.2 L1400.5,1033.5 L1415.1,1029.0 L1431.5,1036.0 L1434.8,1035.4 L1439.3,1031.4 L1447.1,1017.7 L1453.4,1002.5 L1481.0,970.1 L1481.5,966.7 L1479.3,964.1 L1443.2,949.0 L1429.6,940.6 L1425.2,934.4 L1415.3,926.1 L1403.6,922.8 L1398.0,918.5 L1395.5,912.9 L1396.6,891.0 L1395.3,885.7 L1388.0,879.7" pathLength="1"/><path class="halo l-publica" d="M1388.0,879.7 L1354.0,863.1 L1348.3,854.8 L1347.1,850.0 L1347.8,844.1 L1355.9,835.2 L1369.2,829.5 L1378.0,829.1 L1383.9,824.1 L1387.9,804.6 L1402.4,756.3 L1401.4,743.2 L1397.1,736.4 L1392.2,734.1 L1374.8,716.5 L1341.3,702.1 L1310.1,669.8 L1305.5,666.8 L1294.5,667.2" pathLength="1"/><path class="l-publica" data-k="corr1" d="M1388.0,879.7 L1354.0,863.1 L1348.3,854.8 L1347.1,850.0 L1347.8,844.1 L1355.9,835.2 L1369.2,829.5 L1378.0,829.1 L1383.9,824.1 L1387.9,804.6 L1402.4,756.3 L1401.4,743.2 L1397.1,736.4 L1392.2,734.1 L1374.8,716.5 L1341.3,702.1 L1310.1,669.8 L1305.5,666.8 L1294.5,667.2" pathLength="1"/><path class="halo l-publica" d="M846.9,345.5 L830.0,342.9" pathLength="1"/><path class="l-publica" data-k="corr10" d="M846.9,345.5 L830.0,342.9" pathLength="1"/><path class="halo l-publica" d="M856.9,347.3 L846.9,345.5" pathLength="1"/><path class="l-publica" data-k="corr11" d="M856.9,347.3 L846.9,345.5" pathLength="1"/><path class="halo l-publica" d="M872.3,350.6 L856.9,347.3" pathLength="1"/><path class="l-publica" data-k="corr12" d="M872.3,350.6 L856.9,347.3" pathLength="1"/><path class="halo l-publica" d="M1081.7,458.5 L1106.1,457.3 L1113.5,454.8 L1125.7,444.9 L1156.9,377.4 L1172.5,359.9 L1185.7,354.6 L1224.3,347.4 L1229.6,341.7 L1229.4,337.8 L1221.6,332.5 L1201.7,334.5 L1184.5,323.3 L1177.7,323.5 L1161.3,329.6" pathLength="1"/><path class="l-publica" data-k="corr13" d="M1081.7,458.5 L1106.1,457.3 L1113.5,454.8 L1125.7,444.9 L1156.9,377.4 L1172.5,359.9 L1185.7,354.6 L1224.3,347.4 L1229.6,341.7 L1229.4,337.8 L1221.6,332.5 L1201.7,334.5 L1184.5,323.3 L1177.7,323.5 L1161.3,329.6" pathLength="1"/><path class="halo l-publica" d="M1159.6,330.4 L1161.3,329.6" pathLength="1"/><path class="l-publica" data-k="corr14" d="M1159.6,330.4 L1161.3,329.6" pathLength="1"/><path class="halo l-publica" d="M1648.9,1576.7 L1650.1,1566.0 L1642.6,1561.5" pathLength="1"/><path class="l-publica" data-k="corr15" d="M1648.9,1576.7 L1650.1,1566.0 L1642.6,1561.5" pathLength="1"/><path class="halo l-publica" d="M1623.7,2052.4 L1619.9,2039.7 L1623.7,2021.2 L1622.5,2011.5 L1613.8,1996.0 L1604.0,1989.0 L1567.1,1942.0 L1564.1,1928.6 L1568.7,1917.9 L1571.2,1906.0 L1570.0,1883.7 L1562.1,1861.4 L1532.1,1818.3 L1527.9,1807.4 L1531.2,1800.7 L1550.7,1793.6 L1554.2,1787.9 L1555.7,1778.4 L1563.8,1763.0 L1567.6,1744.9 L1576.8,1730.5" pathLength="1"/><path class="l-publica" data-k="corr16" d="M1623.7,2052.4 L1619.9,2039.7 L1623.7,2021.2 L1622.5,2011.5 L1613.8,1996.0 L1604.0,1989.0 L1567.1,1942.0 L1564.1,1928.6 L1568.7,1917.9 L1571.2,1906.0 L1570.0,1883.7 L1562.1,1861.4 L1532.1,1818.3 L1527.9,1807.4 L1531.2,1800.7 L1550.7,1793.6 L1554.2,1787.9 L1555.7,1778.4 L1563.8,1763.0 L1567.6,1744.9 L1576.8,1730.5" pathLength="1"/><path class="halo l-publica" d="M1576.8,1730.5 L1590.5,1722.4 L1610.8,1719.8 L1614.6,1713.3 L1609.5,1698.6 L1599.8,1682.8 L1599.8,1675.7 L1608.7,1658.5 L1604.9,1634.8 L1608.0,1621.6 L1614.0,1613.6 L1632.4,1597.8 L1648.9,1576.7" pathLength="1"/><path class="l-publica" data-k="corr17" d="M1576.8,1730.5 L1590.5,1722.4 L1610.8,1719.8 L1614.6,1713.3 L1609.5,1698.6 L1599.8,1682.8 L1599.8,1675.7 L1608.7,1658.5 L1604.9,1634.8 L1608.0,1621.6 L1614.0,1613.6 L1632.4,1597.8 L1648.9,1576.7" pathLength="1"/><path class="halo l-publica" d="M1642.6,1561.5 L1616.7,1560.3 L1583.7,1567.4 L1573.1,1561.5 L1568.8,1556.2 L1559.4,1549.8 L1523.6,1541.0 L1501.8,1538.4 L1493.0,1539.5 L1483.8,1544.5 L1472.4,1547.5 L1450.0,1536.6 L1444.6,1530.4 L1443.5,1521.5 L1477.5,1474.0 L1482.6,1426.3 L1492.7,1415.7 L1528.2,1396.4 L1547.0,1382.9 L1548.8,1373.0 L1544.2,1336.0 L1548.8,1311.1 L1547.8,1305.8" pathLength="1"/><path class="l-publica" data-k="corr18" d="M1642.6,1561.5 L1616.7,1560.3 L1583.7,1567.4 L1573.1,1561.5 L1568.8,1556.2 L1559.4,1549.8 L1523.6,1541.0 L1501.8,1538.4 L1493.0,1539.5 L1483.8,1544.5 L1472.4,1547.5 L1450.0,1536.6 L1444.6,1530.4 L1443.5,1521.5 L1477.5,1474.0 L1482.6,1426.3 L1492.7,1415.7 L1528.2,1396.4 L1547.0,1382.9 L1548.8,1373.0 L1544.2,1336.0 L1548.8,1311.1 L1547.8,1305.8" pathLength="1"/><path class="halo l-publica" d="M1547.8,1305.8 L1538.8,1289.9 L1531.0,1284.0 L1524.6,1281.7 L1510.5,1283.5 L1499.6,1274.8 L1489.6,1274.1 L1478.2,1270.6 L1468.9,1273.3 L1461.1,1271.0 L1458.5,1268.2 L1457.5,1259.4 L1461.5,1234.8 L1458.0,1228.1 L1450.6,1224.5 L1434.6,1229.2 L1429.6,1228.3 L1419.7,1217.6 L1398.7,1203.9" pathLength="1"/><path class="l-publica" data-k="corr2" d="M1547.8,1305.8 L1538.8,1289.9 L1531.0,1284.0 L1524.6,1281.7 L1510.5,1283.5 L1499.6,1274.8 L1489.6,1274.1 L1478.2,1270.6 L1468.9,1273.3 L1461.1,1271.0 L1458.5,1268.2 L1457.5,1259.4 L1461.5,1234.8 L1458.0,1228.1 L1450.6,1224.5 L1434.6,1229.2 L1429.6,1228.3 L1419.7,1217.6 L1398.7,1203.9" pathLength="1"/><path class="halo l-publica" d="M1398.7,1203.9 L1395.6,1194.9 L1375.7,1187.3 L1367.9,1178.7" pathLength="1"/><path class="l-publica" data-k="corr3" d="M1398.7,1203.9 L1395.6,1194.9 L1375.7,1187.3 L1367.9,1178.7" pathLength="1"/><path class="halo l-publica" d="M1362.0,1173.2 L1356.6,1175.5 L1352.7,1182.1 L1346.4,1186.4 L1342.7,1185.6 L1326.6,1173.8 L1312.1,1177.8 L1296.3,1167.6 L1269.8,1172.5 L1262.9,1172.2 L1255.7,1167.1 L1250.7,1159.0 L1247.2,1132.8" pathLength="1"/><path class="l-publica" data-k="corr4" d="M1362.0,1173.2 L1356.6,1175.5 L1352.7,1182.1 L1346.4,1186.4 L1342.7,1185.6 L1326.6,1173.8 L1312.1,1177.8 L1296.3,1167.6 L1269.8,1172.5 L1262.9,1172.2 L1255.7,1167.1 L1250.7,1159.0 L1247.2,1132.8" pathLength="1"/><path class="halo l-publica" d="M1367.9,1178.7 L1362.0,1173.2" pathLength="1"/><path class="l-publica" data-k="corr5" d="M1367.9,1178.7 L1362.0,1173.2" pathLength="1"/><path class="halo l-publica" d="M1294.5,667.2 L1258.5,673.9 L1249.7,669.6 L1232.5,643.5 L1227.3,638.9 L1177.7,628.2 L1166.8,631.3 L1126.9,680.0 L1116.7,684.4 L1110.4,684.1 L1080.3,677.2 L1074.6,678.5 L1067.6,683.3 L1061.4,696.3 L1055.3,703.1 L1047.2,706.9 L1030.2,710.9 L1017.9,710.9 L1013.2,708.5 L1007.9,702.4 L1006.7,692.2 L1013.0,678.7 L1017.9,672.6 L1023.1,670.4 L1058.9,663.3 L1078.4,621.9 L1080.5,587.0 L1087.9,576.3 L1087.1,570.0 L1080.2,561.6 L1071.3,560.5 L1065.2,556.0" pathLength="1"/><path class="l-publica" data-k="corr6" d="M1294.5,667.2 L1258.5,673.9 L1249.7,669.6 L1232.5,643.5 L1227.3,638.9 L1177.7,628.2 L1166.8,631.3 L1126.9,680.0 L1116.7,684.4 L1110.4,684.1 L1080.3,677.2 L1074.6,678.5 L1067.6,683.3 L1061.4,696.3 L1055.3,703.1 L1047.2,706.9 L1030.2,710.9 L1017.9,710.9 L1013.2,708.5 L1007.9,702.4 L1006.7,692.2 L1013.0,678.7 L1017.9,672.6 L1023.1,670.4 L1058.9,663.3 L1078.4,621.9 L1080.5,587.0 L1087.9,576.3 L1087.1,570.0 L1080.2,561.6 L1071.3,560.5 L1065.2,556.0" pathLength="1"/><path class="halo l-publica" d="M1065.2,556.0 L1060.7,548.6 L1068.5,531.9 L1069.8,525.1 L1056.6,508.6 L1055.7,502.2 L1071.3,464.6 L1075.1,460.3 L1081.7,458.5" pathLength="1"/><path class="l-publica" data-k="corr7" d="M1065.2,556.0 L1060.7,548.6 L1068.5,531.9 L1069.8,525.1 L1056.6,508.6 L1055.7,502.2 L1071.3,464.6 L1075.1,460.3 L1081.7,458.5" pathLength="1"/><path class="halo l-publica" d="M1159.6,330.4 L1149.3,334.8 L1140.7,335.7 L1062.0,327.4 L1051.1,328.6 L1040.7,333.2 L1021.1,346.9 L1011.4,356.0 L1006.4,363.5 L1005.7,373.8 L1014.2,396.7 L1013.7,406.8 L987.3,421.2 L982.2,435.8 L973.8,440.3 L966.8,436.7 L965.8,429.2 L969.6,422.7 L980.8,411.7 L983.8,402.2 L973.4,386.3 L972.4,353.6 L969.1,344.7 L963.2,337.6 L947.6,330.7 L932.3,331.7 L918.3,336.2 L890.7,350.9 L881.4,352.0 L872.3,350.6" pathLength="1"/><path class="l-publica" data-k="corr8" d="M1159.6,330.4 L1149.3,334.8 L1140.7,335.7 L1062.0,327.4 L1051.1,328.6 L1040.7,333.2 L1021.1,346.9 L1011.4,356.0 L1006.4,363.5 L1005.7,373.8 L1014.2,396.7 L1013.7,406.8 L987.3,421.2 L982.2,435.8 L973.8,440.3 L966.8,436.7 L965.8,429.2 L969.6,422.7 L980.8,411.7 L983.8,402.2 L973.4,386.3 L972.4,353.6 L969.1,344.7 L963.2,337.6 L947.6,330.7 L932.3,331.7 L918.3,336.2 L890.7,350.9 L881.4,352.0 L872.3,350.6" pathLength="1"/><path class="halo l-publica" d="M830.0,342.9 L826.3,342.3" pathLength="1"/><path class="l-publica" data-k="corr9" d="M830.0,342.9 L826.3,342.3" pathLength="1"/><path class="halo l-publica" d="M818.6,533.4 L838.7,535.0 L842.9,537.1 L851.3,550.5 L859.1,552.9 L874.7,547.4 L884.9,540.5 L902.7,542.7 L908.2,545.8 L931.8,551.2 L947.5,548.2 L953.9,554.1 L952.8,569.9 L955.0,573.0 L960.8,571.9 L965.7,562.7 L970.7,565.5 L975.0,577.1 L974.9,582.1 L971.2,590.6 L976.2,592.1" pathLength="1"/><path class="l-publica" data-k="nev0" d="M818.6,533.4 L838.7,535.0 L842.9,537.1 L851.3,550.5 L859.1,552.9 L874.7,547.4 L884.9,540.5 L902.7,542.7 L908.2,545.8 L931.8,551.2 L947.5,548.2 L953.9,554.1 L952.8,569.9 L955.0,573.0 L960.8,571.9 L965.7,562.7 L970.7,565.5 L975.0,577.1 L974.9,582.1 L971.2,590.6 L976.2,592.1" pathLength="1"/><path class="halo l-publica" d="M818.6,533.4 L805.2,528.7 L782.6,512.1 L772.9,510.2 L742.5,516.4 L733.6,515.5" pathLength="1"/><path class="l-publica" data-k="nev1" d="M818.6,533.4 L805.2,528.7 L782.6,512.1 L772.9,510.2 L742.5,516.4 L733.6,515.5" pathLength="1"/><path class="halo l-publica" d="M733.6,515.5 L724.5,510.2" pathLength="1"/><path class="l-publica" data-k="nev2" d="M733.6,515.5 L724.5,510.2" pathLength="1"/><path class="halo l-publica" d="M1042.5,667.8 L1036.3,657.4 L1034.5,649.2 L1021.9,648.8 L1005.6,642.7 L996.3,641.7 L992.6,633.3 L997.7,631.8 L998.8,629.4 L994.8,628.4 L993.9,619.5 L988.1,617.0 L982.6,606.4 L982.2,598.5 L976.8,596.0 L976.2,592.1" pathLength="1"/><path class="l-publica" data-k="nev3" d="M1042.5,667.8 L1036.3,657.4 L1034.5,649.2 L1021.9,648.8 L1005.6,642.7 L996.3,641.7 L992.6,633.3 L997.7,631.8 L998.8,629.4 L994.8,628.4 L993.9,619.5 L988.1,617.0 L982.6,606.4 L982.2,598.5 L976.8,596.0 L976.2,592.1" pathLength="1"/><path class="halo l-publica" d="M1151.6,334.0 L1177.7,323.5 L1184.5,323.3 L1201.7,334.5 L1221.6,332.5 L1229.4,337.8 L1229.6,341.7 L1224.3,347.4 L1185.7,354.6 L1172.5,359.9 L1156.9,377.4 L1125.7,444.9 L1113.5,454.8 L1098.8,458.4 L1081.6,458.4 L1075.1,460.3 L1071.3,464.6 L1055.2,505.8 L1069.8,525.2 L1068.4,531.9 L1061.5,544.4 L1061.5,552.1 L1071.3,560.5 L1080.2,561.6 L1087.1,570.0 L1087.9,576.3 L1080.4,587.0 L1078.4,621.9 L1058.9,663.3 L1042.5,667.8 L1034.7,667.4 L1017.9,672.6 L1013.0,678.7 L1006.7,692.2 L1007.9,702.4 L1010.2,706.2 L1017.9,710.8 L1030.2,710.8 L1047.2,706.9 L1055.2,703.1 L1061.4,696.3 L1067.6,683.3 L1074.6,678.5 L1080.4,677.2 L1110.4,684.1 L1116.7,684.4 L1126.9,680.0 L1166.9,631.3 L1177.8,628.1 L1227.3,638.9 L1232.6,643.5 L1249.7,669.6 L1258.5,673.9 L1298.7,666.1 L1305.5,666.8 L1314.4,673.0 L1341.3,702.1 L1374.9,716.5 L1392.2,734.1 L1397.1,736.4 L1401.4,743.2 L1402.4,756.2 L1387.9,804.6 L1383.9,824.1 L1378.0,829.0 L1369.2,829.5 L1355.9,835.2 L1347.8,844.1 L1348.3,854.8 L1354.0,863.0 L1388.1,879.7 L1395.3,885.7 L1396.6,891.0 L1395.5,912.9 L1398.0,918.5 L1403.6,922.8 L1415.3,926.1 L1425.2,934.4 L1429.6,940.6 L1443.2,949.0 L1479.3,964.1 L1481.6,968.4 L1453.4,1002.5 L1447.1,1017.7 L1436.4,1034.2 L1431.5,1036.0 L1419.6,1030.0 L1413.1,1028.9 L1400.5,1033.5 L1397.5,1039.2 L1397.2,1054.1 L1393.7,1058.9 L1379.8,1066.8 L1372.1,1086.1 L1368.2,1090.4 L1361.1,1091.5 L1342.0,1087.1 L1331.2,1092.2 L1297.5,1102.1 L1272.3,1093.8 L1261.3,1093.5 L1252.3,1097.7 L1247.0,1103.7 L1245.3,1111.6 L1250.7,1159.0 L1255.7,1167.1 L1262.9,1172.2 L1269.8,1172.5 L1296.3,1167.6 L1312.1,1177.8 L1326.6,1173.8 L1342.7,1185.6 L1346.4,1186.4 L1352.7,1182.1 L1356.6,1175.5 L1360.4,1173.3 L1364.5,1174.0 L1375.7,1187.3 L1395.7,1194.9 L1399.9,1205.5 L1419.7,1217.6 L1429.7,1228.3 L1434.6,1229.2 L1450.6,1224.5 L1458.0,1228.1 L1461.5,1234.8 L1457.5,1263.0 L1461.1,1271.0 L1468.9,1273.3 L1478.2,1270.6 L1489.6,1274.1 L1499.6,1274.7 L1510.5,1283.5 L1524.6,1281.7 L1531.0,1284.0 L1538.8,1289.9 L1544.4,1297.9 L1548.8,1311.1 L1544.2,1336.0 L1548.8,1373.0 L1547.0,1382.9 L1528.2,1396.4 L1492.7,1415.7 L1482.6,1426.3 L1477.5,1474.0 L1443.5,1521.5 L1444.6,1530.4 L1447.3,1533.9 L1472.4,1547.5 L1483.8,1544.5 L1493.0,1539.5 L1501.8,1538.4 L1523.6,1541.0 L1559.4,1549.8 L1568.8,1556.2 L1573.1,1561.5 L1583.7,1567.4 L1616.7,1560.4 L1646.2,1562.3 L1650.1,1566.0 L1650.8,1569.2" pathLength="1"/><path class="l-publica" data-k="portal_cascada" d="M1151.6,334.0 L1177.7,323.5 L1184.5,323.3 L1201.7,334.5 L1221.6,332.5 L1229.4,337.8 L1229.6,341.7 L1224.3,347.4 L1185.7,354.6 L1172.5,359.9 L1156.9,377.4 L1125.7,444.9 L1113.5,454.8 L1098.8,458.4 L1081.6,458.4 L1075.1,460.3 L1071.3,464.6 L1055.2,505.8 L1069.8,525.2 L1068.4,531.9 L1061.5,544.4 L1061.5,552.1 L1071.3,560.5 L1080.2,561.6 L1087.1,570.0 L1087.9,576.3 L1080.4,587.0 L1078.4,621.9 L1058.9,663.3 L1042.5,667.8 L1034.7,667.4 L1017.9,672.6 L1013.0,678.7 L1006.7,692.2 L1007.9,702.4 L1010.2,706.2 L1017.9,710.8 L1030.2,710.8 L1047.2,706.9 L1055.2,703.1 L1061.4,696.3 L1067.6,683.3 L1074.6,678.5 L1080.4,677.2 L1110.4,684.1 L1116.7,684.4 L1126.9,680.0 L1166.9,631.3 L1177.8,628.1 L1227.3,638.9 L1232.6,643.5 L1249.7,669.6 L1258.5,673.9 L1298.7,666.1 L1305.5,666.8 L1314.4,673.0 L1341.3,702.1 L1374.9,716.5 L1392.2,734.1 L1397.1,736.4 L1401.4,743.2 L1402.4,756.2 L1387.9,804.6 L1383.9,824.1 L1378.0,829.0 L1369.2,829.5 L1355.9,835.2 L1347.8,844.1 L1348.3,854.8 L1354.0,863.0 L1388.1,879.7 L1395.3,885.7 L1396.6,891.0 L1395.5,912.9 L1398.0,918.5 L1403.6,922.8 L1415.3,926.1 L1425.2,934.4 L1429.6,940.6 L1443.2,949.0 L1479.3,964.1 L1481.6,968.4 L1453.4,1002.5 L1447.1,1017.7 L1436.4,1034.2 L1431.5,1036.0 L1419.6,1030.0 L1413.1,1028.9 L1400.5,1033.5 L1397.5,1039.2 L1397.2,1054.1 L1393.7,1058.9 L1379.8,1066.8 L1372.1,1086.1 L1368.2,1090.4 L1361.1,1091.5 L1342.0,1087.1 L1331.2,1092.2 L1297.5,1102.1 L1272.3,1093.8 L1261.3,1093.5 L1252.3,1097.7 L1247.0,1103.7 L1245.3,1111.6 L1250.7,1159.0 L1255.7,1167.1 L1262.9,1172.2 L1269.8,1172.5 L1296.3,1167.6 L1312.1,1177.8 L1326.6,1173.8 L1342.7,1185.6 L1346.4,1186.4 L1352.7,1182.1 L1356.6,1175.5 L1360.4,1173.3 L1364.5,1174.0 L1375.7,1187.3 L1395.7,1194.9 L1399.9,1205.5 L1419.7,1217.6 L1429.7,1228.3 L1434.6,1229.2 L1450.6,1224.5 L1458.0,1228.1 L1461.5,1234.8 L1457.5,1263.0 L1461.1,1271.0 L1468.9,1273.3 L1478.2,1270.6 L1489.6,1274.1 L1499.6,1274.7 L1510.5,1283.5 L1524.6,1281.7 L1531.0,1284.0 L1538.8,1289.9 L1544.4,1297.9 L1548.8,1311.1 L1544.2,1336.0 L1548.8,1373.0 L1547.0,1382.9 L1528.2,1396.4 L1492.7,1415.7 L1482.6,1426.3 L1477.5,1474.0 L1443.5,1521.5 L1444.6,1530.4 L1447.3,1533.9 L1472.4,1547.5 L1483.8,1544.5 L1493.0,1539.5 L1501.8,1538.4 L1523.6,1541.0 L1559.4,1549.8 L1568.8,1556.2 L1573.1,1561.5 L1583.7,1567.4 L1616.7,1560.4 L1646.2,1562.3 L1650.1,1566.0 L1650.8,1569.2" pathLength="1"/><path class="l-sendero" data-k="s_nevada" d="M1020.5,668.3 L1020.5,713.2 L1014.9,721.6 L1014.9,752.5 L1040.0,777.8 L1040.0,783.4 L1051.2,794.6 L1051.2,808.7 L1087.4,842.4 L1087.4,864.9 L1073.5,878.9 L1073.5,901.4 L1037.2,937.9 L1037.2,946.3 L1034.4,949.1 L1034.4,996.9 L1031.7,999.7 L1031.7,1005.3 L1006.5,1030.6 L998.2,1030.6 L995.4,1033.4 L908.9,1033.4 L903.3,1027.8 L895.0,1027.8 L867.1,999.7"/><path class="l-actual" data-k="s_roca" d="M1062.1,994.3 L951.3,1047.1 L867.6,1000.5"/><path class="halo l-lindero" d="M633.6,829.4 L737.7,892.1 L744.5,916.5 L799.3,898.4 L879.4,969.0 L878.5,973.8 L881.3,974.9 L874.8,986.7 L873.0,1005.7 L862.0,1019.7 L824.7,1026.2 L774.0,1016.9 L712.5,992.6 L696.4,1037.1 L644.9,1066.3 L625.1,1067.5 L515.0,1102.2 L454.6,1091.9 L380.5,1036.7 L368.5,1040.3 L346.3,1021.4 L314.8,989.7 L347.9,989.9 L360.8,976.8 L373.9,980.0 L391.8,970.6 L411.9,964.0 L466.4,904.6 L489.3,905.6 L502.5,891.6 L515.3,889.5 L525.4,876.3 L548.3,870.6 L588.6,844.5 Z" pathLength="1"/><path class="l-lindero" data-k="lindero" d="M633.6,829.4 L737.7,892.1 L744.5,916.5 L799.3,898.4 L879.4,969.0 L878.5,973.8 L881.3,974.9 L874.8,986.7 L873.0,1005.7 L862.0,1019.7 L824.7,1026.2 L774.0,1016.9 L712.5,992.6 L696.4,1037.1 L644.9,1066.3 L625.1,1067.5 L515.0,1102.2 L454.6,1091.9 L380.5,1036.7 L368.5,1040.3 L346.3,1021.4 L314.8,989.7 L347.9,989.9 L360.8,976.8 L373.9,980.0 L391.8,970.6 L411.9,964.0 L466.4,904.6 L489.3,905.6 L502.5,891.6 L515.3,889.5 L525.4,876.3 L548.3,870.6 L588.6,844.5 Z" pathLength="1"/></svg>
+  <div class="pin pin der" style="left:17.48%;top:59.01%"><i></i><span>1 · ENTRADA BAJA<small>730 M · 8 MIN DEL CENTRO</small></span></div><div class="pin pin der" style="left:56.73%;top:39.83%"><i></i><span>2 · EL NEVADA<small>1.230 M · 13 MIN</small></span></div><div class="pin pin der" style="left:59.01%;top:59.29%"><i></i><span>3 · VÍA AL CHORRO<small>22 MIN + 2 KM A PIE</small></span></div><div class="pin finca der" style="left:48.20%;top:59.66%"><i></i><span>LOS PINOS<small>1.270 M</small></span></div><div class="pin pin der" style="left:52.85%;top:62.44%"><i></i><span>ROCA MIRADOR<small>1.216 M</small></span></div><div class="pin public izq" style="left:64.13%;top:20.40%"><i></i><span>PORTAL · BOSQUE ENCANTADO<small>OBRA PÚBLICA 2024</small></span></div><div class="pin public izq menor" style="left:92.00%;top:93.55%"><i></i><span>CASCADA CHORRO EL INDIO</span></div><div class="pin pin der menor" style="left:59.29%;top:76.64%"><i></i><span>MIRADOR LOMA DEL VIENTO</span></div>
+  <div class="escala" aria-hidden="true"><span style="width:7.75%"></span><em>500 m</em></div>
+  <span class="norte" aria-hidden="true">N</span>
+</figure>
+</div></section><section class="lam " id="lam-pisos" data-title="Una montaña, cinco pisos">
+<div class="wrap">
+  <p class="eyebrow"><span>05</span>El proyecto</p><h2>Una montaña, cinco pisos</h2>
+  <p class="lead ancho">Cada altura tiene su uso. Lo construido se concentra abajo, en la terraza junto a la ciudad; arriba todo es de bajo impacto. Toque un piso para verlo.</p>
+  <div class="corte-wrap"><svg class="corte draw" viewBox="0 0 1600 640" role="img" aria-label="Corte de la montaña de 730 a 1.270 metros, con los cinco pisos del proyecto">
+  <defs><linearGradient id="gArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F5A3A"/><stop offset="1" stop-color="#0E2A21"/></linearGradient></defs>
+  <g class="grid"><line x1="90" x2="1560" y1="544.4" y2="544.4"/><text x="78" y="550.4" text-anchor="end">700 m</text><line x1="90" x2="1560" y1="466.2" y2="466.2"/><text x="78" y="472.2" text-anchor="end">800 m</text><line x1="90" x2="1560" y1="388.1" y2="388.1"/><text x="78" y="394.1" text-anchor="end">900 m</text><line x1="90" x2="1560" y1="310.0" y2="310.0"/><text x="78" y="316.0" text-anchor="end">1.000 m</text><line x1="90" x2="1560" y1="231.9" y2="231.9"/><text x="78" y="237.9" text-anchor="end">1.100 m</text><line x1="90" x2="1560" y1="153.8" y2="153.8"/><text x="78" y="159.8" text-anchor="end">1.200 m</text><line x1="90" x2="1560" y1="75.6" y2="75.6"/><text x="78" y="81.6" text-anchor="end">1.300 m</text></g>
+  <path class="c-area" d="M90.0,519.0 L99.2,519.1 L108.5,519.3 L117.7,519.5 L127.0,519.5 L136.2,519.7 L145.5,519.8 L154.7,519.9 L164.0,520.0 L173.2,519.8 L182.5,519.5 L191.7,518.7 L200.9,517.6 L210.2,516.1 L219.4,514.5 L228.7,513.0 L237.9,511.7 L247.2,510.6 L256.4,509.9 L265.7,509.3 L274.9,508.7 L284.2,507.9 L293.4,506.8 L302.6,505.5 L311.9,503.9 L321.1,502.1 L330.4,500.0 L339.6,497.8 L348.9,495.4 L358.1,492.8 L367.4,490.1 L376.6,487.3 L385.8,484.5 L395.1,481.9 L404.3,479.3 L413.6,476.9 L422.8,474.7 L432.1,472.7 L441.3,471.0 L450.6,469.5 L459.8,468.0 L469.1,466.6 L478.3,464.9 L487.5,463.0 L496.8,460.6 L506.0,458.0 L515.3,454.9 L524.5,451.6 L533.8,448.1 L543.0,444.6 L552.3,441.2 L561.5,437.7 L570.8,433.9 L580.0,429.8 L589.2,425.0 L598.5,419.8 L607.7,414.3 L617.0,408.8 L626.2,403.5 L635.5,398.4 L644.7,393.3 L654.0,388.2 L663.2,383.1 L672.5,378.0 L681.7,373.0 L690.9,368.5 L700.2,364.7 L709.4,361.4 L718.7,358.8 L727.9,356.6 L737.2,354.7 L746.4,352.9 L755.7,351.1 L764.9,349.4 L774.2,347.7 L783.4,346.5 L792.6,345.6 L801.9,345.4 L811.1,345.5 L820.4,345.9 L829.6,346.2 L838.9,346.5 L848.1,346.2 L857.4,345.7 L866.6,344.8 L875.8,343.8 L885.1,342.7 L894.3,341.6 L903.6,340.9 L912.8,340.4 L922.1,340.1 L931.3,339.8 L940.6,339.6 L949.8,339.2 L959.1,338.4 L968.3,337.2 L977.5,335.5 L986.8,333.7 L996.0,331.9 L1005.3,330.1 L1014.5,328.4 L1023.8,326.8 L1033.0,325.4 L1042.3,324.0 L1051.5,322.7 L1060.8,321.5 L1070.0,320.1 L1079.2,318.4 L1088.5,316.4 L1097.7,313.7 L1107.0,310.4 L1116.2,306.3 L1125.5,301.4 L1134.7,295.8 L1144.0,289.5 L1153.2,282.6 L1162.5,275.3 L1171.7,268.0 L1180.9,260.9 L1190.2,254.0 L1199.4,247.6 L1208.7,241.4 L1217.9,235.5 L1227.2,229.8 L1236.4,224.6 L1245.7,219.9 L1254.9,215.9 L1264.2,212.3 L1273.4,208.9 L1282.6,205.5 L1291.9,202.0 L1301.1,198.5 L1310.4,195.2 L1319.6,192.1 L1328.9,189.1 L1338.1,186.1 L1347.4,182.7 L1356.6,178.7 L1365.8,174.1 L1375.1,169.0 L1384.3,163.6 L1393.6,158.1 L1402.8,152.9 L1412.1,148.0 L1421.3,143.6 L1430.6,139.6 L1439.8,135.9 L1449.1,132.4 L1458.3,128.8 L1467.5,124.9 L1476.8,120.9 L1486.0,116.9 L1495.3,113.0 L1504.5,109.8 L1513.8,107.1 L1523.0,105.1 L1532.3,103.5 L1541.5,102.4 L1550.8,101.7 L1560.0,101.4 L1560,560 L90,560 Z"/>
+  <path class="c-line" d="M90.0,519.0 L99.2,519.1 L108.5,519.3 L117.7,519.5 L127.0,519.5 L136.2,519.7 L145.5,519.8 L154.7,519.9 L164.0,520.0 L173.2,519.8 L182.5,519.5 L191.7,518.7 L200.9,517.6 L210.2,516.1 L219.4,514.5 L228.7,513.0 L237.9,511.7 L247.2,510.6 L256.4,509.9 L265.7,509.3 L274.9,508.7 L284.2,507.9 L293.4,506.8 L302.6,505.5 L311.9,503.9 L321.1,502.1 L330.4,500.0 L339.6,497.8 L348.9,495.4 L358.1,492.8 L367.4,490.1 L376.6,487.3 L385.8,484.5 L395.1,481.9 L404.3,479.3 L413.6,476.9 L422.8,474.7 L432.1,472.7 L441.3,471.0 L450.6,469.5 L459.8,468.0 L469.1,466.6 L478.3,464.9 L487.5,463.0 L496.8,460.6 L506.0,458.0 L515.3,454.9 L524.5,451.6 L533.8,448.1 L543.0,444.6 L552.3,441.2 L561.5,437.7 L570.8,433.9 L580.0,429.8 L589.2,425.0 L598.5,419.8 L607.7,414.3 L617.0,408.8 L626.2,403.5 L635.5,398.4 L644.7,393.3 L654.0,388.2 L663.2,383.1 L672.5,378.0 L681.7,373.0 L690.9,368.5 L700.2,364.7 L709.4,361.4 L718.7,358.8 L727.9,356.6 L737.2,354.7 L746.4,352.9 L755.7,351.1 L764.9,349.4 L774.2,347.7 L783.4,346.5 L792.6,345.6 L801.9,345.4 L811.1,345.5 L820.4,345.9 L829.6,346.2 L838.9,346.5 L848.1,346.2 L857.4,345.7 L866.6,344.8 L875.8,343.8 L885.1,342.7 L894.3,341.6 L903.6,340.9 L912.8,340.4 L922.1,340.1 L931.3,339.8 L940.6,339.6 L949.8,339.2 L959.1,338.4 L968.3,337.2 L977.5,335.5 L986.8,333.7 L996.0,331.9 L1005.3,330.1 L1014.5,328.4 L1023.8,326.8 L1033.0,325.4 L1042.3,324.0 L1051.5,322.7 L1060.8,321.5 L1070.0,320.1 L1079.2,318.4 L1088.5,316.4 L1097.7,313.7 L1107.0,310.4 L1116.2,306.3 L1125.5,301.4 L1134.7,295.8 L1144.0,289.5 L1153.2,282.6 L1162.5,275.3 L1171.7,268.0 L1180.9,260.9 L1190.2,254.0 L1199.4,247.6 L1208.7,241.4 L1217.9,235.5 L1227.2,229.8 L1236.4,224.6 L1245.7,219.9 L1254.9,215.9 L1264.2,212.3 L1273.4,208.9 L1282.6,205.5 L1291.9,202.0 L1301.1,198.5 L1310.4,195.2 L1319.6,192.1 L1328.9,189.1 L1338.1,186.1 L1347.4,182.7 L1356.6,178.7 L1365.8,174.1 L1375.1,169.0 L1384.3,163.6 L1393.6,158.1 L1402.8,152.9 L1412.1,148.0 L1421.3,143.6 L1430.6,139.6 L1439.8,135.9 L1449.1,132.4 L1458.3,128.8 L1467.5,124.9 L1476.8,120.9 L1486.0,116.9 L1495.3,113.0 L1504.5,109.8 L1513.8,107.1 L1523.0,105.1 L1532.3,103.5 L1541.5,102.4 L1550.8,101.7 L1560.0,101.4" pathLength="1"/>
+  <path class="c-cable" d="M127.0,506.9 L1560.0,97.5"/>
+  <text class="c-cable-t" x="413.6" y="192.8">TELEFÉRICO PROPUESTO · 1,9 KM</text>
+  <a class="piso" href="#lam-puerta" data-target="lam-puerta"><line x1="284.2" y1="495.9" x2="284.2" y2="455.9"/><circle cx="284.2" cy="507.9" r="11"/><rect x="192.2" y="411.9" width="184" height="44" rx="8"/><text x="284.2" y="441.9" text-anchor="middle">LA PUERTA</text></a><a class="piso" href="#lam-quebradas" data-target="lam-quebradas"><line x1="626.2" y1="391.5" x2="626.2" y2="291.5"/><circle cx="626.2" cy="403.5" r="11"/><rect x="534.2" y="247.5" width="184" height="44" rx="8"/><text x="626.2" y="277.5" text-anchor="middle">QUEBRADAS Y BOSQUE</text></a><a class="piso" href="#lam-meseta" data-target="lam-meseta"><line x1="959.1" y1="326.4" x2="959.1" y2="286.4"/><circle cx="959.1" cy="338.4" r="11"/><rect x="867.1" y="242.4" width="184" height="44" rx="8"/><text x="959.1" y="272.4" text-anchor="middle">LA MESETA</text></a><a class="piso" href="#lam-bosque" data-target="lam-bosque"><line x1="1236.4" y1="212.6" x2="1236.4" y2="112.6"/><circle cx="1236.4" cy="224.6" r="11"/><rect x="1144.4" y="68.6" width="184" height="44" rx="8"/><text x="1236.4" y="98.6" text-anchor="middle">BOSQUE ALTO</text></a><a class="piso" href="#lam-cima" data-target="lam-cima"><line x1="1439.8" y1="123.9" x2="1439.8" y2="83.9"/><circle cx="1439.8" cy="135.9" r="11"/><rect x="1347.8" y="39.9" width="184" height="44" rx="8"/><text x="1439.8" y="69.9" text-anchor="middle">LA CIMA</text></a>
+  <text class="c-foot" x="90" y="610">ENTRADA BAJA · 0 KM</text>
+  <text class="c-foot" x="1560" y="610" text-anchor="end">LOS PINOS · 2.0 KM</text>
+</svg></div>
+</div></section><section class="lam " id="lam-puerta" data-title="Piso 1 · La Puerta">
+<div class="wrap">
+  <p class="eyebrow"><span>06</span>Piso 1 · La Puerta · 730 m</p><h2>La Puerta</h2>
+  <p class="lead ancho">En la terraza baja, junto a la vía: la fachada con taquillas y entrada peatonal, el lobby, el mariposario y el museo de ciencias en un edificio con forma de mariposa, serpentario, locales, ambulatorio, viveros y laboratorios.</p>
+  <div class="scene" id="sc-puerta"><div class="tabs" role="tablist" aria-label="Escenas"><button type="button" role="tab" id="t-puerta-aerea" aria-controls="p-puerta-aerea" aria-selected="true" tabindex="0">Vista aérea</button><button type="button" role="tab" id="t-llegada" aria-controls="p-llegada" aria-selected="false" tabindex="-1">La llegada</button><button type="button" role="tab" id="t-fachada" aria-controls="p-fachada" aria-selected="false" tabindex="-1">Fachada y taquillas</button><button type="button" role="tab" id="t-lobby" aria-controls="p-lobby" aria-selected="false" tabindex="-1">Lobby</button><button type="button" role="tab" id="t-mariposario" aria-controls="p-mariposario" aria-selected="false" tabindex="-1">Mariposario</button><button type="button" role="tab" id="t-museo" aria-controls="p-museo" aria-selected="false" tabindex="-1">Museo de ciencias</button><button type="button" role="tab" id="t-serpentario" aria-controls="p-serpentario" aria-selected="false" tabindex="-1">Serpentario</button><button type="button" role="tab" id="t-locales" aria-controls="p-locales" aria-selected="false" tabindex="-1">Locales y ambulatorio</button><button type="button" role="tab" id="t-vivero" aria-controls="p-vivero" aria-selected="false" tabindex="-1">Vivero y orquideario</button></div><div class="panel" role="tabpanel" id="p-puerta-aerea" aria-labelledby="t-puerta-aerea"><div class="cmp" style="--pos:55%" data-start="55">
+  <img class="cmp-hoy" src="img/P02_puerta_aereo__hoy.jpg" alt="Foto real del dron: la terraza baja junto a la quebrada" width="1600" height="893" decoding="async" loading="lazy">
+  <div class="cmp-prop"><img class="" src="img/P02_puerta_aereo.jpg" alt="Propuesta: edificio mariposa con dos domos sobre la terraza baja" width="1600" height="893" decoding="async" loading="lazy"></div>
+  <div class="cmp-line" aria-hidden="true"><span class="cmp-knob"></span></div>
+  <input class="cmp-range" type="range" min="0" max="100" value="55" aria-label="Deslice para comparar la foto real con la propuesta">
+  <span class="tag tag-l">PROPUESTA · IMAGEN REFERENCIAL</span><span class="tag tag-r">HOY · FOTO REAL DEL DRON</span>
+</div><div class="cap"><p>La terraza baja hoy y la propuesta: el edificio mariposa con sus dos domos, la plaza de entrada, estacionamiento, viveros y laboratorios. Deslice para comparar.</p><button class="heart" type="button" data-pick="puerta-aerea" data-label="La Puerta: edificio mariposa" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-llegada" aria-labelledby="t-llegada" hidden><div class="single kb"><img class="" src="img/P03_entrada_aereo.jpg" alt="Vista aérea del portal de entrada sobre la vía y el edificio mariposa al fondo" width="1600" height="893" decoding="async" loading="lazy"><span class="tag tag-l">IMAGEN REFERENCIAL</span></div><div class="cap"><p>La llegada desde la vía: portal con taquillas y acceso peatonal, y al fondo el edificio mariposa.</p><button class="heart" type="button" data-pick="llegada" data-label="Portal de entrada" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-fachada" aria-labelledby="t-fachada" hidden><div class="single kb"><img class="" src="img/P04_fachada_calle.jpg" alt="Fachada de piedra y madera con el nombre La Chucurí y taquillas" width="1600" height="905" decoding="async" loading="lazy"><span class="tag tag-l">IMAGEN REFERENCIAL</span></div><div class="cap"><p>Una fachada imponente de piedra y madera, con taquillas y entrada peatonal.</p><button class="heart" type="button" data-pick="fachada" data-label="Fachada con taquillas y entrada peatonal" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-lobby" aria-labelledby="t-lobby" hidden><div class="single kb"><img class="" src="img/P05_lobby.jpg" alt="Lobby de doble altura con escultura de mariposas azules" width="1600" height="905" decoding="async" loading="lazy"><span class="tag tag-l">IMAGEN REFERENCIAL</span></div><div class="cap"><p>El lobby de entrada, abierto al bosque, con la mariposa Morpho como emblema.</p><button class="heart" type="button" data-pick="lobby" data-label="Lobby de entrada" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-mariposario" aria-labelledby="t-mariposario" hidden><div class="single kb"><img class="" src="img/P06_domo_mariposario.jpg" alt="Familia dentro del domo del mariposario con una mariposa Morpho en la mano" width="1600" height="905" decoding="async" loading="lazy"><span class="tag tag-l">IMAGEN REFERENCIAL</span></div><div class="cap"><p>Dentro del domo: mariposas Morpho y Heliconius, propias de los bosques premontanos del Táchira.</p><button class="heart" type="button" data-pick="mariposario" data-label="Mariposario" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-museo" aria-labelledby="t-museo" hidden><div class="single kb"><img class="" src="img/P07_museo_ciencias.jpg" alt="Museo con esqueleto de dinosaurio y diorama del páramo" width="1600" height="905" decoding="async" loading="lazy"><span class="tag tag-l">IMAGEN REFERENCIAL</span></div><div class="cap"><p>Museo de ciencias: el Tachiraptor, el páramo y el bosque nublado en dioramas, para colegios y visitantes.</p><button class="heart" type="button" data-pick="museo" data-label="Museo de ciencias" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-serpentario" aria-labelledby="t-serpentario" hidden><div class="single kb"><img class="" src="img/P08_serpentario.jpg" alt="Serpentario con terrarios y laboratorio al fondo" width="1600" height="905" decoding="async" loading="lazy"><span class="tag tag-l">IMAGEN REFERENCIAL</span></div><div class="cap"><p>Serpentario y centro antiofídico: exhibición, investigación y producción de suero.</p><button class="heart" type="button" data-pick="serpentario" data-label="Serpentario y centro antiofídico" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-locales" aria-labelledby="t-locales" hidden><div class="single kb"><img class="" src="img/P09_locales_ambulatorio.jpg" alt="Paseo con locales comerciales y un pabellón de primeros auxilios" width="1600" height="905" decoding="async" loading="lazy"><span class="tag tag-l">IMAGEN REFERENCIAL</span></div><div class="cap"><p>Locales para negocios y servicios, y un área de ambulatorio para visitantes y vecinos.</p><button class="heart" type="button" data-pick="locales" data-label="Locales comerciales y ambulatorio" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-vivero" aria-labelledby="t-vivero" hidden><div class="single kb"><img class="" src="img/P16_vivero_orquideario.jpg" alt="Invernadero con orquídeas y plántulas nativas" width="1600" height="905" decoding="async" loading="lazy"><span class="tag tag-l">IMAGEN REFERENCIAL</span></div><div class="cap"><p>Viveros de especies nativas y un orquideario, también como laboratorio para universidades.</p><button class="heart" type="button" data-pick="vivero" data-label="Viveros y orquideario" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div></div>
+</div></section><section class="lam " id="lam-quebradas" data-title="Piso 2 · Las quebradas">
+<div class="wrap">
+  <p class="eyebrow"><span>07</span>Piso 2 · Las quebradas</p><h2>La quebrada, de frontera a bulevar</h2>
+  <p class="lead ancho">A lo largo de la Quebrada La Chucurí, donde el bosque toca los barrios: un bulevar con áreas de ejercicio, y un colector de aguas servidas que devuelve la quebrada limpia, con su flora y su fauna.</p>
+  <div class="scene" id="sc-quebradas"><div class="tabs" role="tablist" aria-label="Escenas"><button type="button" role="tab" id="t-bulevar" aria-controls="p-bulevar" aria-selected="true" tabindex="0">Bulevar de la quebrada</button><button type="button" role="tab" id="t-agua" aria-controls="p-agua" aria-selected="false" tabindex="-1">Agua limpia</button></div><div class="panel" role="tabpanel" id="p-bulevar" aria-labelledby="t-bulevar"><div class="cmp" style="--pos:55%" data-start="55">
+  <img class="cmp-hoy" src="img/P10_bulevar_quebrada__hoy.jpg" alt="Foto real del dron: la quebrada entre el barrio y el bosque" width="1600" height="893" decoding="async" loading="lazy">
+  <div class="cmp-prop"><img class="" src="img/P10_bulevar_quebrada.jpg" alt="Propuesta: bulevar a lo largo de la quebrada con áreas de ejercicio" width="1600" height="893" decoding="async" loading="lazy"></div>
+  <div class="cmp-line" aria-hidden="true"><span class="cmp-knob"></span></div>
+  <input class="cmp-range" type="range" min="0" max="100" value="55" aria-label="Deslice para comparar la foto real con la propuesta">
+  <span class="tag tag-l">PROPUESTA · IMAGEN REFERENCIAL</span><span class="tag tag-r">HOY · FOTO REAL DEL DRON</span>
+</div><div class="cap"><p>La quebrada entre el barrio y el bosque, hoy y con el bulevar: caminería, áreas de ejercicio, puentes y la quebrada saneada.</p><button class="heart" type="button" data-pick="bulevar" data-label="Bulevar y áreas de ejercicio en la quebrada" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-agua" aria-labelledby="t-agua" hidden><div class="single kb"><img class="" src="img/P11_quebrada_limpia.jpg" alt="Quebrada de agua clara en el bosque con un sendero de piedra" width="1600" height="905" decoding="async" loading="lazy"><span class="tag tag-l">IMAGEN REFERENCIAL</span></div><div class="cap"><p>Con un colector de aguas servidas, la quebrada recupera su agua, su flora y su fauna.</p><button class="heart" type="button" data-pick="agua" data-label="Colector y saneamiento de la quebrada" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div></div>
+</div></section><section class="lam " id="lam-bosque" data-title="Piso 3 · El bosque">
+<div class="wrap">
+  <p class="eyebrow"><span>08</span>Piso 3 · El bosque · 800–1.150 m</p><h2>73 hectáreas de bosque premontano</h2>
+  <p class="lead ancho">Uno de los últimos bosques premontanos de San Cristóbal, con especies del Libro Rojo como el nogal, el cedro y la caoba. Senderos de interpretación, rutas científicas, aulas abiertas, observación de aves, puentes colgantes y bicicleta de montaña.</p>
+  <div class="scene" id="sc-bosque"><div class="tabs" role="tablist" aria-label="Escenas"><button type="button" role="tab" id="t-puentes" aria-controls="p-puentes" aria-selected="true" tabindex="0">Puentes colgantes</button><button type="button" role="tab" id="t-aves" aria-controls="p-aves" aria-selected="false" tabindex="-1">Observatorio de aves</button><button type="button" role="tab" id="t-aula" aria-controls="p-aula" aria-selected="false" tabindex="-1">Aulas abiertas</button><button type="button" role="tab" id="t-bici" aria-controls="p-bici" aria-selected="false" tabindex="-1">Bicicleta de montaña</button></div><div class="panel" role="tabpanel" id="p-puentes" aria-labelledby="t-puentes"><div class="cmp" style="--pos:55%" data-start="55">
+  <img class="cmp-hoy" src="img/P13_puente_colgante__hoy.jpg" alt="Foto real del dron: el bosque con la ciudad al fondo" width="1600" height="893" decoding="async" loading="lazy">
+  <div class="cmp-prop"><img class="" src="img/P13_puente_colgante.jpg" alt="Propuesta: puente colgante sobre el bosque con la ciudad al fondo" width="1600" height="893" decoding="async" loading="lazy"></div>
+  <div class="cmp-line" aria-hidden="true"><span class="cmp-knob"></span></div>
+  <input class="cmp-range" type="range" min="0" max="100" value="55" aria-label="Deslice para comparar la foto real con la propuesta">
+  <span class="tag tag-l">PROPUESTA · IMAGEN REFERENCIAL</span><span class="tag tag-r">HOY · FOTO REAL DEL DRON</span>
+</div><div class="cap"><p>Puentes colgantes sobre el dosel, con San Cristóbal de fondo.</p><button class="heart" type="button" data-pick="puentes" data-label="Puentes colgantes" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-aves" aria-labelledby="t-aves" hidden><div class="cmp" style="--pos:55%" data-start="55">
+  <img class="cmp-hoy" src="img/P14_observatorio_aves__hoy.jpg" alt="Foto real del dron: el bosque premontano" width="1600" height="893" decoding="async" loading="lazy">
+  <div class="cmp-prop"><img class="" src="img/P14_observatorio_aves.jpg" alt="Propuesta: torre de observación de aves sobre el bosque" width="1600" height="893" decoding="async" loading="lazy"></div>
+  <div class="cmp-line" aria-hidden="true"><span class="cmp-knob"></span></div>
+  <input class="cmp-range" type="range" min="0" max="100" value="55" aria-label="Deslice para comparar la foto real con la propuesta">
+  <span class="tag tag-l">PROPUESTA · IMAGEN REFERENCIAL</span><span class="tag tag-r">HOY · FOTO REAL DEL DRON</span>
+</div><div class="cap"><p>Una torre de observación de aves y una pasarela entre las copas de los árboles.</p><button class="heart" type="button" data-pick="aves" data-label="Observatorio de aves" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-aula" aria-labelledby="t-aula" hidden><div class="single kb"><img class="" src="img/P12_sendero_aula.jpg" alt="Estudiantes en un aula abierta dentro del bosque" width="1600" height="905" decoding="async" loading="lazy"><span class="tag tag-l">IMAGEN REFERENCIAL</span></div><div class="cap"><p>Aulas abiertas, laboratorios de campo y rutas científicas para colegios y universidades.</p><button class="heart" type="button" data-pick="aula" data-label="Aulas abiertas y rutas científicas" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-bici" aria-labelledby="t-bici" hidden><div class="single kb"><img class="" src="img/P15_bicicleta_montana.jpg" alt="Ciclista bajando un sendero entre pinos con la ciudad abajo" width="1600" height="905" decoding="async" loading="lazy"><span class="tag tag-l">IMAGEN REFERENCIAL</span></div><div class="cap"><p>Caminos empinados para bicicleta de montaña, con la ciudad abajo.</p><button class="heart" type="button" data-pick="bici" data-label="Bicicleta de montaña" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div></div>
+</div></section><section class="lam " id="lam-meseta" data-title="Piso 4 · La meseta">
+<div class="wrap duo">
+  <div class="txt">
+    <p class="eyebrow"><span>09</span>Piso 4 · La meseta · 1.000 m</p><h2>Cabañas entre los árboles</h2>
+    <p class="lead">Una meseta natural de 2,7 hectáreas a mil metros admite una villa de cabañas de madera y piedra, sin abrir vías dentro del bosque.</p>
+    <button class="heart" type="button" data-pick="cabanas" data-label="Cabañas en la meseta" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button>
+  </div>
+  <div class="cmp" style="--pos:55%" data-start="55">
+  <img class="cmp-hoy" src="img/P17_cabanas_meseta__hoy.jpg" alt="Foto real del dron: el bosque central con la ciudad a la derecha" width="1600" height="893" decoding="async" loading="lazy">
+  <div class="cmp-prop"><img class="" src="img/P17_cabanas_meseta.jpg" alt="Propuesta: cabañas entre los árboles" width="1600" height="893" decoding="async" loading="lazy"></div>
+  <div class="cmp-line" aria-hidden="true"><span class="cmp-knob"></span></div>
+  <input class="cmp-range" type="range" min="0" max="100" value="55" aria-label="Deslice para comparar la foto real con la propuesta">
+  <span class="tag tag-l">PROPUESTA · IMAGEN REFERENCIAL</span><span class="tag tag-r">HOY · FOTO REAL DEL DRON</span>
+</div>
+</div></section><section class="lam " id="lam-teleferico" data-title="El teleférico">
+<div class="wrap duo">
+  <div class="txt">
+    <p class="eyebrow"><span>10</span>El teleférico</p><h2>De la ciudad a la cima en menos de diez minutos</h2>
+    <ul class="chips-dato">
+      <li><b>1,9 km</b> de recorrido</li><li><b>540 m</b> de desnivel</li><li><b>730 → 1.270</b> metros</li>
+    </ul>
+    <p class="lead">Un teleférico sobre el bosque, sin talar bajo la línea, uniría la Puerta con la cima.</p>
+    <button class="heart" type="button" data-pick="teleferico" data-label="Teleférico" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button>
+  </div>
+  <div class="cmp" style="--pos:55%" data-start="55">
+  <img class="cmp-hoy" src="img/P18_teleferico__hoy.jpg" alt="Foto real del dron: la montaña desde la entrada" width="1600" height="893" decoding="async" loading="lazy">
+  <div class="cmp-prop"><img class="" src="img/P18_teleferico.jpg" alt="Propuesta: teleférico desde la entrada hasta la cima" width="1600" height="893" decoding="async" loading="lazy"></div>
+  <div class="cmp-line" aria-hidden="true"><span class="cmp-knob"></span></div>
+  <input class="cmp-range" type="range" min="0" max="100" value="55" aria-label="Deslice para comparar la foto real con la propuesta">
+  <span class="tag tag-l">PROPUESTA · IMAGEN REFERENCIAL</span><span class="tag tag-r">HOY · FOTO REAL DEL DRON</span>
+</div>
+</div></section><section class="lam " id="lam-cima" data-title="Piso 5 · La cima: usted elige">
+<div class="wrap">
+  <p class="eyebrow"><span>11</span>Piso 5 · La cima · 1.270 m</p><h2>En la cima, usted elige</h2>
+  <div class="duo cima">
+    <div class="chooser" id="chooser">
+      <div class="v-stage"><img class="v-img" data-v="hoy" src="img/V1_virgen__hoy.jpg" alt="La cima hoy: el pinar visto desde el lado de la ciudad" width="1600" height="893" loading="lazy" decoding="async"><img class="v-img on" data-v="virgen" src="img/V1_virgen.jpg" alt="Propuesta: imagen monumental de la Virgen Inmaculada en la cima" width="1600" height="893" loading="lazy" decoding="async"><img class="v-img" data-v="cristo" src="img/V2_cristo.jpg" alt="Propuesta: imagen monumental de Cristo con los brazos abiertos en la cima" width="1600" height="893" loading="lazy" decoding="async"><img class="v-img" data-v="rosario" src="img/V3_rosario.jpg" alt="Propuesta: camino del Rosario alrededor de la cima con una cruz" width="1600" height="893" loading="lazy" decoding="async"><img class="v-img" data-v="virgen-rosario" src="img/V4_virgen_rosario.jpg" alt="Propuesta: la Virgen en la cima rodeada por el camino del Rosario" width="1600" height="893" loading="lazy" decoding="async"><span class="v-sweep" aria-hidden="true"></span><span class="tag tag-l" id="v-tag">IMAGEN REFERENCIAL · MISMA FOTO DEL DRON</span></div>
+      <div class="vbtns" role="group" aria-label="Variaciones de la cima"><button type="button" class="vbtn" data-v="hoy" aria-pressed="false">Hoy</button><button type="button" class="vbtn" data-v="virgen" aria-pressed="true">Virgen Inmaculada</button><button type="button" class="vbtn" data-v="cristo" aria-pressed="false">Cristo</button><button type="button" class="vbtn" data-v="rosario" aria-pressed="false">El Rosario</button><button type="button" class="vbtn" data-v="virgen-rosario" aria-pressed="false">Virgen y Rosario</button></div>
+      <button type="button" class="btn elegir" id="v-elegir">Elegir esta para mi selección</button>
+    </div>
+    <div class="txt">
+      <p class="lead">La cumbre mira de frente al centro de la ciudad. Una imagen de 30 metros tendría línea de vista desde la Plaza Bolívar, la Catedral, la ULA, la UNET y hasta la Basílica de Táriba, a 9 km.</p>
+      <figure class="map draw" data-map="visibilidad" style="aspect-ratio:1300/1666;--ar:0.7803">
+  <img src="img/map_visibilidad.jpg" alt="Mapa de los lugares desde donde se vería una imagen en la cima" width="1300" height="1666" loading="lazy"><img class="tint" src="img/map_visibilidad_tint.png" alt="" width="1300" height="1666" loading="lazy">
+  <svg viewBox="0 0 1300 1666" preserveAspectRatio="none" aria-hidden="true"><path class="halo l-lindero" d="M739.6,1466.7 L799.0,1502.5 L802.9,1516.4 L834.2,1506.0 L879.9,1546.4 L879.4,1549.1 L881.0,1549.8 L877.3,1556.5 L876.3,1567.4 L870.0,1575.3 L848.7,1579.0 L819.7,1573.7 L784.6,1559.9 L775.4,1585.3 L746.0,1601.9 L734.7,1602.6 L671.9,1622.4 L637.4,1616.6 L595.1,1585.1 L588.2,1587.1 L557.5,1558.2 L576.5,1558.3 L583.8,1550.9 L591.3,1552.7 L613.0,1543.5 L644.1,1509.6 L657.1,1510.2 L664.7,1502.2 L672.0,1501.0 L677.8,1493.5 L690.9,1490.2 L713.9,1475.3 Z" pathLength="1"/><path class="l-lindero" data-k="lindero" d="M739.6,1466.7 L799.0,1502.5 L802.9,1516.4 L834.2,1506.0 L879.9,1546.4 L879.4,1549.1 L881.0,1549.8 L877.3,1556.5 L876.3,1567.4 L870.0,1575.3 L848.7,1579.0 L819.7,1573.7 L784.6,1559.9 L775.4,1585.3 L746.0,1601.9 L734.7,1602.6 L671.9,1622.4 L637.4,1616.6 L595.1,1585.1 L588.2,1587.1 L557.5,1558.2 L576.5,1558.3 L583.8,1550.9 L591.3,1552.7 L613.0,1543.5 L644.1,1509.6 L657.1,1510.2 L664.7,1502.2 L672.0,1501.0 L677.8,1493.5 L690.9,1490.2 L713.9,1475.3 Z" pathLength="1"/></svg>
+  <div class="pin finca izq" style="left:67.17%;top:93.90%"><i></i><span>LA CIMA<small>IMAGEN DE 30 M</small></span></div><div class="pin pin der" style="left:40.05%;top:61.58%"><i></i><span>PLAZA BOLÍVAR<small>4,0 KM</small></span></div><div class="pin pin der" style="left:34.80%;top:82.14%"><i></i><span>TERMINAL<small>2,9 KM</small></span></div><div class="pin pin der menor" style="left:49.49%;top:74.00%"><i></i><span>HOSPITAL CENTRAL<small>2,5 KM</small></span></div><div class="pin pin izq" style="left:63.71%;top:34.78%"><i></i><span>ULA<small>6,1 KM</small></span></div><div class="pin pin izq" style="left:82.05%;top:35.57%"><i></i><span>UNET<small>6,2 KM</small></span></div><div class="pin pin der" style="left:47.99%;top:8.55%"><i></i><span>BASÍLICA DE TÁRIBA<small>9,0 KM</small></span></div>
+  <div class="escala" aria-hidden="true"><span style="width:6.12%"></span><em>500 m</em></div>
+  <span class="norte" aria-hidden="true">N</span>
+</figure>
+      <p class="fuente">En naranja, las zonas con línea de vista a una imagen de 30 m. Cálculo sobre el relieve: los edificios tapan la vista a nivel de calle.</p>
+    </div>
+  </div>
+</div></section><section class="lam " id="lam-cima2" data-title="La cima: fe, memoria y miradores">
+<div class="wrap">
+  <p class="eyebrow"><span>12</span>La cima</p><h2>Fe, memoria y miradores</h2>
+  <p class="lead ancho">Un templo entre los pinos, un jardín de la memoria donde cada pino guarda un nicho, un memorial para mascotas, un restaurante con la ciudad de frente y vuelos en parapente sobre el valle.</p>
+  <div class="scene" id="sc-cima"><div class="tabs" role="tablist" aria-label="Escenas"><button type="button" role="tab" id="t-templo" aria-controls="p-templo" aria-selected="true" tabindex="0">Templo entre los pinos</button><button type="button" role="tab" id="t-memoria" aria-controls="p-memoria" aria-selected="false" tabindex="-1">Jardín de la memoria</button><button type="button" role="tab" id="t-mascotas" aria-controls="p-mascotas" aria-selected="false" tabindex="-1">Memorial de mascotas</button><button type="button" role="tab" id="t-mirador" aria-controls="p-mirador" aria-selected="false" tabindex="-1">Mirador y restaurante</button><button type="button" role="tab" id="t-parapente" aria-controls="p-parapente" aria-selected="false" tabindex="-1">Parapente</button></div><div class="panel" role="tabpanel" id="p-templo" aria-labelledby="t-templo"><div class="cmp" style="--pos:55%" data-start="55">
+  <img class="cmp-hoy" src="img/P19_templo_pinos__hoy.jpg" alt="Foto real: el interior del pinar" width="1600" height="893" decoding="async" loading="lazy">
+  <div class="cmp-prop"><img class="" src="img/P19_templo_pinos.jpg" alt="Propuesta: templo al aire libre entre los pinos" width="1600" height="893" decoding="async" loading="lazy"></div>
+  <div class="cmp-line" aria-hidden="true"><span class="cmp-knob"></span></div>
+  <input class="cmp-range" type="range" min="0" max="100" value="55" aria-label="Deslice para comparar la foto real con la propuesta">
+  <span class="tag tag-l">PROPUESTA · IMAGEN REFERENCIAL</span><span class="tag tag-r">HOY · FOTO REAL DEL DRON</span>
+</div><div class="cap"><p>Un templo católico al aire libre entre los pinos.</p><button class="heart" type="button" data-pick="templo" data-label="Templo al aire libre" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-memoria" aria-labelledby="t-memoria" hidden><div class="cmp" style="--pos:55%" data-start="55">
+  <img class="cmp-hoy" src="img/P20_jardin_memoria__hoy.jpg" alt="Foto real: el pinar en la ladera" width="1600" height="893" decoding="async" loading="lazy">
+  <div class="cmp-prop"><img class="" src="img/P20_jardin_memoria.jpg" alt="Propuesta: placas de bronce al pie de los pinos" width="1600" height="893" decoding="async" loading="lazy"></div>
+  <div class="cmp-line" aria-hidden="true"><span class="cmp-knob"></span></div>
+  <input class="cmp-range" type="range" min="0" max="100" value="55" aria-label="Deslice para comparar la foto real con la propuesta">
+  <span class="tag tag-l">PROPUESTA · IMAGEN REFERENCIAL</span><span class="tag tag-r">HOY · FOTO REAL DEL DRON</span>
+</div><div class="cap"><p>Un pino, un nicho: un jardín de la memoria donde cada árbol guarda cenizas con una placa de bronce.</p><button class="heart" type="button" data-pick="memoria" data-label="Jardín de la memoria (columbario)" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-mascotas" aria-labelledby="t-mascotas" hidden><div class="cmp" style="--pos:55%" data-start="55">
+  <img class="cmp-hoy" src="img/P21_memorial_mascotas__hoy.jpg" alt="Foto real: el borde del pinar" width="1600" height="893" decoding="async" loading="lazy">
+  <div class="cmp-prop"><img class="" src="img/P21_memorial_mascotas.jpg" alt="Propuesta: jardín memorial para mascotas" width="1600" height="893" decoding="async" loading="lazy"></div>
+  <div class="cmp-line" aria-hidden="true"><span class="cmp-knob"></span></div>
+  <input class="cmp-range" type="range" min="0" max="100" value="55" aria-label="Deslice para comparar la foto real con la propuesta">
+  <span class="tag tag-l">PROPUESTA · IMAGEN REFERENCIAL</span><span class="tag tag-r">HOY · FOTO REAL DEL DRON</span>
+</div><div class="cap"><p>Un memorial sencillo para mascotas, en el borde del pinar.</p><button class="heart" type="button" data-pick="mascotas" data-label="Memorial de mascotas" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-mirador" aria-labelledby="t-mirador" hidden><div class="cmp" style="--pos:55%" data-start="55">
+  <img class="cmp-hoy" src="img/P22_mirador_restaurante__hoy.jpg" alt="Foto real del dron: la ciudad desde la cima" width="1600" height="893" decoding="async" loading="lazy">
+  <div class="cmp-prop"><img class="" src="img/P22_mirador_restaurante.jpg" alt="Propuesta: restaurante mirador sobre el pinar frente a la ciudad" width="1600" height="893" decoding="async" loading="lazy"></div>
+  <div class="cmp-line" aria-hidden="true"><span class="cmp-knob"></span></div>
+  <input class="cmp-range" type="range" min="0" max="100" value="55" aria-label="Deslice para comparar la foto real con la propuesta">
+  <span class="tag tag-l">PROPUESTA · IMAGEN REFERENCIAL</span><span class="tag tag-r">HOY · FOTO REAL DEL DRON</span>
+</div><div class="cap"><p>Un restaurante y mirador con la ciudad de frente.</p><button class="heart" type="button" data-pick="mirador" data-label="Mirador y restaurante" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div><div class="panel" role="tabpanel" id="p-parapente" aria-labelledby="t-parapente" hidden><div class="cmp" style="--pos:55%" data-start="55">
+  <img class="cmp-hoy" src="img/P23_parapente__hoy.jpg" alt="Foto real del dron: el valle desde el pinar" width="1600" height="893" decoding="async" loading="lazy">
+  <div class="cmp-prop"><img class="" src="img/P23_parapente.jpg" alt="Propuesta: parapentes sobre el valle" width="1600" height="893" decoding="async" loading="lazy"></div>
+  <div class="cmp-line" aria-hidden="true"><span class="cmp-knob"></span></div>
+  <input class="cmp-range" type="range" min="0" max="100" value="55" aria-label="Deslice para comparar la foto real con la propuesta">
+  <span class="tag tag-l">PROPUESTA · IMAGEN REFERENCIAL</span><span class="tag tag-r">HOY · FOTO REAL DEL DRON</span>
+</div><div class="cap"><p>Vuelos en parapente sobre el valle de San Cristóbal.</p><button class="heart" type="button" data-pick="parapente" data-label="Parapente" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span class="h-off">Me interesa</span><span class="h-on">En su selección</span></button></div></div></div>
+</div></section><section class="lam " id="lam-noche" data-title="De noche">
+<div class="wrap">
+  <p class="eyebrow"><span>13</span>De noche</p><h2>La montaña iluminada, frente a la ciudad</h2>
+  <div class="cmp" style="--pos:60%" data-start="60">
+  <img class="cmp-hoy" src="img/P01_masterplan.jpg" alt="Propuesta de día" width="1600" height="893" decoding="async" loading="lazy">
+  <div class="cmp-prop"><img class="" src="img/N1_noche.jpg" alt="Propuesta de noche" width="1600" height="893" decoding="async" loading="lazy"></div>
+  <div class="cmp-line" aria-hidden="true"><span class="cmp-knob"></span></div>
+  <input class="cmp-range" type="range" min="0" max="100" value="60" aria-label="Deslice para comparar la foto real con la propuesta">
+  <span class="tag tag-l">NOCHE · IMAGEN REFERENCIAL</span><span class="tag tag-r">DÍA · IMAGEN REFERENCIAL</span>
+</div>
+</div></section><section class="lam " id="lam-valor" data-title="Lo que vale esta montaña">
+<div class="wrap">
+  <p class="eyebrow"><span>14</span>El valor</p><h2>Lo que vale esta montaña</h2>
+  <div class="valor">
+    <div class="v-dato"><b>73 ha</b><span>de bosque premontano, uno de los últimos de la ciudad</span></div>
+    <div class="v-dato"><b>20 ha</b><span>de pinar que se ve desde todo el valle</span></div>
+    <div class="v-dato"><b>7 %</b><span>se interviene; el 93 % sigue siendo bosque</span></div>
+    <div class="v-dato"><b>8 min</b><span>de la Plaza Bolívar, dentro de la ciudad</span></div>
+  </div>
+  <div class="duo dem">
+    <div>
+      <h3 class="sub-h">La demanda ya existe</h3>
+      <ul class="demanda">
+        <li><b>1.000–1.200</b> personas cada fin de semana en el corredor del Chorro El Indio <small>Últimas Noticias, 09-11-2025</small></li>
+        <li><b>800</b> peregrinos en el primer Viacrucis ecológico de la Diócesis, por estas lomas <small>La Nación, 01-04-2026</small></li>
+        <li><b>90.000–100.000</b> peregrinos esperados en Táriba cada 15 de agosto <small>Diario de los Andes, 2024</small></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="sub-h">Referentes en la región</h3>
+      <table class="ref">
+        <tr><th>Cerro del Santísimo · Floridablanca</th><td>Estatua de 37,5 m, teleférico de 1.380 m y ecoparque junto a la ciudad (2015). Inversión prevista: COP 45.000 millones.</td></tr>
+        <tr><th>Monserrate · Bogotá</th><td>Santuario con teleférico y funicular: unos 1,36 millones de pasajeros en 2023.</td></tr>
+        <tr><th>Cristo Rey · Cali</th><td>Parque integral de 28,9 ha con senderos y locales: 200.000–300.000 visitantes.</td></tr>
+        <tr><th>Memoriales en el bosque</th><td>En EE. UU., un árbol memorial se ofrece entre USD 4.900 y 9.900 (Better Place Forests).</td></tr>
+      </table>
+      <p class="fuente">Fuentes: Vanguardia, Las2orillas, Alcaldía de Cali, Better Place Forests. Referentes de terceros: no son proyecciones de este proyecto.</p>
+    </div>
+  </div>
+</div></section><section class="lam " id="lam-desarrollo" data-title="Cómo se puede desarrollar">
+<div class="wrap">
+  <p class="eyebrow"><span>15</span>Desarrollo</p><h2>Un plan maestro, varias puertas de entrada</h2>
+  <ol class="fases">
+    <li><b>Fase 1</b><h4>La Cima</h4><p>Mirador, imagen y templo, jardín de la memoria, restaurante. Hay acceso por la vía al Chorro y el pinar ya es conocido.</p></li>
+    <li><b>Fase 2</b><h4>La Puerta</h4><p>Fachada, mariposario y museo, locales, ambulatorio, bulevar y colector de la quebrada.</p></li>
+    <li><b>Fase 3</b><h4>Teleférico y bosque</h4><p>Teleférico, senderos, puentes, aves, bicicleta, parapente y cabañas.</p></li>
+    <li><b>Fase 4</b><h4>Campus</h4><p>Universidad, laboratorios y centro de investigación, con aliados académicos.</p></li>
+  </ol>
+  <h3 class="sub-h">¿Por dónde le interesa entrar?</h3>
+  <div class="puertas"><button type="button" class="pchip" data-pick="p-mirador" data-label="Concesión del mirador y restaurante" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span>Concesión del mirador y restaurante</span></button><button type="button" class="pchip" data-pick="p-memoria" data-label="Jardín de la memoria (columbario)" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span>Jardín de la memoria (columbario)</span></button><button type="button" class="pchip" data-pick="p-mariposario" data-label="Mariposario y museo" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span>Mariposario y museo</span></button><button type="button" class="pchip" data-pick="p-teleferico" data-label="Teleférico" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span>Teleférico</span></button><button type="button" class="pchip" data-pick="p-cabanas" data-label="Cabañas" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span>Cabañas</span></button><button type="button" class="pchip" data-pick="p-campus" data-label="Campus universitario y centro de investigación" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span>Campus universitario y centro de investigación</span></button><button type="button" class="pchip" data-pick="p-aventura" data-label="Aventura: bicicleta, parapente, puentes" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span>Aventura: bicicleta, parapente, puentes</span></button><button type="button" class="pchip" data-pick="p-total" data-label="Socio del proyecto completo" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.6-9.2C.9 7.9 3 4.5 6.4 4.5c2.1 0 3.6 1.2 4.6 2.7 1-1.5 2.5-2.7 4.6-2.7 3.4 0 5.5 3.4 4 6.8-2.1 4.6-9.6 9.2-9.6 9.2z"/></svg><span>Socio del proyecto completo</span></button></div>
+</div></section><section class="lam " id="lam-expediente" data-title="Expediente técnico">
+<div class="wrap duo">
+  <div class="txt">
+    <p class="eyebrow"><span>16</span>Expediente técnico</p><h2>Lo que se verifica antes de invertir</h2>
+    <p class="lead">El inversionista recibe el expediente con lo que ya está levantado y la lista de lo que se tramita.</p>
+  </div>
+  <ul class="check">
+    <li class="ok">Levantamiento topográfico de 2004: 103,8 ha y 39 vértices, georreferenciado</li>
+    <li class="ok">Levantamiento aéreo del 08-10-2026: 79 fotografías y 33 videos</li>
+    <li class="ok">Análisis de pendientes, accesos, distancias y visibilidad</li>
+    <li>Estatus frente al Parque Nacional Chorro El Indio (INPARQUES)</li>
+    <li>Servidumbre de la línea de alta tensión (Corpoelec)</li>
+    <li>Zonificación municipal y variables urbanas</li>
+    <li>Estudios geotécnicos y de riesgo</li>
+    <li>Factibilidad de agua, electricidad y saneamiento</li>
+    <li>Documentos de propiedad</li>
+    <li>Acuerdo de paso para el sendero del Nevada</li>
+  </ul>
+</div></section><section class="lam " id="lam-contacto" data-title="Su selección y contacto">
+<div class="wrap duo">
+  <div class="txt">
+    <p class="eyebrow"><span>17</span>Contacto</p><h2>Solicite el expediente técnico y agende su visita</h2>
+    <div class="contactos">
+    </div>
+    <p class="aviso">Prototipo conceptual · No es un proyecto aprobado · Imágenes referenciales · Levantamiento aéreo: 08-10-2026 · Superficie según levantamiento topográfico (2004) · Distancias aproximadas</p>
+  </div>
+  <div class="resumen" id="resumen">
+    <h3 class="sub-h">Su selección</h3>
+    <div class="res-body" id="res-body"><p class="vacio">Todavía no ha elegido nada. Toque <b>Me interesa</b> en cada escena, o elija una variación de la cima.</p></div>
+    <div class="res-act">
+      <button type="button" class="btn" id="res-copiar">Copiar resumen</button>
+      <a class="btn ghost" id="res-wa" href="https://wa.me/" target="_blank" rel="noopener">Compartir por WhatsApp</a>
+      <button type="button" class="btn ghost" id="res-borrar">Borrar selección</button>
+    </div>
+    <p class="estado" id="res-estado" role="status"></p>
+    <textarea id="res-texto" class="res-texto" readonly hidden aria-label="Resumen de su selección"></textarea>
+  </div>
+</div></section></main>
+<p class="ayuda" id="ayuda" aria-hidden="true">Use ↑ ↓ o la rueda para pasar de lámina</p>
+<script>(() => {
+  "use strict";
+  const root = document.documentElement;
+  const reduce = !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+  const store = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* sin almacenamiento: la página funciona igual */ } }
+  };
+  const inView = (el) => { const r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < window.innerHeight; };
+
+  /* ---------------- selección del inversionista ---------------- */
+  const KEY = "chucuri-seleccion-v1";
+  const CIMA = { virgen: "Virgen Inmaculada", cristo: "Cristo", rosario: "El Rosario", "virgen-rosario": "Virgen y Rosario" };
+  const saved = store.get(KEY);
+  const sel = { items: (saved && saved.items) || {}, cima: (saved && saved.cima) || null };
+  const guardar = () => store.set(KEY, sel);
+
+  function textoResumen() {
+    const intereses = Object.entries(sel.items).filter(([k]) => !k.startsWith("p-")).map(([, v]) => v);
+    const puertas = Object.entries(sel.items).filter(([k]) => k.startsWith("p-")).map(([, v]) => v);
+    const l = ["La Chucurí · Mi selección"];
+    if (sel.cima) l.push("Imagen de la cima: " + CIMA[sel.cima]);
+    if (intereses.length) l.push("Me interesa: " + intereses.join("; "));
+    if (puertas.length) l.push("Puertas de entrada: " + puertas.join("; "));
+    l.push("(Prototipo conceptual · imágenes referenciales)");
+    return l.join("\n");
+  }
+  function pintar() {
+    $$("[data-pick]").forEach(b => b.setAttribute("aria-pressed", sel.items[b.dataset.pick] ? "true" : "false"));
+    const n = Object.keys(sel.items).length + (sel.cima ? 1 : 0);
+    $("#sel-n").textContent = n;
+    const body = $("#res-body");
+    const intereses = Object.entries(sel.items).filter(([k]) => !k.startsWith("p-"));
+    const puertas = Object.entries(sel.items).filter(([k]) => k.startsWith("p-"));
+    if (!n) {
+      body.innerHTML = '<p class="vacio">Todavía no ha elegido nada. Toque <b>Me interesa</b> en cada escena, o elija una variación de la cima.</p>';
+    } else {
+      const li = arr => arr.map(([, v]) => `<li>${v.replace(/</g, "&lt;")}</li>`).join("");
+      body.innerHTML =
+        (sel.cima ? `<h5>Imagen de la cima</h5><ul><li>${CIMA[sel.cima]}</li></ul>` : "") +
+        (intereses.length ? `<h5>Me interesa</h5><ul>${li(intereses)}</ul>` : "") +
+        (puertas.length ? `<h5>Puertas de entrada</h5><ul>${li(puertas)}</ul>` : "");
+    }
+    const t = textoResumen();
+    $("#res-texto").value = t;
+    $("#res-wa").href = "https://wa.me/?text=" + encodeURIComponent(t);
+    const eb = $("#v-elegir");
+    if (eb) {
+      eb.disabled = vActual === "hoy";
+      eb.textContent = vActual === "hoy" ? "Elija una variación" : (sel.cima === vActual ? "Elegida para su selección ✓" : "Elegir esta para mi selección");
+    }
+  }
+  document.addEventListener("click", e => {
+    const b = e.target.closest("[data-pick]");
+    if (!b) return;
+    const id = b.dataset.pick;
+    if (sel.items[id]) delete sel.items[id]; else sel.items[id] = b.dataset.label;
+    guardar(); pintar();
+  });
+  $("#res-copiar").addEventListener("click", () => {
+    const t = textoResumen(), est = $("#res-estado"), ta = $("#res-texto");
+    const fallback = () => { ta.hidden = false; ta.focus(); ta.select(); est.textContent = "Seleccione el texto y cópielo."; };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(() => { est.textContent = "Resumen copiado."; }, fallback);
+    } else fallback();
+  });
+  let borrarArmado = 0;
+  $("#res-borrar").addEventListener("click", e => {
+    const b = e.currentTarget;
+    if (Date.now() - borrarArmado > 4000) { borrarArmado = Date.now(); b.textContent = "Toque otra vez para borrar"; setTimeout(() => { b.textContent = "Borrar selección"; }, 4000); return; }
+    sel.items = {}; sel.cima = null; guardar(); pintar(); b.textContent = "Borrar selección"; borrarArmado = 0;
+    $("#res-estado").textContent = "Selección borrada.";
+  });
+  $("#b-sel").addEventListener("click", () => $("#lam-contacto").scrollIntoView({ behavior: reduce ? "auto" : "smooth" }));
+
+  /* ---------------- comparador hoy / propuesta ---------------- */
+  const setPos = (c, v) => {
+    c.style.setProperty("--pos", v + "%");
+    const r = $(".cmp-range", c); if (r) r.value = Math.round(v);
+  };
+  $$(".cmp").forEach(c => {
+    const r = $(".cmp-range", c);
+    r.addEventListener("input", () => { c.dataset.tocado = "1"; setPos(c, +r.value); });
+  });
+  const ease = k => 1 - Math.pow(1 - k, 3);
+  function barrer(c) {
+    if (c.dataset.tocado || c.dataset.barrido) return;
+    c.dataset.barrido = "1";
+    const fin = +c.dataset.start || 55;
+    if (reduce) { setPos(c, fin); return; }
+    c.classList.add("barriendo");
+    const fases = [[0, 100, 1500], [100, 100, 300], [100, fin, 700]];
+    let i = 0, t0 = null;
+    const paso = t => {
+      if (c.dataset.tocado) { c.classList.remove("barriendo"); return; }
+      if (t0 === null) t0 = t;
+      const [a, b, d] = fases[i], k = Math.min(1, (t - t0) / d);
+      setPos(c, a + (b - a) * ease(k));
+      if (k >= 1) { i++; t0 = t; if (i >= fases.length) { c.classList.remove("barriendo"); return; } }
+      requestAnimationFrame(paso);
+    };
+    requestAnimationFrame(paso);
+  }
+
+  /* ---------------- pestañas de escenas ---------------- */
+  $$(".scene").forEach(s => {
+    const tabs = $$('[role="tab"]', s);
+    const activar = i => tabs.forEach((t, k) => {
+      const on = k === i, p = document.getElementById(t.getAttribute("aria-controls"));
+      t.setAttribute("aria-selected", on ? "true" : "false"); t.tabIndex = on ? 0 : -1;
+      if (p) {
+        p.hidden = !on;
+        const c = on && $(".cmp", p);
+        if (c && !c.dataset.barrido) { setPos(c, 0); requestAnimationFrame(() => barrer(c)); }
+      }
+    });
+    tabs.forEach((t, i) => {
+      t.addEventListener("click", () => activar(i));
+      t.addEventListener("keydown", e => {
+        if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+        e.preventDefault(); e.stopPropagation();
+        const j = (i + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
+        activar(j); tabs[j].focus();
+      });
+    });
+  });
+
+  /* ---------------- la cima: variaciones ---------------- */
+  const stage = $(".v-stage");
+  const vimgs = $$(".v-img"), vbtns = $$(".vbtn");
+  let vActual = "virgen";
+  function elegirV(v) {
+    if (v === vActual) return;
+    const nuevo = vimgs.find(i => i.dataset.v === v), viejo = vimgs.find(i => i.dataset.v === vActual);
+    vimgs.forEach(i => i.classList.remove("prev"));
+    if (viejo) { viejo.classList.remove("on"); viejo.classList.add("prev"); }
+    nuevo.classList.add("on");
+    stage.classList.remove("go"); void stage.offsetWidth; stage.classList.add("go");
+    vActual = v;
+    vbtns.forEach(b => b.setAttribute("aria-pressed", b.dataset.v === v ? "true" : "false"));
+    $("#v-tag").textContent = v === "hoy" ? "HOY · FOTO REAL DEL DRON · 08-10-2026" : "IMAGEN REFERENCIAL · MISMA FOTO DEL DRON";
+    setTimeout(() => { if (viejo && viejo.dataset.v !== vActual) viejo.classList.remove("prev"); }, 1400);
+    pintar();
+  }
+  vbtns.forEach(b => b.addEventListener("click", () => elegirV(b.dataset.v)));
+  $("#v-elegir").addEventListener("click", () => {
+    if (vActual === "hoy") return;
+    sel.cima = sel.cima === vActual ? null : vActual; guardar(); pintar();
+  });
+
+  /* ---------------- portada ---------------- */
+  const hero = $(".hero");
+  if (!reduce) {
+    hero.classList.add("go");
+    $(".hero-prop", hero).addEventListener("animationend", () => hero.classList.remove("go"), { once: true });
+  }
+  $("#hero-toggle").addEventListener("click", e => {
+    const b = e.currentTarget, ver = !hero.classList.contains("ver-hoy");
+    hero.classList.remove("go"); hero.classList.toggle("ver-hoy", ver);
+    b.setAttribute("aria-pressed", ver ? "true" : "false");
+    b.textContent = ver ? "Ver la propuesta" : "Ver la foto real de hoy";
+  });
+
+  /* ---------------- mapas: resaltar rutas ---------------- */
+  $$("[data-route]").forEach(li => {
+    if (!li.matches("li")) return;
+    const sec = li.closest(".lam"), k = li.dataset.route;
+    const on = v => { $$(`path[data-k="${k}"]`, sec).forEach(p => p.classList.toggle("hl", v)); $$(`.pin[data-route="${k}"]`, sec).forEach(p => p.classList.toggle("hl", v)); };
+    li.addEventListener("mouseenter", () => on(true)); li.addEventListener("mouseleave", () => on(false));
+  });
+
+  /* ---------------- animaciones al entrar en pantalla ---------------- */
+  const lams = $$(".lam");
+  if ("IntersectionObserver" in window && !reduce) {
+    $$(".draw").forEach(d => { if (!inView(d)) d.classList.add("armed"); });
+    $$(".cmp").forEach(c => { if (!inView(c) && !c.closest("[hidden]")) setPos(c, 0); else if (inView(c)) c.dataset.barrido = "1"; });
+    const io = new IntersectionObserver(ents => ents.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target;
+      if (el.classList.contains("draw")) { if (el.classList.contains("armed")) { el.classList.remove("armed"); el.classList.add("play"); } }
+      else if (el.classList.contains("cmp")) barrer(el);
+      io.unobserve(el);
+    }), { threshold: 0.45 });
+    $$(".draw, .cmp").forEach(el => io.observe(el));
+  }
+
+  /* ---------------- navegación por láminas ---------------- */
+  const donde = $("#donde"), prog = $("#progreso"), links = $$(".indice a");
+  const actual = () => { const y = window.innerHeight * 0.35; let i = 0; lams.forEach((l, k) => { if (l.getBoundingClientRect().top <= y) i = k; }); return i; };
+  const ir = i => { i = Math.max(0, Math.min(lams.length - 1, i)); lams[i].scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); };
+  let tick = false;
+  const alScroll = () => {
+    tick = false;
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.width = (h > 0 ? 100 * window.scrollY / h : 0) + "%";
+    const i = actual();
+    donde.textContent = String(i).padStart(2, "0") + " · " + lams[i].dataset.title;
+    links.forEach((a, k) => a.classList.toggle("act", k === i));
+  };
+  window.addEventListener("scroll", () => { if (!tick) { tick = true; requestAnimationFrame(alScroll); } }, { passive: true });
+  alScroll();
+  document.addEventListener("keydown", e => {
+    const t = e.target;
+    if (t.closest && t.closest("input, textarea, select")) return;
+    const k = e.key;
+    if (k === " " && t.closest && t.closest("button, a")) return;
+    if (k === "ArrowDown" || k === "PageDown" || k === " ") { e.preventDefault(); ir(actual() + 1); }
+    else if (k === "ArrowUp" || k === "PageUp") { e.preventDefault(); ir(actual() - 1); }
+    else if (k === "Home") { e.preventDefault(); ir(0); }
+    else if (k === "End") { e.preventDefault(); ir(lams.length - 1); }
+    else if (k === "Escape") cerrarIndice();
+  });
+
+  /* índice */
+  const bIndice = $("#b-indice"), indice = $("#indice");
+  const cerrarIndice = () => { indice.hidden = true; bIndice.setAttribute("aria-expanded", "false"); };
+  bIndice.addEventListener("click", () => { const abrir = indice.hidden; indice.hidden = !abrir; bIndice.setAttribute("aria-expanded", abrir ? "true" : "false"); });
+  indice.addEventListener("click", e => { if (e.target.closest("a")) cerrarIndice(); });
+  document.addEventListener("click", e => { if (!indice.hidden && !e.target.closest("#indice, #b-indice")) cerrarIndice(); });
+
+  /* notas de revisión */
+  const bNotas = $("#b-notas");
+  const notas = v => { root.classList.toggle("revision", v); bNotas.setAttribute("aria-pressed", v ? "true" : "false"); store.set("chucuri-notas", v); };
+  notas(store.get("chucuri-notas") === true);
+  bNotas.addEventListener("click", () => notas(!root.classList.contains("revision")));
+
+  /* pantalla completa */
+  const bFull = $("#b-full");
+  if (!document.fullscreenEnabled) bFull.hidden = true;
+  bFull.addEventListener("click", () => {
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    else root.requestFullscreen().catch(() => {});
+  });
+
+  /* ayuda inicial */
+  const ayuda = $("#ayuda");
+  const ocultarAyuda = () => ayuda.classList.add("fuera");
+  setTimeout(ocultarAyuda, 7000);
+  window.addEventListener("scroll", ocultarAyuda, { once: true, passive: true });
+
+  pintar();
+})();
+</script>
+</body>
+</html>
