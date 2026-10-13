@@ -17,7 +17,9 @@
   const CIELO_DIA = { "sky-color": "#6fa8dc", "horizon-color": "#dfe8f3", "fog-color": "#e3ebf3", "fog-ground-blend": 0.55, "horizon-fog-blend": 0.75, "sky-horizon-blend": 0.6, "atmosphere-blend": 0.85 };
   const CIELO_NOCHE = { "sky-color": "#050c1a", "horizon-color": "#13233d", "fog-color": "#0a1424", "fog-ground-blend": 0.5, "horizon-fog-blend": 0.6, "sky-horizon-blend": 0.5, "atmosphere-blend": 0.6 };
 
-  let mapa = null, puntos = [], marcadores = {}, noche = false, variante = "virgen", recorrido = null;
+  let mapa = null, puntos = [], marcadores = {}, noche = false, variante = "virgen", recorrido = null, modelos = null;
+  /* versión de maqueta3d.js (la pone construir_sitio.py) para que el navegador no use una copia vieja */
+  const V3D = (document.currentScript && document.currentScript.dataset.v3d) || "1";
   const ficha = $("#ficha"), cargando = $(".maq-carga"), ayuda = $(".maq-ayuda");
 
   function estilo() {
@@ -114,13 +116,16 @@
       const b = document.createElement("button");
       const acceso = ACCESOS.includes(p.id);
       b.type = "button";
-      b.className = "hs" + (acceso ? " acceso" : "");
+      /* en la cima la etiqueta va al lado del punto, para no tapar la imagen de 34 m que se levanta ahí */
+      const lado = p.id === "cima";
+      b.className = "hs" + (acceso ? " acceso" : "") + (lado ? " lado" : "");
       b.setAttribute("aria-label", p.titulo);
       const corto = p.titulo.split(" · ")[0];
       const sobre = p.piso ? "Piso " + p.piso : (acceso ? "Alrededores" : "Conexión");
       b.innerHTML = `<span class="hs-etiqueta"><small>${sobre}</small>${corto}</span><span class="hs-punto"></span>`;
       b.addEventListener("click", ev => { ev.stopPropagation(); detenerRecorrido(); abrir(p.id, true); });
-      marcadores[p.id] = { el: b, m: new maplibregl.Marker({ element: b, anchor: "bottom" }).setLngLat([p.lon, p.lat]).addTo(mapa) };
+      marcadores[p.id] = { el: b, m: new maplibregl.Marker({ element: b, anchor: lado ? "left" : "bottom", offset: lado ? [-8, 0] : [0, 0] })
+        .setLngLat([p.lon, p.lat]).addTo(mapa) };
     });
     ajustarEtiquetas();
     /* los vuelos mueven la cámara cuadro a cuadro: las etiquetas se reordenan cuando la cámara se queda quieta */
@@ -198,13 +203,15 @@
   }
   /* hacia dónde mira la cámara en cada sitio: abajo, desde la ciudad hacia la montaña; arriba, desde la montaña hacia la ciudad */
   const RUMBO = { puerta: 140, universidad: 140, portal: 140, bulevar: 145, villa: 135, restaurante: 140, bosque: 140, puente: 140,
-    observatorio: 140, teleferico: 120, glamping: 300, cabanas: 300, aventura: 300, estacion: 295, capilla: 300, cima: 300, pinos: 300,
+    /* glamping, cabañas y aventura están ladera abajo de la cima: mirando hacia la ciudad la cámara quedaba encima de la cumbre */
+    observatorio: 140, teleferico: 120, glamping: 200, cabanas: 165, aventura: 150, estacion: 295, capilla: 300, cima: 300, pinos: 300,
     nevada: 220, rotaria: 150 };
   function volarA(p) {
-    const lejos = !p.piso;
+    const lejos = !p.piso && p.id !== "teleferico";      /* el teleférico, de cerca: se ven las torres y las cabinas */
     const pad = window.innerWidth > 900 ? { top: 60, right: ficha.offsetWidth + 60 } : { bottom: ficha.offsetHeight };
     const rumbo = RUMBO[p.id] ?? mapa.getBearing() * 0.6 + 150 * 0.4;
-    volar({ center: [p.lon, p.lat], zoom: lejos ? 15.2 : 16.3, pitch: 66, bearing: rumbo, padding: pad }, 3400);
+    /* cerca, para ver los modelos 3D con detalle */
+    volar({ center: [p.lon, p.lat], zoom: lejos ? 15.4 : 16.9, pitch: 64, bearing: rumbo, padding: pad }, 3400);
   }
 
   /* ---------------- cámara propia ----------------
@@ -288,6 +295,7 @@
     if (mapa.getLayer("obras")) mapa.setPaintProperty("obras", "fill-extrusion-color", ["get", v ? "noche" : "color"]);
     if (mapa.getLayer("pisos")) mapa.setPaintProperty("pisos", "raster-opacity", opacidadPisos(v));
     if (mapa.setSky) mapa.setSky(v ? CIELO_NOCHE : CIELO_DIA);
+    if (modelos) modelos.ponerNoche(v);
   }
 
   /* ---------------- recorrido guiado ---------------- */
@@ -330,6 +338,7 @@
       variante = b.dataset.variante;
       $$("[data-variante]").forEach(x => x.setAttribute("aria-pressed", x.dataset.variante === variante ? "true" : "false"));
       if (mapa.getLayer("obras")) mapa.setFilter("obras", filtroObras());
+      if (modelos) modelos.ponerVariante(variante);
       abrir("cima", true);
       /* la ficha muestra la imagen de la variación elegida */
       const k = imgs.findIndex(i => i.src.includes({ virgen: "V1g", cristo: "V2g", rosario: "V3g" }[variante]));
@@ -338,8 +347,8 @@
     if (b.dataset.capa) {
       const on = b.getAttribute("aria-pressed") !== "true";
       b.setAttribute("aria-pressed", on ? "true" : "false");
-      const capas = { pisos: ["pisos"], obras: ["obras"],
-        rutas: ["senderos", "cable", "caminos", "camineria", "camineria-halo", "camineria-nombre"] }[b.dataset.capa] || [];
+      const capas = { pisos: ["pisos"], obras: [modelos ? "modelos3d" : "obras"],
+        rutas: ["senderos", "caminos", "camineria", "camineria-halo", "camineria-nombre"].concat(modelos ? [] : ["cable"]) }[b.dataset.capa] || [];
       capas.forEach(c => mapa.getLayer(c) && mapa.setLayoutProperty(c, "visibility", on ? "visible" : "none"));
       if (b.dataset.capa === "pisos") $(".leyenda-pisos").hidden = !on;
     }
@@ -351,12 +360,15 @@
     if (mapa) return;
     mapa = new maplibregl.Map({
       container: "mapa", style: estilo(), ...VISTA, maxPitch: 80, minZoom: 11.5, maxZoom: 17.6,
-      cooperativeGestures: true, attributionControl: { compact: true }, fadeDuration: 200
+      cooperativeGestures: true, attributionControl: { compact: true }, fadeDuration: 200,
+      /* bordes limpios en los modelos 3D; en pantallas densas (teléfonos) no hace falta y se ahorra trabajo */
+      canvasContextAttributes: { antialias: (window.devicePixelRatio || 1) < 2 && !/[?&]sinaa\b/.test(location.search) }
     });
     window.maqueta = mapa;
     mapa.addControl(new maplibregl.NavigationControl({ visualizePitch: true, showCompass: true }), "top-right");
     mapa.on("load", async () => {
       try { await capasPropias(); } catch (e) { console.error("Capas de la maqueta:", e); }
+      cargarModelos();
       ponerNoche(noche);
       cargando.classList.add("fuera");
       /* créditos del mapa plegados en su botón (i); también están en el pie de la página */
@@ -382,6 +394,35 @@
     seccion.classList.add("explorando");
     if (ayuda) ayuda.classList.add("fuera");
   }
+
+  /* modelos 3D detallados (three.js, js/maqueta3d.js). Si no cargan, quedan los volúmenes simples. */
+  let seVe = false;
+  async function cargarModelos() {
+    if (/[?&]sin3d\b/.test(location.search)) return;     /* para comparar: ?sin3d deja los volúmenes simples */
+    try {
+      const [mod, datos] = await Promise.all([
+        import(new URL("js/maqueta3d.js?v=" + V3D, document.baseURI).href),
+        fetch("datos/modelos.json").then(r => r.json())]);
+      modelos = mod.crearModelos3D(mapa, maplibregl, datos);
+      mapa.addLayer(modelos.capa);
+      /* con los modelos ya no hacen falta los volúmenes simples ni la línea del teleférico pintada en el suelo */
+      if (mapa.getLayer("obras")) mapa.setLayoutProperty("obras", "visibility", "none");
+      if (mapa.getLayer("cable")) mapa.setLayoutProperty("cable", "visibility", "none");
+      const chip = $("[data-capa=obras]");
+      if (chip && chip.getAttribute("aria-pressed") !== "true") mapa.setLayoutProperty("modelos3d", "visibility", "none");
+      modelos.ponerVariante(variante);
+      modelos.ponerNoche(noche);
+      animarModelos();
+    } catch (e) {
+      console.warn("Modelos 3D no disponibles; quedan los volúmenes simples.", e);
+      modelos = null;
+    }
+  }
+  /* las cabinas del teleférico solo se mueven con la maqueta a la vista (ahorra batería) */
+  function animarModelos() { if (modelos) modelos.animar(seVe && !reduce && !document.hidden); }
+  if ("IntersectionObserver" in window)
+    new IntersectionObserver(e => { seVe = e.some(x => x.isIntersecting); animarModelos(); }, { threshold: 0.15 }).observe(seccion);
+  document.addEventListener("visibilitychange", animarModelos);
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(e => { if (e.some(x => x.isIntersecting)) { crear(); io.disconnect(); } }, { rootMargin: "600px 0px" });
     io.observe(seccion);
