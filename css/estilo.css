@@ -264,6 +264,7 @@ p { margin: 0; }
 .caminos-graf text.dim { fill: var(--gris); font-size: 18px; }
 .caminos-graf text.grande { fill: var(--neon); font-size: 54px; font-weight: 700; }
 .caminos-graf text.grande.gris { fill: #8190A3; }
+.caminos-graf.vertical { display: none; }
 .tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
 .tarjeta { border: 1px solid var(--linea); border-top: 3px solid var(--neon); border-radius: 14px; padding: 18px; background: linear-gradient(160deg, rgba(245, 140, 30, .08), rgba(14, 27, 45, .5)); display: flex; flex-direction: column; gap: 8px; }
 .tarjeta b { font: 700 clamp(30px, 3vw, 44px)/1 var(--f-display); color: var(--neon); font-variant-numeric: tabular-nums; }
@@ -335,6 +336,8 @@ p { margin: 0; }
 .js .cortina.visto { clip-path: inset(0 0 0 0); transition: clip-path 1.4s var(--ease); }
 
 @media (max-width: 1080px) {
+  /* iPhone de lado: el margen nunca queda debajo de la muesca (fuera del teléfono vale 0 y no cambia nada) */
+  :root { --gutter: max(clamp(16px, 4.2vw, 64px), env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px)); }
   .fases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .carrusel { grid-auto-columns: minmax(260px, 70%); }
 }
@@ -356,18 +359,123 @@ p { margin: 0; }
   .leyenda-pisos { display: none; }
   .maqueta .maplibregl-ctrl-top-right { top: calc(170px + env(safe-area-inset-top, 0px)); }
   .bajar { display: none; }
+  /* portada: crece si el texto no cabe, en vez de cortarse por arriba bajo la barra */
+  .hero { height: auto; min-height: 100vh; min-height: 100svh; }
+  .hero-txt { padding-top: calc(96px + env(safe-area-inset-top, 0px)); }
+  /* en una sola columna el título va antes que su imagen, también en los bloques invertidos */
+  .duo.invertido > .txt { order: -1; }
+  .numeros > div:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .equipo { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* galerías que se deslizan hasta el borde de la pantalla */
+  .carrusel { margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }
+  .carrusel, .corte-wrap, .caminos-graf, .maq-controles, .ficha-mini { overscroll-behavior-x: contain; }
+  .menu, .visor, .ficha-cuerpo { overscroll-behavior: contain; }
+  .ficha-img { aspect-ratio: 16 / 9; }
+  .ficha-cuerpo { padding-bottom: calc(18px + env(safe-area-inset-bottom, 0px)); }
+  /* si no cabe, la ficha se desliza: no se aplastan las miniaturas */
+  .ficha-cuerpo > * { flex-shrink: 0; }
+  /* sitio sin imágenes: el título no pasa por debajo del botón de cerrar */
+  .ficha-img[hidden] + .ficha-cuerpo > .ficha-piso, .ficha-img[hidden] + .ficha-cuerpo > h3 { padding-right: 52px; }
+  .visor-num { flex: none; white-space: nowrap; }
+  /* comparador: en el iPhone el deslizador solo se mueve arrastrando su botón; se hace del tamaño de la perilla visible */
+  .cmp input { -webkit-appearance: none; appearance: none; background: transparent; }
+  .cmp input::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 46px; height: 46px; border-radius: 50%; background: transparent; }
+  a, button, .foto, .cmp { -webkit-tap-highlight-color: rgba(245, 140, 30, .18); }
+  /* puntos de la maqueta: solo el punto y la etiqueta visible reciben el toque (la etiqueta oculta no tapa otros puntos) */
+  .hs { pointer-events: none; }
+  .hs-punto, .hs-etiqueta { pointer-events: auto; }
+  .hs-punto::before { content: ""; position: absolute; inset: -14px; border-radius: 50%; }
+  /* las etiquetas visibles van por encima de los puntos sin etiqueta */
+  .maplibregl-marker.hs:not(.sin-etiqueta) { z-index: 2; }
+  .maplibregl-marker.hs:hover, .maplibregl-marker.hs.activo { z-index: 3; }
 }
 @media (max-width: 640px) {
   .donde { display: none; }
   .fases { grid-template-columns: minmax(0, 1fr); }
-  .maq-cabeza p { display: none; }
+  .maq-cabeza p:not(.num-sec) { display: none; }
   .maqueta .maplibregl-ctrl-top-right { display: none; }
-  /* en el teléfono los controles van en una sola fila que se desliza */
-  .maq-controles { flex-wrap: nowrap; overflow-x: auto; pointer-events: auto; right: 0; padding-right: var(--gutter); scrollbar-width: none; }
+  /* en el teléfono los controles van en una sola fila que se desliza de borde a borde */
+  .maq-controles { flex-wrap: nowrap; overflow-x: auto; pointer-events: auto; left: 0; right: 0; bottom: calc(46px + env(safe-area-inset-bottom, 0px)); padding: 0 var(--gutter); scroll-padding-inline: var(--gutter); scrollbar-width: none; }
   .maq-controles::-webkit-scrollbar { display: none; }
-  .maq-controles .chip { padding: 9px 12px; font-size: 12.5px; }
+  .maq-controles .chip { padding: 0 14px; min-height: 44px; font-size: 12.5px; }
+  .maq-controles .grupo-chips .chip { min-height: 42px; }
+  .maqueta .maplibregl-ctrl-bottom-right { bottom: env(safe-area-inset-bottom, 0px); }
   .cmp .tag .largo { display: none; }
   .hs-etiqueta { font-size: 11px; padding: 5px 7px; }
+
+  /* ritmo vertical: menos aire muerto entre secciones; cada bloque se separa más que sus partes */
+  html { scroll-padding-top: 16px; }
+  .sec { padding-top: 64px; padding-bottom: 64px; }
+  .envoltura { gap: 28px; }
+  .cabeza { gap: 16px; }
+  .cabeza h2 { font-size: clamp(34px, 11vw, 44px); }
+  .duo { gap: 16px; }
+  .txt { gap: 14px; }
+  .fuente { font-size: 14px; }
+  .credito { border-radius: 14px; }
+  .paralaje h2 { max-width: none; }
+
+  /* portada: título, cifras y botones en una pantalla, sin tocar la barra */
+  .hero-txt { padding-top: calc(80px + env(safe-area-inset-top, 0px)); padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px)); gap: 13px; }
+  .hero h1 { font-size: min(76px, 20.5vw); white-space: nowrap; }
+  .hero .ceja { font-size: 12.5px; letter-spacing: .16em; gap: 10px; }
+  .sub { font-size: 16px; letter-spacing: .16em; }
+  .hero .lead { line-height: 1.5; }
+  .cifras { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 2px; }
+  .cifras li { padding: 10px 12px; }
+  .cifras b { font-size: 26px; }
+  .acciones { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .acciones .btn { justify-content: center; min-height: 48px; }
+
+  /* números, galerías y tarjetas */
+  .numeros > div { padding: 18px 16px; }
+  .numeros b { white-space: nowrap; }
+  .carrusel { grid-auto-columns: 84%; gap: 12px; }
+  .carrusel .foto img { aspect-ratio: 4 / 3; }
+  .corte { min-width: 960px; }
+  /* el diagrama de los caminos se ve vertical, completo y sin deslizar */
+  .caminos-graf { display: none; }
+  .caminos-graf.vertical { display: block; }
+  .caminos-graf.vertical svg { min-width: 0; }
+  .caminos-graf.vertical text { font-size: 18px; }
+  .caminos-graf.vertical text.dim { font-size: 15px; }
+  .caminos-graf.vertical text.grande { font-size: 44px; }
+  .v-botones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .v-botones .chip { justify-content: center; min-height: 44px; padding: 8px 10px; letter-spacing: .08em; white-space: normal; text-align: center; line-height: 1.15; }
+  .equipo { gap: 12px; }
+  .persona { padding: 12px; gap: 10px; }
+  .persona h4 { font-size: 18px; }
+  .persona .retrato span { top: 8px; left: 8px; }
+
+  /* toques cómodos: botones de al menos 40-44 px */
+  .b-menu { position: relative; }
+  .b-menu::after { content: ""; position: absolute; inset: -6px -4px; }
+  .menu .cerrar, .visor .cerrar { min-height: 44px; padding: 0 18px; }
+  .dn-switch { top: 10px; right: 10px; }
+  .dn-switch button { padding: 13px 14px; }
+
+  /* ficha de la maqueta (hoja inferior): más compacta para que se vea el mapa */
+  .ficha-cuerpo { padding: 14px 16px calc(16px + env(safe-area-inset-bottom, 0px)); gap: 10px; }
+  .ficha-cuerpo h3 { font-size: 22px; }
+  .ficha-cuerpo .pie { font-size: 15px; }
+  .ficha-cerrar { top: 8px; right: 8px; width: 44px; height: 44px; }
+  .ficha-tabs button { padding: 13px 12px; }
+  .ficha-nav .chip { justify-content: center; min-height: 44px; }
+}
+/* teléfono de lado (poca altura): la maqueta cabe en la pantalla y la ficha va al costado, como en la computadora */
+@media (max-width: 932px) and (max-height: 500px) and (orientation: landscape) {
+  .hero h1 { font-size: min(15vw, 24vh); }
+  .maqueta { min-height: 0; }
+  .maq-cabeza { top: calc(66px + env(safe-area-inset-top, 0px)); }
+  .maq-cabeza h2 { font-size: 30px; }
+  .maq-cabeza p:not(.num-sec) { display: none; }
+  .maqueta .maplibregl-ctrl-top-right { top: calc(66px + env(safe-area-inset-top, 0px)); }
+  .maq-controles { flex-wrap: nowrap; overflow-x: auto; pointer-events: auto; left: 0; right: 44px; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); padding: 0 var(--gutter); scroll-padding-inline: var(--gutter); scrollbar-width: none; }
+  .maq-controles::-webkit-scrollbar { display: none; }
+  .ficha { top: calc(64px + env(safe-area-inset-top, 0px)); bottom: calc(10px + env(safe-area-inset-bottom, 0px)); left: auto; right: var(--gutter); width: min(400px, 50%); max-height: none; border-radius: 18px; }
+  .ficha[hidden] { transform: translateX(110%); }
+  .ficha-img { aspect-ratio: auto; flex: 0 0 44%; }
+  .ficha-cuerpo { padding-bottom: 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

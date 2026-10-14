@@ -12,6 +12,12 @@
   /* vista general (ciudad + montaña + horizonte) y el acercamiento lento con que arranca */
   const VISTA = { center: [-72.2205, 7.7422], zoom: 14.4, pitch: 66, bearing: 162 };
   const VISTA_INTRO = { center: [-72.2197, 7.7400], zoom: 14.72, pitch: 64, bearing: 132 };
+  /* en el teléfono (pantalla angosta y alta) la montaña entera cabe mirando a lo largo del terreno, de la entrada a la cima */
+  const angosta = () => window.innerWidth < 641;
+  const VISTA_TEL = { center: [-72.2222, 7.7392], zoom: 13.95, pitch: 64, bearing: 120 };
+  const VISTA_INTRO_TEL = { center: [-72.2222, 7.7392], zoom: 14.25, pitch: 64, bearing: 105 };
+  const vistaGeneral = () => angosta() ? VISTA_TEL : VISTA;
+  const vistaIntro = () => angosta() ? VISTA_INTRO_TEL : VISTA_INTRO;
   const ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
   const DEM = "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png";
   const CIELO_DIA = { "sky-color": "#6fa8dc", "horizon-color": "#dfe8f3", "fog-color": "#e3ebf3", "fog-ground-blend": 0.55, "horizon-fog-blend": 0.75, "sky-horizon-blend": 0.6, "atmosphere-blend": 0.85 };
@@ -133,11 +139,14 @@
     mapa.on("moveend", () => { clearTimeout(espera); espera = setTimeout(ajustarEtiquetas, 140); });
     requestAnimationFrame(() => requestAnimationFrame(ajustarEtiquetas));
   }
-  /* etiquetas sin encimarse: se muestran por orden de importancia; las que chocan quedan como punto (se ven al pasar el cursor) */
+  /* etiquetas sin encimarse: se muestran por orden de importancia; las que chocan quedan como punto (se ven al pasar el cursor).
+     En el teléfono, además, una etiqueta no tapa otros puntos, la barra, el título, los controles ni la ficha, ni se sale de la pantalla. */
   const PRIORIDAD = ["puerta", "cima", "glamping", "bosque", "bulevar", "villa", "teleferico", "nevada", "rotaria", "estacion", "capilla",
     "cabanas", "aventura", "restaurante", "universidad", "puente", "observatorio", "pinos", "portal", "viento", "panaga", "roca"];
+  const toca = (r, o, mx, my) => r.left - mx < o.right && r.right + mx > o.left && r.top - my < o.bottom && r.bottom + my > o.top;
   function ajustarEtiquetas() {
-    seccion.classList.toggle("compacto", mapa.getZoom() < 14.6 && window.innerWidth < 900);
+    const movil = window.innerWidth < 900;
+    seccion.classList.toggle("compacto", mapa.getZoom() < (angosta() ? 13.8 : 14.6) && movil);
     const ids = Object.keys(marcadores).sort((a, b) => {
       const pa = marcadores[a].el.classList.contains("activo") ? -1 : PRIORIDAD.indexOf(a);
       const pb = marcadores[b].el.classList.contains("activo") ? -1 : PRIORIDAD.indexOf(b);
@@ -145,10 +154,17 @@
     });
     ids.forEach(id => marcadores[id].el.classList.remove("sin-etiqueta"));
     const ocupado = [];
-    ids.forEach(id => {
+    const tapas = !movil ? [] : [".barra", ".maq-controles", ".maq-ayuda:not(.fuera)", seccion.classList.contains("explorando") ? "" : ".maq-cabeza", ficha.hidden ? "" : "#ficha"]
+      .filter(Boolean).map(s => $(s)).filter(Boolean).map(e => e.getBoundingClientRect());
+    /* MapLibre deja casi transparente el punto que queda detrás de una loma: en el teléfono su etiqueta no se muestra */
+    const tapado = id => movil && parseFloat(marcadores[id].el.style.opacity || "1") < 0.5;
+    /* puntos de los sitios más importantes (los ya revisados): una etiqueta no los tapa; los de menos importancia quedan debajo de ella */
+    const puntosR = !movil ? [] : ids.map(id => tapado(id) ? null : marcadores[id].el.querySelector(".hs-punto").getBoundingClientRect());
+    ids.forEach((id, i) => {
       const r = marcadores[id].el.querySelector(".hs-etiqueta").getBoundingClientRect();
       if (!r.width) return;
-      const choca = ocupado.some(o => r.left - 6 < o.right && r.right + 6 > o.left && r.top - 4 < o.bottom && r.bottom + 4 > o.top);
+      const choca = ocupado.some(o => toca(r, o, 6, 4)) || (movil && (tapado(id) || r.left < 4 || r.right > window.innerWidth - 4 ||
+        tapas.some(o => toca(r, o, 0, 0)) || puntosR.slice(0, i).some(p => p && toca(r, p, 3, 3))));
       if (choca) marcadores[id].el.classList.add("sin-etiqueta"); else ocupado.push(r);
     });
   }
@@ -208,7 +224,9 @@
     nevada: 220, rotaria: 150 };
   function volarA(p) {
     const lejos = !p.piso && p.id !== "teleferico";      /* el teleférico, de cerca: se ven las torres y las cabinas */
-    const pad = window.innerWidth > 900 ? { top: 60, right: ficha.offsetWidth + 60 } : { bottom: ficha.offsetHeight };
+    /* ficha al costado (computadora y teléfono de lado) o abajo (teléfono y tableta de pie): el sitio queda en la parte libre */
+    const lateral = window.innerWidth > 900 || ficha.offsetWidth < window.innerWidth * 0.75;
+    const pad = lateral ? { top: 60, right: ficha.offsetWidth + 60 } : { top: $(".barra").offsetHeight, bottom: ficha.offsetHeight };
     const rumbo = RUMBO[p.id] ?? mapa.getBearing() * 0.6 + 150 * 0.4;
     /* cerca, para ver los modelos 3D con detalle */
     volar({ center: [p.lon, p.lat], zoom: lejos ? 15.4 : 16.9, pitch: 64, bearing: rumbo, padding: pad }, 3400);
@@ -309,7 +327,7 @@
     btn.setAttribute("aria-pressed", "true");
     const paso = () => {
       if (!recorrido) return;
-      if (i >= PARADAS.length) { detenerRecorrido(); cerrar(); volar(VISTA, 4000); return; }
+      if (i >= PARADAS.length) { detenerRecorrido(); cerrar(); volar(vistaGeneral(), 4000); return; }
       abrir(PARADAS[i++], true);
       recorrido.t = setTimeout(paso, reduce ? 4000 : 9000);
     };
@@ -329,7 +347,7 @@
     if (!b || !mapa) return;
     if (b.dataset.modo) ponerNoche(b.dataset.modo === "noche");
     if (b.dataset.accion === "recorrido") recorrido ? detenerRecorrido() : iniciarRecorrido();
-    if (b.dataset.accion === "inicio") { detenerRecorrido(); cerrar(); volar(VISTA, 2500); }
+    if (b.dataset.accion === "inicio") { detenerRecorrido(); cerrar(); volar(vistaGeneral(), 2500); }
     if (b.dataset.accion === "completa") {
       if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
       else seccion.requestFullscreen && seccion.requestFullscreen().catch(() => {});
@@ -354,12 +372,15 @@
     }
   });
   document.addEventListener("keydown", ev => { if (ev.key === "Escape" && !ficha.hidden) cerrar(); });
+  /* el iPhone no deja poner una parte de la página en pantalla completa: ahí el botón se quita en vez de no hacer nada */
+  const bCompleta = $("[data-accion=completa]");
+  if (bCompleta && !(document.fullscreenEnabled && seccion.requestFullscreen)) bCompleta.style.display = "none";
 
   /* ---------------- arranque perezoso: el mapa se crea al acercarse a la sección ---------------- */
   function crear() {
     if (mapa) return;
     mapa = new maplibregl.Map({
-      container: "mapa", style: estilo(), ...VISTA, maxPitch: 80, minZoom: 11.5, maxZoom: 17.6,
+      container: "mapa", style: estilo(), ...vistaGeneral(), maxPitch: 80, minZoom: 11.5, maxZoom: 17.6,
       cooperativeGestures: true, attributionControl: { compact: true }, fadeDuration: 200,
       /* bordes limpios en los modelos 3D; en pantallas densas (teléfonos) no hace falta y se ahorra trabajo */
       canvasContextAttributes: { antialias: (window.devicePixelRatio || 1) < 2 && !/[?&]sinaa\b/.test(location.search) }
@@ -386,13 +407,16 @@
   function intro() {
     if (!listo || !aLaVista || introHecha) return;
     introHecha = true;
-    if (!reduce && !seccion.classList.contains("explorando")) volar(VISTA_INTRO, 11000, null, false);
+    if (!reduce && !seccion.classList.contains("explorando")) volar(vistaIntro(), 11000, null, false);
     setTimeout(() => ayuda && ayuda.classList.add("fuera"), 5000);
     setTimeout(explorar, 12000);
   }
   function explorar() {
+    const antes = seccion.classList.contains("explorando");
     seccion.classList.add("explorando");
     if (ayuda) ayuda.classList.add("fuera");
+    /* en el teléfono el título apartaba algunas etiquetas: al retirarse, se vuelven a ubicar */
+    if (!antes && mapa && Object.keys(marcadores).length && window.innerWidth < 900) setTimeout(ajustarEtiquetas, 400);
   }
 
   /* modelos 3D detallados (three.js, js/maqueta3d.js). Si no cargan, quedan los volúmenes simples. */
