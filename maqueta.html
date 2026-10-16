@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maqueta 3D en vivo · La Chucurí</title>
+<meta name="theme-color" content="#08111D">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.9.0/dist/maplibre-gl.css">
+<link rel="stylesheet" href="css/estilo.css?v=4013df84">
+<style>.maqueta{height:100vh;height:100dvh}.barra .volver{margin-left:auto;margin-right:12px;color:#fff;font:600 14px Barlow,sans-serif;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:999px}.b-menu{display:none}</style>
+</head>
+<body>
+<div class="barra solida"><a class="logo" href="index.html"><svg viewBox="0 0 40 28" aria-hidden="true"><path d="M20 6c-2-4-8-6-13-5S0 6 3 11s9 5 13 4c-3 2-7 5-6 9s6 4 9 0l1-3 1 3c3 4 8 4 9 0s-3-7-6-9c4 1 10 1 13-4s-2-11-7-10-11 1-13 5z"/></svg>La Chucurí</a>
+<p class="donde" aria-live="polite"></p><a class="volver" href="index.html#maqueta">← Volver a la página</a><button type="button" class="b-menu" aria-expanded="false" aria-controls="menu">Índice</button><span class="progreso" aria-hidden="true"></span></div>
+<nav class="menu" id="menu" hidden aria-label="Índice"><button type="button" class="chip cerrar">Cerrar</button><ol><li><a href="index.html">La página</a></li></ol></nav>
+<main>
+<section class="maqueta" id="maqueta" data-titulo="Maqueta 3D en vivo" aria-label="Maqueta 3D de la montaña">
+<div id="mapa"></div>
+<div class="maq-carga"><p>Cargando la montaña</p></div>
+<div class="maq-cabeza"><p class="num-sec">Maqueta 3D en vivo</p><h2>Recorra la montaña</h2>
+<p>Gire, acerque y toque cada punto. Necesita una computadora o un teléfono reciente.</p></div>
+<div class="leyenda-pisos" aria-label="Leyenda de los pisos"></div>
+<p class="maq-ayuda">Toque los puntos · dos dedos para mover</p>
+<div class="maq-controles">
+<span class="grupo-chips" role="group" aria-label="Día o noche"><button type="button" class="chip" data-modo="dia" aria-pressed="true">Día</button><button type="button" class="chip" data-modo="noche" aria-pressed="false">Noche</button></span>
+<button type="button" class="chip" data-accion="recorrido" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5l11 7-11 7z"/></svg>Recorrido guiado</button>
+<span class="grupo-chips" role="group" aria-label="Imagen de la cima"><button type="button" class="chip" data-variante="virgen" aria-pressed="true">Virgen</button><button type="button" class="chip" data-variante="cristo" aria-pressed="false">Cristo</button><button type="button" class="chip" data-variante="rosario" aria-pressed="false">Rosario</button></span>
+<button type="button" class="chip" data-capa="pisos" aria-pressed="true">Pisos</button>
+<button type="button" class="chip" data-capa="obras" aria-pressed="true">Obras 3D</button>
+<button type="button" class="chip" data-capa="rutas" aria-pressed="true">Senderos</button>
+<button type="button" class="chip" data-accion="inicio">Vista general</button>
+<button type="button" class="chip" data-accion="completa">Pantalla completa</button>
+</div>
+<aside class="ficha" id="ficha" hidden aria-live="polite">
+<button type="button" class="ficha-cerrar" aria-label="Cerrar">×</button>
+<figure class="ficha-img"><img alt=""><span class="tag"></span><figcaption></figcaption></figure>
+<div class="ficha-cuerpo"><p class="ceja ficha-piso"></p><h3></h3><div class="ficha-tabs"></div><div class="ficha-mini"></div><p class="pie"></p>
+<span class="credito ficha-credito" hidden></span>
+<div class="ficha-nav"><button type="button" class="chip" data-nav="ant">Anterior</button><button type="button" class="chip" data-nav="sig">Siguiente</button></div></div>
+</aside>
+</section>
+</main>
+<div class="visor" id="visor" hidden role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+<button type="button" class="chip cerrar">Cerrar</button><button type="button" class="flecha ant" aria-label="Anterior">‹</button><button type="button" class="flecha sig" aria-label="Siguiente">›</button>
+<div class="visor-img"><img alt=""></div><div class="visor-pie"><span class="visor-texto"></span><span class="visor-num"></span></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://unpkg.com/maplibre-gl@5.9.0/dist/maplibre-gl.js"></script>
+<script src="js/app.js?v=7b3f0dcb"></script>
+<script src="js/maqueta.js?v=e609af23" data-v3d="f17bdc7c"></script>
+</body>
+</html>

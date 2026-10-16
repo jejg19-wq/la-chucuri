@@ -1,0 +1,610 @@
+{
+ "nota": "Presentación realista renderizada en Blender (produccion/09_maqueta_blender). Rutas relativas a sitio_web/media/presentacion/. El último cuadro de cada vuelo es la misma cámara que la foto fija de la parada de llegada (\"termina_en\"), así que se puede cortar del video a la foto sin salto.",
+ "ancho": 1920,
+ "alto": 1080,
+ "fps": 24,
+ "paradas": [
+  {
+   "id": "portada",
+   "titulo": "La Chucurí",
+   "modo": "dia",
+   "imagen_dia": "paradas/portada.webp",
+   "datos": "paradas/portada.json",
+   "imagen": "paradas/portada.webp",
+   "camara": {
+    "pos": [
+     -3539.89,
+     1179.88,
+     2921.78
+    ],
+    "mira": [
+     -55.15,
+     -88.46,
+     950.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "ciudad",
+   "titulo": "A 8 minutos de la Plaza Bolívar",
+   "modo": "dia",
+   "imagen_dia": "paradas/ciudad.webp",
+   "datos": "paradas/ciudad.json",
+   "imagen": "paradas/ciudad.webp",
+   "camara": {
+    "pos": [
+     -2383.32,
+     5068.19,
+     2130.0
+    ],
+    "mira": [
+     -1257.49,
+     3118.19,
+     830.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "terreno",
+   "titulo": "103,8 hectáreas",
+   "modo": "dia",
+   "imagen_dia": "paradas/terreno.webp",
+   "datos": "paradas/terreno.json",
+   "imagen": "paradas/terreno.webp",
+   "camara": {
+    "pos": [
+     -1794.72,
+     2001.99,
+     3264.04
+    ],
+    "mira": [
+     -22.06,
+     -110.57,
+     950.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "historia",
+   "titulo": "El Camino de los Españoles",
+   "modo": "dia",
+   "imagen_dia": "paradas/historia.webp",
+   "datos": "paradas/historia.json",
+   "imagen": "paradas/historia.webp",
+   "camara": {
+    "pos": [
+     -1355.79,
+     -291.97,
+     920.18
+    ],
+    "mira": [
+     -954.15,
+     -221.15,
+     730.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "puerta",
+   "titulo": "Piso 1 · La Puerta",
+   "modo": "dia",
+   "imagen_dia": "paradas/puerta.webp",
+   "imagen_noche": "paradas/puerta_noche.webp",
+   "datos": "paradas/puerta.json",
+   "imagen": "paradas/puerta.webp",
+   "camara": {
+    "pos": [
+     -1399.03,
+     -226.41,
+     1045.16
+    ],
+    "mira": [
+     -827.29,
+     -276.44,
+     740.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "agua",
+   "titulo": "Parque de agua y centro de fauna",
+   "modo": "dia",
+   "imagen_dia": "paradas/agua.webp",
+   "datos": "paradas/agua.json",
+   "imagen": "paradas/agua.webp",
+   "camara": {
+    "pos": [
+     -1332.45,
+     -569.41,
+     1035.0
+    ],
+    "mira": [
+     -882.45,
+     -309.61,
+     735.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "quebradas",
+   "titulo": "Piso 2 · Las quebradas",
+   "modo": "dia",
+   "imagen_dia": "paradas/quebradas.webp",
+   "datos": "paradas/quebradas.json",
+   "imagen": "paradas/quebradas.webp",
+   "camara": {
+    "pos": [
+     -911.07,
+     413.68,
+     1130.0
+    ],
+    "mira": [
+     -386.07,
+     110.57,
+     780.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "villa",
+   "titulo": "La villa y las cabañas",
+   "modo": "dia",
+   "imagen_dia": "paradas/villa.webp",
+   "datos": "paradas/villa.json",
+   "imagen": "paradas/villa.webp",
+   "camara": {
+    "pos": [
+     -776.62,
+     502.55,
+     1140.94
+    ],
+    "mira": [
+     -573.59,
+     -55.29,
+     770.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "bosque",
+   "titulo": "Piso 3 · El bosque",
+   "modo": "dia",
+   "imagen_dia": "paradas/bosque.webp",
+   "datos": "paradas/bosque.json",
+   "imagen": "paradas/bosque.webp",
+   "camara": {
+    "pos": [
+     -344.08,
+     433.94,
+     1480.0
+    ],
+    "mira": [
+     330.92,
+     44.23,
+     1030.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "meseta",
+   "titulo": "Piso 4 · La meseta",
+   "modo": "dia",
+   "imagen_dia": "paradas/meseta.webp",
+   "datos": "paradas/meseta.json",
+   "imagen": "paradas/meseta.webp",
+   "camara": {
+    "pos": [
+     -140.24,
+     415.67,
+     1281.68
+    ],
+    "mira": [
+     124.65,
+     -43.12,
+     1000.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "teleferico",
+   "titulo": "De la ciudad a la cima en 10 minutos",
+   "modo": "dia",
+   "imagen_dia": "paradas/teleferico.webp",
+   "datos": "paradas/teleferico.json",
+   "imagen": "paradas/teleferico.webp",
+   "camara": {
+    "pos": [
+     -1195.81,
+     -111.7,
+     1725.0
+    ],
+    "mira": [
+     55.15,
+     -221.15,
+     1000.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "cima",
+   "titulo": "Piso 5 · La cima",
+   "modo": "dia",
+   "imagen_dia": "paradas/cima.webp",
+   "imagen_noche": "paradas/cima_noche.webp",
+   "datos": "paradas/cima.json",
+   "imagen": "paradas/cima.webp",
+   "camara": {
+    "pos": [
+     458.31,
+     180.9,
+     1539.94
+    ],
+    "mira": [
+     871.42,
+     -232.21,
+     1255.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "rosario",
+   "titulo": "El gran Rosario",
+   "modo": "dia",
+   "imagen_dia": "paradas/rosario.webp",
+   "imagen_noche": "paradas/rosario_noche.webp",
+   "datos": "paradas/rosario.json",
+   "imagen": "paradas/rosario.webp",
+   "camara": {
+    "pos": [
+     816.17,
+     45.76,
+     1564.98
+    ],
+    "mira": [
+     917.74,
+     -233.31,
+     1268.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "estacion",
+   "titulo": "Estación Mirador, capilla y observatorio",
+   "modo": "dia",
+   "imagen_dia": "paradas/estacion.webp",
+   "imagen_noche": "paradas/estacion_noche.webp",
+   "datos": "paradas/estacion.json",
+   "imagen": "paradas/estacion.webp",
+   "camara": {
+    "pos": [
+     1206.52,
+     -558.96,
+     1440.01
+    ],
+    "mira": [
+     904.51,
+     -199.03,
+     1269.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "accesos",
+   "titulo": "Cómo se llega",
+   "modo": "dia",
+   "imagen_dia": "paradas/accesos.webp",
+   "datos": "paradas/accesos.json",
+   "imagen": "paradas/accesos.webp",
+   "camara": {
+    "pos": [
+     772.14,
+     3419.9,
+     3107.52
+    ],
+    "mira": [
+     772.14,
+     552.87,
+     1100.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "ha35",
+   "titulo": "Se adapta a su idea",
+   "modo": "dia",
+   "imagen_dia": "paradas/ha35.webp",
+   "datos": "paradas/ha35.json",
+   "imagen": "paradas/ha35.webp",
+   "camara": {
+    "pos": [
+     -1728.22,
+     254.39,
+     1640.36
+    ],
+    "mira": [
+     -573.59,
+     -165.86,
+     780.0
+    ],
+    "fov_v": 36.87
+   }
+  },
+  {
+   "id": "cierre",
+   "titulo": "La Chucurí de noche",
+   "modo": "noche",
+   "imagen_dia": "paradas/cierre.webp",
+   "imagen_noche": "paradas/cierre_noche.webp",
+   "datos": "paradas/cierre.json",
+   "imagen": "paradas/cierre_noche.webp",
+   "camara": {
+    "pos": [
+     -2094.35,
+     3443.53,
+     2851.78
+    ],
+    "mira": [
+     -55.15,
+     -88.46,
+     950.0
+    ],
+    "fov_v": 36.87
+   }
+  }
+ ],
+ "vuelos": [
+  {
+   "n": 1,
+   "desde": "portada",
+   "hasta": "ciudad",
+   "segundos": 7.0,
+   "cuadros": 168,
+   "modo": "dia",
+   "video": "vuelos/01_portada_ciudad.mp4",
+   "primer_cuadro": "vuelos/01_portada_ciudad_ini.webp",
+   "ultimo_cuadro": "vuelos/01_portada_ciudad_fin.webp",
+   "termina_en": "paradas/ciudad.webp",
+   "existe": true,
+   "mb": 12.8
+  },
+  {
+   "n": 2,
+   "desde": "ciudad",
+   "hasta": "terreno",
+   "segundos": 7.0,
+   "cuadros": 168,
+   "modo": "dia",
+   "video": "vuelos/02_ciudad_terreno.mp4",
+   "primer_cuadro": "vuelos/02_ciudad_terreno_ini.webp",
+   "ultimo_cuadro": "vuelos/02_ciudad_terreno_fin.webp",
+   "termina_en": "paradas/terreno.webp",
+   "existe": true,
+   "mb": 10.84
+  },
+  {
+   "n": 3,
+   "desde": "terreno",
+   "hasta": "historia",
+   "segundos": 7.0,
+   "cuadros": 168,
+   "modo": "dia",
+   "video": "vuelos/03_terreno_historia.mp4",
+   "primer_cuadro": "vuelos/03_terreno_historia_ini.webp",
+   "ultimo_cuadro": "vuelos/03_terreno_historia_fin.webp",
+   "termina_en": "paradas/historia.webp",
+   "existe": true,
+   "mb": 8.83
+  },
+  {
+   "n": 4,
+   "desde": "historia",
+   "hasta": "puerta",
+   "segundos": 5.33,
+   "cuadros": 128,
+   "modo": "dia",
+   "video": "vuelos/04_historia_puerta.mp4",
+   "primer_cuadro": "vuelos/04_historia_puerta_ini.webp",
+   "ultimo_cuadro": "vuelos/04_historia_puerta_fin.webp",
+   "termina_en": "paradas/puerta.webp",
+   "existe": true,
+   "mb": 2.33
+  },
+  {
+   "n": 5,
+   "desde": "puerta",
+   "hasta": "agua",
+   "segundos": 5.21,
+   "cuadros": 125,
+   "modo": "dia",
+   "video": "vuelos/05_puerta_agua.mp4",
+   "primer_cuadro": "vuelos/05_puerta_agua_ini.webp",
+   "ultimo_cuadro": "vuelos/05_puerta_agua_fin.webp",
+   "termina_en": "paradas/agua.webp",
+   "existe": true,
+   "mb": 2.74
+  },
+  {
+   "n": 6,
+   "desde": "agua",
+   "hasta": "quebradas",
+   "segundos": 5.71,
+   "cuadros": 137,
+   "modo": "dia",
+   "video": "vuelos/06_agua_quebradas.mp4",
+   "primer_cuadro": "vuelos/06_agua_quebradas_ini.webp",
+   "ultimo_cuadro": "vuelos/06_agua_quebradas_fin.webp",
+   "termina_en": "paradas/quebradas.webp",
+   "existe": true,
+   "mb": 5.57
+  },
+  {
+   "n": 7,
+   "desde": "quebradas",
+   "hasta": "villa",
+   "segundos": 5.29,
+   "cuadros": 127,
+   "modo": "dia",
+   "video": "vuelos/07_quebradas_villa.mp4",
+   "primer_cuadro": "vuelos/07_quebradas_villa_ini.webp",
+   "ultimo_cuadro": "vuelos/07_quebradas_villa_fin.webp",
+   "termina_en": "paradas/villa.webp",
+   "existe": true,
+   "mb": 3.42
+  },
+  {
+   "n": 8,
+   "desde": "villa",
+   "hasta": "bosque",
+   "segundos": 5.88,
+   "cuadros": 141,
+   "modo": "dia",
+   "video": "vuelos/08_villa_bosque.mp4",
+   "primer_cuadro": "vuelos/08_villa_bosque_ini.webp",
+   "ultimo_cuadro": "vuelos/08_villa_bosque_fin.webp",
+   "termina_en": "paradas/bosque.webp",
+   "existe": true,
+   "mb": 4.21
+  },
+  {
+   "n": 9,
+   "desde": "bosque",
+   "hasta": "meseta",
+   "segundos": 5.5,
+   "cuadros": 132,
+   "modo": "dia",
+   "video": "vuelos/09_bosque_meseta.mp4",
+   "primer_cuadro": "vuelos/09_bosque_meseta_ini.webp",
+   "ultimo_cuadro": "vuelos/09_bosque_meseta_fin.webp",
+   "termina_en": "paradas/meseta.webp",
+   "existe": true,
+   "mb": 2.45
+  },
+  {
+   "n": 10,
+   "desde": "meseta",
+   "hasta": "teleferico",
+   "segundos": 5.83,
+   "cuadros": 140,
+   "modo": "dia",
+   "video": "vuelos/10_meseta_teleferico.mp4",
+   "primer_cuadro": "vuelos/10_meseta_teleferico_ini.webp",
+   "ultimo_cuadro": "vuelos/10_meseta_teleferico_fin.webp",
+   "termina_en": "paradas/teleferico.webp",
+   "existe": true,
+   "mb": 4.28
+  },
+  {
+   "n": 11,
+   "desde": "teleferico",
+   "hasta": "cima",
+   "segundos": 6.12,
+   "cuadros": 147,
+   "modo": "dia",
+   "video": "vuelos/11_teleferico_cima.mp4",
+   "primer_cuadro": "vuelos/11_teleferico_cima_ini.webp",
+   "ultimo_cuadro": "vuelos/11_teleferico_cima_fin.webp",
+   "termina_en": "paradas/cima.webp",
+   "existe": true,
+   "mb": 5.0
+  },
+  {
+   "n": 12,
+   "desde": "cima",
+   "hasta": "rosario",
+   "segundos": 5.38,
+   "cuadros": 129,
+   "modo": "dia",
+   "video": "vuelos/12_cima_rosario.mp4",
+   "primer_cuadro": "vuelos/12_cima_rosario_ini.webp",
+   "ultimo_cuadro": "vuelos/12_cima_rosario_fin.webp",
+   "termina_en": "paradas/rosario.webp",
+   "existe": true,
+   "mb": 3.26
+  },
+  {
+   "n": 13,
+   "desde": "rosario",
+   "hasta": "estacion",
+   "segundos": 5.71,
+   "cuadros": 137,
+   "modo": "dia",
+   "video": "vuelos/13_rosario_estacion.mp4",
+   "primer_cuadro": "vuelos/13_rosario_estacion_ini.webp",
+   "ultimo_cuadro": "vuelos/13_rosario_estacion_fin.webp",
+   "termina_en": "paradas/estacion.webp",
+   "existe": true,
+   "mb": 7.11
+  },
+  {
+   "n": 14,
+   "desde": "estacion",
+   "hasta": "accesos",
+   "segundos": 7.0,
+   "cuadros": 168,
+   "modo": "dia",
+   "video": "vuelos/14_estacion_accesos.mp4",
+   "primer_cuadro": "vuelos/14_estacion_accesos_ini.webp",
+   "ultimo_cuadro": "vuelos/14_estacion_accesos_fin.webp",
+   "termina_en": "paradas/accesos.webp",
+   "existe": true,
+   "mb": 12.41
+  },
+  {
+   "n": 15,
+   "desde": "accesos",
+   "hasta": "ha35",
+   "segundos": 6.71,
+   "cuadros": 161,
+   "modo": "dia",
+   "video": "vuelos/15_accesos_ha35.mp4",
+   "primer_cuadro": "vuelos/15_accesos_ha35_ini.webp",
+   "ultimo_cuadro": "vuelos/15_accesos_ha35_fin.webp",
+   "termina_en": "paradas/ha35.webp",
+   "existe": true,
+   "mb": 9.73
+  },
+  {
+   "n": 16,
+   "desde": "ha35",
+   "hasta": "cierre",
+   "segundos": 6.08,
+   "cuadros": 146,
+   "modo": "dia_a_noche",
+   "video": "vuelos/16_ha35_cierre.mp4",
+   "primer_cuadro": "vuelos/16_ha35_cierre_ini.webp",
+   "ultimo_cuadro": "vuelos/16_ha35_cierre_fin.webp",
+   "termina_en": "paradas/cierre_noche.webp",
+   "existe": true,
+   "mb": 6.64
+  }
+ ],
+ "apertura": {
+  "n": 0,
+  "desde": "plaza_bolivar",
+  "hasta": "portada",
+  "segundos": 16.0,
+  "cuadros": 384,
+  "modo": "dia",
+  "video": "vuelos/00_apertura.mp4",
+  "primer_cuadro": "vuelos/00_apertura_ini.webp",
+  "ultimo_cuadro": "vuelos/00_apertura_fin.webp",
+  "termina_en": "paradas/portada.webp",
+  "existe": true,
+  "mb": 18.45
+ }
+}

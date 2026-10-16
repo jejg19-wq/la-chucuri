@@ -1,0 +1,230 @@
+{
+ "nota": "Paradas del modo presentación (reuniones). La cámara mira al 'objetivo' [lon, lat, altura m] desde 'distancia_m', con 'rumbo' (hacia dónde mira, grados desde el norte, en sentido horario) e 'inclinacion' (grados desde la vertical: 0 = mirando hacia abajo, 90 = horizonte). Lo usan presentacion.js (MapLibre) y produccion/09_maqueta_blender (los vuelos realistas). 'modo': dia | noche.",
+ "paradas": [
+  {
+   "id": "portada",
+   "titulo": "La Chucurí",
+   "objetivo": [
+    -72.2215,
+    7.7392,
+    950
+   ],
+   "rumbo": 110,
+   "inclinacion": 62,
+   "distancia_m": 4200,
+   "modo": "dia"
+  },
+  {
+   "id": "ciudad",
+   "titulo": "A 8 minutos de la Plaza Bolívar",
+   "objetivo": [
+    -72.2324,
+    7.7682,
+    830
+   ],
+   "rumbo": 150,
+   "inclinacion": 60,
+   "distancia_m": 2600,
+   "modo": "dia"
+  },
+  {
+   "id": "terreno",
+   "titulo": "103,8 hectáreas",
+   "objetivo": [
+    -72.2212,
+    7.739,
+    950
+   ],
+   "rumbo": 140,
+   "inclinacion": 50,
+   "distancia_m": 3600,
+   "modo": "dia"
+  },
+  {
+   "id": "historia",
+   "titulo": "El Camino de los Españoles",
+   "objetivo": [
+    -72.22965,
+    7.738,
+    730
+   ],
+   "rumbo": 80,
+   "inclinacion": 65,
+   "distancia_m": 450,
+   "modo": "dia"
+  },
+  {
+   "id": "puerta",
+   "titulo": "Piso 1 · La Puerta",
+   "objetivo": [
+    -72.2285,
+    7.7375,
+    740
+   ],
+   "rumbo": 95,
+   "inclinacion": 62,
+   "distancia_m": 650,
+   "modo": "dia"
+  },
+  {
+   "id": "agua",
+   "titulo": "Parque de agua y centro de fauna",
+   "objetivo": [
+    -72.229,
+    7.7372,
+    735
+   ],
+   "rumbo": 60,
+   "inclinacion": 60,
+   "distancia_m": 600,
+   "modo": "dia"
+  },
+  {
+   "id": "quebradas",
+   "titulo": "Piso 2 · Las quebradas",
+   "objetivo": [
+    -72.2245,
+    7.741,
+    780
+   ],
+   "rumbo": 120,
+   "inclinacion": 60,
+   "distancia_m": 700,
+   "modo": "dia"
+  },
+  {
+   "id": "villa",
+   "titulo": "La villa y las cabañas",
+   "objetivo": [
+    -72.2262,
+    7.7395,
+    770
+   ],
+   "rumbo": 160,
+   "inclinacion": 58,
+   "distancia_m": 700,
+   "modo": "dia"
+  },
+  {
+   "id": "bosque",
+   "titulo": "Piso 3 · El bosque",
+   "objetivo": [
+    -72.218,
+    7.7404,
+    1030
+   ],
+   "rumbo": 120,
+   "inclinacion": 60,
+   "distancia_m": 900,
+   "modo": "dia"
+  },
+  {
+   "id": "meseta",
+   "titulo": "Piso 4 · La meseta",
+   "objetivo": [
+    -72.21987,
+    7.73961,
+    1000
+   ],
+   "rumbo": 150,
+   "inclinacion": 62,
+   "distancia_m": 600,
+   "modo": "dia"
+  },
+  {
+   "id": "teleferico",
+   "titulo": "De la ciudad a la cima en 10 minutos",
+   "objetivo": [
+    -72.2205,
+    7.738,
+    1000
+   ],
+   "rumbo": 95,
+   "inclinacion": 66,
+   "distancia_m": 2000,
+   "modo": "dia",
+   "blender": {
+    "distancia_m": 1450,
+    "inclinacion": 60
+   }
+  },
+  {
+   "id": "cima",
+   "titulo": "Piso 5 · La cima",
+   "objetivo": [
+    -72.2131,
+    7.7379,
+    1255
+   ],
+   "rumbo": 135,
+   "inclinacion": 64,
+   "distancia_m": 650,
+   "modo": "dia"
+  },
+  {
+   "id": "rosario",
+   "titulo": "El gran Rosario",
+   "objetivo": [
+    -72.21268,
+    7.73789,
+    1268
+   ],
+   "rumbo": 160,
+   "inclinacion": 45,
+   "distancia_m": 420,
+   "modo": "dia"
+  },
+  {
+   "id": "estacion",
+   "titulo": "Estación Mirador, capilla y observatorio",
+   "objetivo": [
+    -72.2128,
+    7.7382,
+    1269
+   ],
+   "rumbo": 320,
+   "inclinacion": 70,
+   "distancia_m": 500,
+   "modo": "dia"
+  },
+  {
+   "id": "accesos",
+   "titulo": "Cómo se llega",
+   "objetivo": [
+    -72.214,
+    7.745,
+    1100
+   ],
+   "rumbo": 180,
+   "inclinacion": 55,
+   "distancia_m": 3500,
+   "modo": "dia"
+  },
+  {
+   "id": "ha35",
+   "titulo": "Se adapta a su idea",
+   "objetivo": [
+    -72.2262,
+    7.7385,
+    780
+   ],
+   "rumbo": 110,
+   "inclinacion": 55,
+   "distancia_m": 1500,
+   "modo": "dia"
+  },
+  {
+   "id": "cierre",
+   "titulo": "La Chucurí de noche",
+   "objetivo": [
+    -72.2215,
+    7.7392,
+    950
+   ],
+   "rumbo": 150,
+   "inclinacion": 65,
+   "distancia_m": 4500,
+   "modo": "noche"
+  }
+ ]
+}

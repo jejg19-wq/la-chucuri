@@ -1,0 +1,915 @@
+{
+"puntos": [
+{
+"id": "puerta",
+"titulo": "La Puerta · Mariposario y Centro de Ciencias",
+"corto": "La Puerta",
+"piso": "Piso 1 · La Puerta",
+"texto": "En la terraza baja, junto a la ciudad: un edificio en forma de mariposa con dos domos de mariposas vivas, museo de ciencias, laboratorios y un salón de conversación.",
+"imagenes": [
+{
+"src": "img/real/real_0425",
+"texto": "Así está hoy: la terraza baja junto a la quebrada",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/PU1_puerta_dia",
+"texto": "El edificio mariposa y sus dos domos",
+"tipo": "día"
+},
+{
+"src": "img/v2/CM1_caminerias",
+"texto": "Las caminerías entre jardines de mariposas",
+"tipo": "día"
+},
+{
+"src": "img/v2/PU2_puerta_noche",
+"texto": "La Puerta de noche",
+"tipo": "noche"
+},
+{
+"src": "img/v2/PU2_puerta_noche_alt",
+"texto": "La Puerta de noche · otra versión",
+"tipo": "noche"
+},
+{
+"src": "img/v2/M5_morpho_mano",
+"texto": "Dentro del domo: una Morpho azul",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/P06_domo_mariposario_v2",
+"texto": "Dentro del mariposario",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/LA1_laboratorio",
+"texto": "Los laboratorios de biodiversidad",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/SC1_salon_conversacion",
+"texto": "El salón de conversación",
+"tipo": "detalle"
+}
+],
+"ancla": "#puerta",
+"principal": true,
+"credito": ""
+},
+{
+"id": "universidad",
+"titulo": "El campus · universidad del bosque",
+"corto": "Campus",
+"piso": "Piso 1 · La Puerta",
+"texto": "Dos propuestas para la terraza baja: un campus de ciencias del bosque, o una ciudad universitaria con residencias.",
+"imagenes": [
+{
+"src": "img/real/real_0425",
+"texto": "Así está hoy",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/UN1_campus_A",
+"texto": "Propuesta A · campus del bosque",
+"tipo": "variación"
+},
+{
+"src": "img/v2/UN2_campus_B",
+"texto": "Propuesta B · campus con residencias",
+"tipo": "variación"
+},
+{
+"src": "img/v2/UN3_campus_vida",
+"texto": "La vida en el campus",
+"tipo": "detalle"
+}
+],
+"ancla": "#puerta",
+"principal": false,
+"credito": ""
+},
+{
+"id": "portal",
+"titulo": "El portal de entrada",
+"corto": "Portal",
+"piso": "Piso 1 · La Puerta",
+"texto": "La llegada desde la vía: portal de piedra y madera con taquillas y acceso peatonal, a 8 minutos de la Plaza Bolívar.",
+"imagenes": [
+{
+"src": "img/v2/PU4_fachada_noche",
+"texto": "El portal de noche",
+"tipo": "noche"
+}
+],
+"ancla": "#puerta",
+"principal": false,
+"credito": ""
+},
+{
+"id": "bulevar",
+"titulo": "El bulevar de la quebrada",
+"corto": "Bulevar",
+"piso": "Piso 2 · Las quebradas",
+"texto": "Donde el bosque toca los barrios: un colector y una planta de tratamiento devuelven la quebrada limpia, y a su lado un bulevar con áreas de ejercicio.",
+"imagenes": [
+{
+"src": "img/real/real_0420",
+"texto": "Así está hoy: la quebrada entre el barrio y el bosque",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/QB1_bulevar_dia",
+"texto": "El bulevar en la mañana",
+"tipo": "día"
+},
+{
+"src": "img/v2/BJ1_bulevar_ejercicio",
+"texto": "Las áreas de ejercicio junto a la quebrada",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/QB2_bulevar_noche",
+"texto": "El bulevar de noche",
+"tipo": "noche"
+},
+{
+"src": "img/v2/M4_agua",
+"texto": "Agua limpia otra vez",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/AG3_planta_tratamiento",
+"texto": "La planta de tratamiento junto a la quebrada",
+"tipo": "propuesta"
+}
+],
+"ancla": "#quebradas",
+"principal": false,
+"credito": ""
+},
+{
+"id": "villa",
+"titulo": "La villa · edificios entre los árboles",
+"corto": "La villa",
+"piso": "Piso 1 · La Puerta",
+"texto": "En la ladera baja, junto al barrio: edificios de tres y cuatro pisos escalonados entre los árboles, con caminerías y una plaza. Dónde y cuántos, lo deciden los propietarios.",
+"imagenes": [
+{
+"src": "img/real/real_0415",
+"texto": "Así está hoy: la ladera junto al barrio",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/VI1_villa_dia",
+"texto": "La villa entre los árboles",
+"tipo": "día"
+},
+{
+"src": "img/v2/VI2_villa_noche",
+"texto": "La villa de noche",
+"tipo": "noche"
+},
+{
+"src": "img/v2/VI3_villa_cerca",
+"texto": "Entre los edificios, la caminería sube hacia el bosque",
+"tipo": "detalle"
+}
+],
+"ancla": "#villa",
+"principal": false,
+"credito": ""
+},
+{
+"id": "restaurante",
+"titulo": "Restaurante de la quebrada",
+"corto": "Restaurante",
+"piso": "Piso 2 · Las quebradas",
+"texto": "Un restaurante de madera y piedra junto al agua, con terraza en medio del bosque: comer escuchando la quebrada.",
+"imagenes": [
+{
+"src": "img/v2/FR_rio_quebrada_v2",
+"texto": "Así son hoy las quebradas de la montaña (foto real)",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/RE1_restaurante_quebrada",
+"texto": "La terraza junto a la cascada",
+"tipo": "día"
+}
+],
+"ancla": "#quebradas",
+"principal": false,
+"credito": ""
+},
+{
+"id": "bosque",
+"titulo": "El bosque premontano · senderos",
+"corto": "El bosque",
+"piso": "Piso 3 · El bosque",
+"texto": "73 hectáreas de bosque premontano: senderos de interpretación, aulas abiertas, cascadas y fauna única.",
+"imagenes": [
+{
+"src": "img/v2/BO1_sendero_niebla",
+"texto": "Sendero de interpretación en la niebla",
+"tipo": "día"
+},
+{
+"src": "img/v2/BO5_aula_bosque",
+"texto": "Aula abierta en el bosque",
+"tipo": "día"
+},
+{
+"src": "img/v2/BO6_cascada",
+"texto": "Cascada y mirador de agua",
+"tipo": "día"
+},
+{
+"src": "img/v2/B1_bosque_noche",
+"texto": "El bosque de noche, con luciérnagas",
+"tipo": "noche"
+},
+{
+"src": "img/v2/M1_colibri",
+"texto": "Colibrí en una heliconia",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/M2_orquidea",
+"texto": "Orquídea Flor de Mayo",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/M3_heliconius",
+"texto": "Mariposa Heliconius",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/M6_bromelia_rana",
+"texto": "Ranita en una bromelia",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/M7_tucancito",
+"texto": "Tucancito esmeralda",
+"tipo": "detalle"
+}
+],
+"ancla": "#bosque",
+"principal": true,
+"credito": ""
+},
+{
+"id": "puente",
+"titulo": "Puentes entre las copas",
+"corto": "Puentes",
+"piso": "Piso 3 · El bosque",
+"texto": "Un puente colgante de 150 metros que cruza el bosque a la altura de las copas.",
+"imagenes": [
+{
+"src": "img/real/real_0511",
+"texto": "Así está hoy",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/BO2_puente_aereo",
+"texto": "El puente desde el aire",
+"tipo": "día"
+},
+{
+"src": "img/v2/BO3_puente_persona",
+"texto": "Caminando entre las copas",
+"tipo": "detalle"
+}
+],
+"ancla": "#bosque",
+"principal": false,
+"credito": ""
+},
+{
+"id": "observatorio",
+"titulo": "Observatorio de aves",
+"corto": "Observatorio de aves",
+"piso": "Piso 3 · El bosque",
+"texto": "Una torre que asoma sobre el bosque para ver aves al amanecer, sobre el mar de nubes.",
+"imagenes": [
+{
+"src": "img/real/real_0512",
+"texto": "Así está hoy",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/BO4_observatorio",
+"texto": "El observatorio al amanecer",
+"tipo": "día"
+}
+],
+"ancla": "#bosque",
+"principal": false,
+"credito": ""
+},
+{
+"id": "glamping",
+"titulo": "Glamping en la meseta",
+"corto": "Glamping",
+"piso": "Piso 4 · La meseta",
+"texto": "A mil metros, domos de glamping sobre plataformas de madera, sin cimientos, entre los árboles y de cara a la ciudad.",
+"imagenes": [
+{
+"src": "img/real/real_0488",
+"texto": "Así está hoy",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/G1_glamping_dia",
+"texto": "Los domos al atardecer",
+"tipo": "día"
+},
+{
+"src": "img/v2/G2_glamping_noche",
+"texto": "Los domos de noche",
+"tipo": "noche"
+},
+{
+"src": "img/v2/G3_glamping_interior",
+"texto": "Despertar frente a la ciudad",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/GL5_glamping_deck",
+"texto": "La terraza con jacuzzi",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/GL4_glamping_lejos",
+"texto": "El glamping desde lejos",
+"tipo": "día"
+}
+],
+"ancla": "#meseta",
+"principal": true,
+"credito": ""
+},
+{
+"id": "cabanas",
+"titulo": "Cabañas en el bosque alto",
+"corto": "Cabañas",
+"piso": "Piso 4 · La meseta",
+"texto": "Cabañas de madera sobre pilotes, entre pinos y árboles nativos, con su terraza mirando a la ciudad.",
+"imagenes": [
+{
+"src": "img/v2/CA1_cabanas_dia",
+"texto": "Las cabañas al amanecer",
+"tipo": "día"
+},
+{
+"src": "img/v2/CA2_cabanas_noche",
+"texto": "Las cabañas de noche",
+"tipo": "noche"
+},
+{
+"src": "img/v2/P17_cabanas_meseta",
+"texto": "Las cabañas desde el aire",
+"tipo": "día"
+}
+],
+"ancla": "#villa",
+"principal": false,
+"credito": ""
+},
+{
+"id": "teleferico",
+"titulo": "El teleférico",
+"corto": "Teleférico",
+"piso": "Accesos y entorno",
+"texto": "De la ciudad a la cima en menos de diez minutos: 1,9 km de cable sobre el bosque. O un funicular pegado a la montaña.",
+"imagenes": [
+{
+"src": "img/real/real_0426",
+"texto": "Así está hoy",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/TE1_teleferico",
+"texto": "El teleférico al atardecer",
+"tipo": "día"
+},
+{
+"src": "img/v2/TE3_teleferico_noche",
+"texto": "Las cabinas de noche",
+"tipo": "noche"
+},
+{
+"src": "img/v2/TE2_cabina_interior_v2",
+"texto": "Dentro de la cabina",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/FU1_funicular",
+"texto": "Opción B: un funicular por la misma ladera",
+"tipo": "variación"
+},
+{
+"src": "img/v2/FU2_funicular_vista",
+"texto": "Desde el funicular, la ciudad abajo",
+"tipo": "propuesta"
+}
+],
+"ancla": "#teleferico",
+"principal": true,
+"credito": ""
+},
+{
+"id": "aventura",
+"titulo": "Aventura · bicicleta y senderismo",
+"corto": "Aventura",
+"piso": "Piso 5 · La cima",
+"texto": "Caminos empinados para bicicleta de montaña y senderos de piedra que suben entre el bosque y los pinos, con la ciudad abajo.",
+"imagenes": [
+{
+"src": "img/v2/P15_bicicleta_montana_v2",
+"texto": "Bajada en bicicleta entre los pinos",
+"tipo": "día"
+},
+{
+"src": "img/v2/SE1_senderismo",
+"texto": "Senderismo por el camino real",
+"tipo": "día"
+}
+],
+"ancla": "#meseta",
+"principal": false,
+"credito": ""
+},
+{
+"id": "estacion",
+"titulo": "Estación Mirador · comer con vista",
+"corto": "Estación Mirador",
+"piso": "Piso 5 · La cima",
+"texto": "Restaurante y estación alta del teleférico al borde del pinar, con una terraza de cara a toda la ciudad.",
+"imagenes": [
+{
+"src": "img/real/real_0461",
+"texto": "Así está hoy",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/ES1_estacion_aerea",
+"texto": "La Estación Mirador al atardecer",
+"tipo": "día"
+},
+{
+"src": "img/v2/ES2_estacion_terraza",
+"texto": "La terraza",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/ES3_estacion_noche",
+"texto": "La Estación de noche",
+"tipo": "noche"
+},
+{
+"src": "img/v2/ES3_estacion_noche_alt",
+"texto": "La Estación de noche · otra versión",
+"tipo": "noche"
+},
+{
+"src": "img/v2/ES4_plato_andino",
+"texto": "Pisca andina y arepas con vista",
+"tipo": "detalle"
+}
+],
+"ancla": "#cima",
+"principal": true,
+"credito": ""
+},
+{
+"id": "capilla",
+"titulo": "Capilla de los Pinos",
+"corto": "Capilla",
+"piso": "Piso 5 · La cima",
+"texto": "Una capilla de piedra, madera y vidrio entre los pinos, con el altar abierto a la ciudad.",
+"imagenes": [
+{
+"src": "img/real/real_0479",
+"texto": "Así está hoy: dentro del pinar",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/T1_templo_dia",
+"texto": "La capilla con el sol entre los pinos",
+"tipo": "día"
+},
+{
+"src": "img/v2/T2_templo_interior",
+"texto": "Por dentro",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/T3_templo_noche",
+"texto": "De noche",
+"tipo": "noche"
+}
+],
+"ancla": "#cima",
+"principal": false,
+"credito": ""
+},
+{
+"id": "cima",
+"titulo": "La cima · usted elige",
+"corto": "La cima",
+"piso": "Piso 5 · La cima",
+"texto": "La cumbre mira de frente al centro de la ciudad. Para la imagen monumental: la Virgen con su rosario, el Cristo o el gran Rosario de lámparas.",
+"imagenes": [
+{
+"src": "img/real/real_0503",
+"texto": "Así está hoy: el cono del pinar desde la ciudad",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/V1g_virgen",
+"texto": "Variación 1 · Virgen Inmaculada",
+"tipo": "variación"
+},
+{
+"src": "img/v2/V2g_cristo",
+"texto": "Variación 2 · Cristo",
+"tipo": "variación"
+},
+{
+"src": "img/v2/RS1_rosario_bulevar_dia",
+"texto": "Variación 3 · El gran Rosario",
+"tipo": "variación"
+},
+{
+"src": "img/v2/V5_virgen_rosario_cerca",
+"texto": "Variación 4 · La Virgen con el Rosario alrededor",
+"tipo": "variación"
+},
+{
+"src": "img/v2/N2_cima_noche",
+"texto": "La cima de noche",
+"tipo": "noche"
+},
+{
+"src": "img/v2/RG2_gran_rosario_cristo_0504",
+"texto": "El gran Rosario",
+"tipo": "variación"
+}
+],
+"ancla": "#cima",
+"principal": true,
+"credito": ""
+},
+{
+"id": "pinos",
+"titulo": "Entre los pinos",
+"corto": "Los pinos",
+"piso": "Piso 5 · La cima",
+"texto": "El camino del rosario, el jardín de la memoria, la zona de picnic, el mirador y el despegue de parapente.",
+"imagenes": [
+{
+"src": "img/real/real_0480",
+"texto": "Así está hoy",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/PI2_rosario_pinos",
+"texto": "El camino del rosario",
+"tipo": "día"
+},
+{
+"src": "img/v2/PI6_pinos_noche",
+"texto": "El rosario iluminado de noche",
+"tipo": "noche"
+},
+{
+"src": "img/v2/PI1_jardin_memoria",
+"texto": "El jardín de la memoria",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/PI5_picnic_pinos",
+"texto": "Picnic entre los pinos",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/PI4_mirador_pinos",
+"texto": "El mirador de los pinos",
+"tipo": "detalle"
+},
+{
+"src": "img/v2/PA1_parapente",
+"texto": "Parapente sobre el valle",
+"tipo": "día"
+},
+{
+"src": "img/v2/PA2_parapente_despegue",
+"texto": "El despegue de parapente",
+"tipo": "detalle"
+}
+],
+"ancla": "#cima",
+"principal": false,
+"credito": ""
+},
+{
+"id": "nevada",
+"titulo": "La Cruz · entrada por El Nevada",
+"corto": "La Cruz · El Nevada",
+"piso": "Accesos y entorno",
+"texto": "Al final de la caminería que sube desde la Av. Rotaria está la Cruz: la entrada a La Chucurí por El Nevada que indica el Dr. Tapias. Desde aquí, el Camino de la Virgen del Carmen sigue hasta los pinos.",
+"imagenes": [
+{
+"src": "img/v2/FR_cruz_nevada_v2",
+"texto": "La Cruz, entrada por El Nevada (foto real)",
+"tipo": "hoy"
+},
+{
+"src": "img/real/real_0538",
+"texto": "Desde El Nevada: la ciudad (foto real, 11-10-2026)",
+"tipo": "hoy"
+}
+],
+"ancla": "#accesos",
+"principal": true,
+"credito": "Ruta: información del Dr. Gabriel Omar Tapias"
+},
+{
+"id": "rotaria",
+"titulo": "Caminería Av. Rotaria – El Nevada",
+"corto": "Caminería Av. Rotaria",
+"piso": "Accesos y entorno",
+"texto": "Ya existe: junto a la entrada de la urbanización Los Criollitos empieza una caminería pública de unos 2 km, de asfalto y piedra, que sube hasta El Nevada en unos 35 minutos, con un mirador cerca del final. Al final está la Cruz, la entrada por El Nevada.",
+"imagenes": [],
+"ancla": "#accesos",
+"principal": false,
+"credito": "Fuente: La Nación (20-09-2023) y OpenStreetMap"
+},
+{
+"id": "viento",
+"titulo": "Mirador Loma del Viento · la ciudad ya sube a la montaña",
+"corto": "Loma del Viento",
+"piso": "Accesos y entorno",
+"texto": "Cada fin de semana, cientos de familias suben a los miradores de la vía al Chorro El Indio.",
+"imagenes": [
+{
+"src": "img/real/real_0528",
+"texto": "El mirador lleno de carros y familias (foto real, domingo 11-10-2026)",
+"tipo": "hoy"
+}
+],
+"ancla": "#accesos",
+"principal": false,
+"credito": ""
+},
+{
+"id": "panaga",
+"titulo": "Aldea Pánaga · senderos de la comunidad",
+"corto": "Aldea Pánaga",
+"piso": "Accesos y entorno",
+"texto": "Senderismo interpretativo con la comunidad: de El Nevada a la aldea son 2 km por senderos directos, frente a más de 12 km por carretera.",
+"imagenes": [],
+"ancla": "#accesos",
+"principal": false,
+"credito": "Información: Dr. Gabriel Omar Tapias"
+},
+{
+"id": "roca",
+"titulo": "Roca Mirador",
+"corto": "Roca Mirador",
+"piso": "Accesos y entorno",
+"texto": "La gran roca gris con vista a San Cristóbal, parada de los senderistas que suben por la vía al Chorro.",
+"imagenes": [
+{
+"src": "img/v2/FR_piedra_mirador_v2",
+"texto": "La piedra, con la ciudad al fondo (foto real)",
+"tipo": "hoy"
+},
+{
+"src": "img/real/real_0536",
+"texto": "El pinar visto desde el lado de El Nevada (foto real, 11-10-2026)",
+"tipo": "hoy"
+}
+],
+"ancla": "#accesos",
+"principal": false,
+"credito": ""
+},
+{
+"id": "agua",
+"titulo": "Parque de agua",
+"corto": "Parque de agua",
+"piso": "Piso 1 · La Puerta",
+"texto": "Junto a la ciudad, en la terraza baja: un parque de agua para toda la familia, con toboganes, piscinas y un río lento entre jardines.",
+"imagenes": [
+{
+"src": "img/v2/PU1_puerta_dia",
+"texto": "La terraza baja con la Puerta",
+"tipo": "propuesta"
+},
+{
+"src": "img/v2/WP1_parque_agua_aereo",
+"texto": "El parque de agua desde el aire",
+"tipo": "propuesta"
+},
+{
+"src": "img/v2/WP2_parque_agua",
+"texto": "Toboganes y piscinas",
+"tipo": "propuesta"
+}
+],
+"ancla": "#puerta",
+"principal": true,
+"credito": ""
+},
+{
+"id": "fauna",
+"titulo": "Centro de protección de fauna",
+"corto": "Centro de fauna",
+"piso": "Piso 1 · La Puerta",
+"texto": "Un centro para rescatar, cuidar y estudiar la fauna silvestre de estas montañas, con las universidades.",
+"imagenes": [
+{
+"src": "img/v2/FS1_centro_fauna",
+"texto": "El centro de fauna",
+"tipo": "propuesta"
+},
+{
+"src": "img/v2/AN1_oso_frontino",
+"texto": "Oso frontino",
+"tipo": "propuesta"
+},
+{
+"src": "img/v2/AN2_cunaguaro",
+"texto": "Cunaguaro",
+"tipo": "propuesta"
+},
+{
+"src": "img/v2/AN6_chucuri",
+"texto": "El chucurí",
+"tipo": "propuesta"
+}
+],
+"ancla": "#puerta",
+"principal": false,
+"credito": ""
+},
+{
+"id": "planta",
+"titulo": "La quebrada limpia otra vez",
+"corto": "Planta de tratamiento",
+"piso": "Piso 2 · Las quebradas",
+"texto": "Un colector capta las aguas servidas de los barrios y una planta de tratamiento las limpia antes de volver a la quebrada.",
+"imagenes": [
+{
+"src": "img/real/real_0420",
+"texto": "Así está hoy la quebrada entre el barrio y el bosque",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/AG3_planta_tratamiento",
+"texto": "La planta de tratamiento junto a la quebrada",
+"tipo": "propuesta"
+},
+{
+"src": "img/v2/AG4_planta_tecnicos",
+"texto": "Técnicos y estudiantes miden el agua",
+"tipo": "propuesta"
+}
+],
+"ancla": "#quebradas",
+"principal": true,
+"credito": ""
+},
+{
+"id": "historia",
+"titulo": "La antigua hacienda",
+"corto": "La hacienda",
+"piso": "Piso 1 · La Puerta",
+"texto": "Por aquí pasa el Camino de los Españoles, conocido desde 1547. Aquí nacieron los hermanos Rangel Lamus y, según la tradición, se hacía un gran mercado.",
+"imagenes": [
+{
+"src": "img/v2/HI1_hacienda_1880_aereo",
+"texto": "La hacienda hacia 1880 · recreación histórica",
+"tipo": "recreación"
+},
+{
+"src": "img/real/real_0425",
+"texto": "Hoy",
+"tipo": "hoy"
+},
+{
+"src": "img/v2/HI2_mercado_patio",
+"texto": "El mercado del patio · recreación histórica",
+"tipo": "recreación"
+}
+],
+"ancla": "#historia",
+"principal": true,
+"credito": ""
+},
+{
+"id": "ha35",
+"titulo": "Las 35 hectáreas bajas",
+"corto": "35 ha",
+"piso": "Piso 1 · La Puerta",
+"texto": "Variante: en las 35 hectáreas más bajas, junto a la ciudad (de 730 a 840 m), hoteles y residencias. Arriba, el parque igual. Sujeto a zonificación y permisos.",
+"imagenes": [
+{
+"src": "img/v2/LJ1_parque_dia",
+"texto": "El parque",
+"tipo": "propuesta"
+},
+{
+"src": "img/v2/UR1_urbanismo_35ha",
+"texto": "Variante: hoteles y residencias en la parte baja",
+"tipo": "variación"
+},
+{
+"src": "img/v2/UR2_hotel",
+"texto": "El hotel",
+"tipo": "variación"
+},
+{
+"src": "img/v2/UR3_residencias",
+"texto": "Las residencias",
+"tipo": "variación"
+}
+],
+"ancla": "#invertir",
+"principal": false,
+"credito": ""
+},
+{
+"id": "astro",
+"titulo": "Observatorio",
+"corto": "Observatorio",
+"piso": "Piso 5 · La cima",
+"texto": "En la cresta del pinar: de día, un telescopio acerca la ciudad; de noche, las estrellas.",
+"imagenes": [
+{
+"src": "img/v2/OB1_observatorio_dia",
+"texto": "El observatorio de día",
+"tipo": "día"
+},
+{
+"src": "img/v2/OB2_observatorio_noche",
+"texto": "De noche",
+"tipo": "noche"
+},
+{
+"src": "img/v2/OB3_observatorio_interior",
+"texto": "El telescopio",
+"tipo": "propuesta"
+},
+{
+"src": "img/v2/OB4_telescopios_terraza",
+"texto": "La terraza de los telescopios",
+"tipo": "propuesta"
+}
+],
+"ancla": "#observatorio",
+"principal": true,
+"credito": ""
+},
+{
+"id": "rosario",
+"titulo": "El gran Rosario",
+"corto": "El gran Rosario",
+"piso": "Piso 5 · La cima",
+"texto": "Un rosario que se camina alrededor de la cumbre: cada cuenta es una lámpara… y en cada lámpara, una oración. Al centro, el Cristo acostado entre flores.",
+"imagenes": [
+{
+"src": "img/v2/RG2_gran_rosario_cristo_0504",
+"texto": "El gran Rosario sobre la montaña real",
+"tipo": "propuesta"
+},
+{
+"src": "img/v2/RS1_rosario_bulevar_dia",
+"texto": "El bulevar de lámparas",
+"tipo": "día"
+},
+{
+"src": "img/v2/RS2_rosario_bulevar_noche",
+"texto": "De noche",
+"tipo": "noche"
+},
+{
+"src": "img/v2/RS3_rosario_caminata",
+"texto": "Tocar la lámpara y rezar",
+"tipo": "propuesta"
+},
+{
+"src": "img/v2/CR1_cristo_rosario",
+"texto": "El Cristo de mármol, acostado entre flores",
+"tipo": "propuesta"
+}
+],
+"ancla": "#rosario",
+"principal": false,
+"credito": ""
+}
+]
+}
